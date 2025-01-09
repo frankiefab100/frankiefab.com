@@ -91,9 +91,6 @@ export interface ProjectPageProps {
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export type Params = Promise<{ slug: string }>;
-
-
 export interface ImageProps {
   id: number;
   alternativeText: string;
