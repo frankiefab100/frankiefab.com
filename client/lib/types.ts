@@ -91,7 +91,6 @@ export interface ProjectPageProps {
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-
 export interface ImageProps {
   id: number;
   alternativeText: string;

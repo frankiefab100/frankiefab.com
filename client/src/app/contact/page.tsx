@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const ContactPage = () => {
   const [state, handleSubmit] = useForm(
-    process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID as string
+    process.env.FORMSPREE_FORM_ID as string
   );
   const [showToast, setShowToast] = useState(false);
 
