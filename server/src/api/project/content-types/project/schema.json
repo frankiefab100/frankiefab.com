@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Projects",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "overview": {
+      "type": "text"
+    },
+    "keyFeatures": {
+      "type": "blocks"
+    },
+    "challengesAndProcess": {
+      "type": "blocks"
+    },
+    "screenshots": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tools": {
+      "type": "component",
+      "repeatable": true,
+      "component": "techstack.technology"
+    },
+    "githubUrl": {
+      "type": "string"
+    },
+    "liveUrl": {
+      "type": "string"
+    },
+    "techUse": {
+      "type": "component",
+      "repeatable": true,
+      "component": "stacks-use.core-stack"
+    },
+    "imageUrl": {
+      "type": "string"
+    }
+  }
+}
