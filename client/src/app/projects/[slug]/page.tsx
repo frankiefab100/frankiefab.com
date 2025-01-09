@@ -5,8 +5,22 @@ import Link from "next/link";
 import { ArrowLeft, Github, Link2 } from "lucide-react";
 import { ProjectPageProps } from "../../../../lib/types";
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const response = await getProjectBySlug(params.slug);
+// type Params = Promise<{ slug: string }>;
+
+// export default async function ProjectPage(props: { params: Params }) {
+//   const slug = params.slug;
+//   const response = await getProjectBySlug(slug);
+
+export default async function ProjectPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const slug = params.slug;
+  const response = await getProjectBySlug(slug);
+
+  // export default async function ProjectPage({ params }: ProjectPageProps) {
+  //   const response = await getProjectBySlug(params.slug);
 
   if (!response.data || response.data.length === 0) {
     notFound();

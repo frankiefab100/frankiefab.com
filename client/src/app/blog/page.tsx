@@ -26,7 +26,7 @@ const page = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: process.env.NEXT_PUBLIC_HASHNODE_TOKEN,
+          Authorization: process.env.HASHNODE_TOKEN,
         },
         body: JSON.stringify({
           query: FETCH_ARTICLES,
