@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_stacks_use_core_stacks",
+  "info": {
+    "displayName": "CoreStack"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "useCase": {
+      "type": "text"
+    }
+  }
+}
