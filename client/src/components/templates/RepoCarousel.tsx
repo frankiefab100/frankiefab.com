@@ -70,13 +70,13 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
 
   if (isLoading) return <Loading />;
   if (error)
-    return <div className="text-red-500 text-center py-16">Error: {error}</div>;
+    return <div className="text-red-500 text-center py-24">Error: {error}</div>;
 
   return (
-    <div className="py-16 px-4">
+    <div className="py-24 px-4">
       <div className="container mx-auto">
         <div className="mb-12">
-          <h2 className="font-bold text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
+          <h2 className="font-bold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
             Explore {""}
             <span className="text-cyan-600">Open-Source</span>
             {""} Projects
@@ -120,7 +120,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
                     <h3 className="text-xl font-semibold text-white mb-2 truncate">
                       {repo.name}
                     </h3>
-                    <p className="text-gray-400 text-base sm:text-xl mb-6 line-clamp-3">
+                    <p className="text-gray-700 dark:text-gray-400 text-base sm:text-xl mb-6 line-clamp-3">
                       {repo.description}
                     </p>
                     <div className="mt-auto flex justify-between items-center">

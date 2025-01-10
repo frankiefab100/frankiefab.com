@@ -3,9 +3,9 @@
 import { Mail, Send, CalendarDays, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-export const CTA = () => {
+export const GetInTouch = () => {
   return (
-    <div id="getintouch" className="w-full pb-16 px-4 md:px-6 lg:px-8">
+    <div id="getintouch" className="w-full py-24 px-4 md:px-6 lg:px-8">
       <div className="w-full rounded-3xl overflow-hidden bg-gradient-to-r from-[#020817] to-[#00001f] p-8 md:p-12 shadow-2xl">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Left side content */}

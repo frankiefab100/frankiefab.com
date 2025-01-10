@@ -124,7 +124,7 @@ const services = [
 export default function ServicesSection() {
   return (
     <section className="w-full py-24 px-4 md:px-6 lg:px-8">
-      <h2 className="font-bold text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
+      <h2 className="font-bold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
         What I {""}
         <span className="text-cyan-600">Do</span>
       </h2>
@@ -136,15 +136,15 @@ export default function ServicesSection() {
               className="group relative flex flex-col items-start space-y-3 transition-all duration-300 hover:translate-y-[-4px]"
             >
               <div className="flex justify-center items-center sm:block">
-                <div className="w-[60px] mr-3 rounded-2xl bg-zinc-800/50 p-5 ring-1 ring-zinc-700/50 backdrop-blur-sm transition-colors duration-300 group-hover:bg-zinc-800/70 group-hover:ring-zinc-600/70">
-                  <service.icon className="h-5 w-5 text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300" />
+                <div className="w-[60px] mr-3 rounded-2xl bg-gray-800/50 p-5 ring-1 ring-gray-700/50 backdrop-blur-sm transition-colors duration-300 group-hover:bg-gray-800/70 group-hover:ring-gray-600/70">
+                  <service.icon className="h-5 w-5 text-gray-200 dark:text-gray-400 transition-colors duration-300 hover:text-gray-100 hover:dark:text-gray-300" />
                 </div>
                 {/* <div className="space-y-4"> */}
-                <h3 className="font-Bitform mt-2 text-left text-2xl font-semibold tracking-tight text-zinc-100">
+                <h3 className="font-Bitform mt-2 text-left text-2xl font-semibold tracking-tight text-gray-800 dark:text-gray-100">
                   {service.title}
                 </h3>
               </div>
-              <p className="text-left text-base leading-7 text-zinc-400">
+              <p className="text-left text-base leading-7 text-gray-700 dark:text-gray-400">
                 {service.description}
               </p>
             </div>
