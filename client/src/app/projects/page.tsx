@@ -3,6 +3,14 @@ import Image from "next/image";
 import { getAllProjects } from "../../../lib/strapi";
 import { ArrowRight } from "lucide-react";
 
+// import type { Viewport } from "next";
+
+// export function generateViewport(): Viewport {
+//   return {
+//     themeColor: "black",
+//   };
+// }
+
 export default async function ProjectsPage() {
   const { data: projects } = await getAllProjects();
 

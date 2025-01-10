@@ -1,13 +1,9 @@
-
-
 import { Octokit } from '@octokit/rest';
-import { RepoType } from "./types";
-import { FetchOptions } from "./types"
+import { RepoType, FetchOptions } from "./types";
 
 const octokit = new Octokit({
-  auth: process.env.NEXT_PUBLIC_GITHUB_TOKEN
+  auth: process.env.GITHUB_TOKEN
 });
-
 
 export async function getGithubRepos({
   username,
@@ -32,7 +28,7 @@ export async function getGithubRepos({
         description: repo.description || 'No description provided.',
         stars: repo.stargazers_count ?? 0,
         image: repo.owner?.avatar_url ?? '/placeholder.png',
-        updatedAt: repo.updated_at
+        updatedAt: repo.updated_at ? new Date(repo.updated_at).getTime() : 0
       }));
 
     if (random) {
@@ -45,7 +41,7 @@ export async function getGithubRepos({
         if (starsDiff !== 0) return starsDiff;
 
         // If stars are equal, compare by update date
-        return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+        return b.updatedAt - a.updatedAt;
       });
     }
 
@@ -55,3 +51,4 @@ export async function getGithubRepos({
     return [];
   }
 }
+

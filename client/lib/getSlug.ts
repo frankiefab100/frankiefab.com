@@ -18,10 +18,6 @@ async function fetchAPI(path: string) {
 }
 
 
-export async function getAllProjects() {
-    return fetchAPI('/projects?populate=coverImage');
+export async function getProjectBySlug(slug: string) {
+    return fetchAPI(`/projects?filters[slug][$eq]=${slug}&populate=*`);
 }
-
-// export async function getProjectBySlug(slug: string) {
-//     return fetchAPI(`/projects?filters[slug][$eq]=${slug}&populate=*`);
-// }

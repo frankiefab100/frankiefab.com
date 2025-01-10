@@ -22,12 +22,32 @@ const page = () => {
   const getPosts = async (after?: string) => {
     try {
       setLoading(true);
+      // const response = await fetch("https://gql.hashnode.com/", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Authorization: process.env.HASHNODE_TOKEN,
+      //   },
+      //   body: JSON.stringify({
+      //     query: FETCH_ARTICLES,
+      //     variables: {
+      //       after,
+      //       host: "frankiefab.hashnode.dev",
+      //     },
+      //   }),
+      // });
+
+      const headers: HeadersInit = {
+        "Content-Type": "application/json",
+      };
+
+      if (process.env.HASHNODE_TOKEN) {
+        headers.Authorization = process.env.HASHNODE_TOKEN;
+      }
+
       const response = await fetch("https://gql.hashnode.com/", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: process.env.HASHNODE_TOKEN,
-        },
+        headers,
         body: JSON.stringify({
           query: FETCH_ARTICLES,
           variables: {
