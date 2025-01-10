@@ -39,7 +39,7 @@ export function middleware(request: NextRequest) {
 
   // Example: Handle image requests from Strapi
   if (request.nextUrl.pathname.startsWith('/api/images')) {
-    const strapiImageUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${request.nextUrl.pathname}`;
+    const strapiImageUrl = `${process.env.STRAPI_API_URL}${request.nextUrl.pathname}`;
     return NextResponse.rewrite(strapiImageUrl);
   }
 

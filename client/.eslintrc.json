@@ -3,11 +3,6 @@
     "next/core-web-vitals",
     "next/typescript",
     "next/core-web-app",
-    "eslint-config-next/typescript",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "root": true
+    "eslint-config-next/typescript"
+  ]
 }
