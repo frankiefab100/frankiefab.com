@@ -28,7 +28,7 @@ export default async function ProjectPage({
   const project = response.data[0];
 
   return (
-    <div className="bg-black min-h-screen text-white py-24 sm:py-16 lg:py-24  max-w-7xl mx-auto lg:px-16 px-8">
+    <div className="min-h-screen text-white py-24 sm:py-16 lg:py-24  max-w-7xl mx-auto lg:px-16 px-8">
       {/* <div className="bg-black min-h-screen text-white  px-14 py-24 sm:py-16 lg:py-24 md:px-24 lg:px-40"> */}
       <div className="max-w-6xl mx-auto">
         <Link

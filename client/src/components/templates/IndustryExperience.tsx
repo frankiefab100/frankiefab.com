@@ -20,9 +20,9 @@ const expertiseList = [
 
 export const Expertise = () => {
   return (
-    <section className="pb-6 max-w-7xl mx-auto md:px-16 px-6">
+    <div className="py-8 max-w-7xl mx-auto md:px-16 px-6">
       {/* <section className="px-14 pb-6 md:px-24 lg:px-34"> */}
-      <h2 className="font-bold text-white text-left my-8 tracking-tight lg:text-4xl text-3xl">
+      <h2 className="font-bold text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
         Industry {""}
         <span className="text-cyan-600">Knowledge </span>
       </h2>
@@ -56,30 +56,30 @@ export const Expertise = () => {
           </div>
 
           <div className="lg:col-span-4">
-            <p className="text-lg font-normal text-gray-400">
+            <p className="text-base sm:text-lg font-normal text-gray-400">
               I bring extensive industry experience in developing innovative
               digital solutions that enhance user engagement and streamline
               project workflows.
             </p>
 
-            <hr className="mt-8 border-gray-800 sm:mt-12" />
+            <hr className="mt-8 border-gray-800 sm:mt-10" />
 
             <ul className="grid grid-cols-1 mt-6 sm:grid-cols-2 sm:mt-6 gap-x-8 gap-y-4 sm:gap-y-8">
               {expertiseList.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-start text-base font-normal text-white"
+                  className="flex items-start font-normal text-white"
                 >
                   <span className="w-6 h-6 shrink-0 text-cyan-500">
                     {item[1]}
                   </span>
-                  <span className="ml-4">{item[0]}</span>
+                  <span className="ml-4 text-base">{item[0]}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

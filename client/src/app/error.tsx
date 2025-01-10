@@ -12,7 +12,7 @@ export default function ErrorPage() {
 
   return (
     <div className="bg-white dark:bg-black min-h-screen bg-gradient-to-b  flex items-center justify-center p-4">
-      <div className="bg-gradient-to-r from-[#fbfeff] to-[#e2e2e2] dark:from-[#020817] dark:to-[#00001f] max-w-md w-full rounded-2xl shadow-lg p-8 text-center">
+      <div className="bg-gradient-to-r from-[#fbfeff] to-[#f3f3f3] dark:from-[#051131] dark:to-[#00001f] max-w-md w-full rounded-2xl shadow-lg p-8 text-center">
         <div className="flex justify-center mb-6">
           <AlertTriangle className="h-16 w-16 text-amber-500" />
         </div>

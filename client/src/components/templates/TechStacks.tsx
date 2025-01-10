@@ -70,15 +70,15 @@ const Tooltip: React.FC<TooltipProps> = ({ content, children }) => {
 
 export default function TechStacks() {
   return (
-    <div className="flex flex-col items-center justify-center p-8">
-      <h2 className="font-bold text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
+    <div className="py-24 flex flex-col items-center justify-center p-8">
+      <h2 className="font-bold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
         Core {""}
         <span className="text-cyan-600">Technologies</span>
       </h2>
       <div className="grid grid-cols-4 md:grid-cols-9 gap-4 justify-center items-center text-center">
         {tools.map((tool) => (
           <Tooltip key={tool.name} content={tool.name}>
-            <div className="bg-[#1c1f2e] rounded-full p-4 w-16 h-16 flex items-center justify-center cursor-pointer">
+            <div className="bg-[#f7f9ff] dark:bg-[#1c1f2e] rounded-full p-4 w-16 h-16 flex items-center justify-center cursor-pointer">
               <tool.icon size={40} color={tool.color} aria-hidden="true" />
               <span className="sr-only">{tool.name}</span>
             </div>

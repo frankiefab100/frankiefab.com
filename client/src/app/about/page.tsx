@@ -29,12 +29,12 @@ const page = () => {
           I&apos;m Franklin Ohaegbulam. <br /> I ideate, design, and build
           softwares.
         </h1>
-        <p className="mt-2 mb-6 text-left text- sm:text-xl leading-7 text-zinc-400">
+        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-7 text-zinc-400">
           I am an independent web developer specializing in building
           high-quality, intuitive websites and web applications using modern
           technologies frameworks like JavaScript, React, and Next.js.
         </p>
-        <p className="mt-2 mb-6 text-left text-base  sm:text-xl leading-7 text-zinc-400">
+        <p className="mt-2 mb-6 text-left text-base  sm:text-lg leading-7 text-zinc-400">
           My journey in tech has been marked by a commitment to enhancing user
           experiences. I thrive in collaborative environments, working closely
           with UX designers to transform wireframes and designs from tools like
@@ -42,7 +42,7 @@ const page = () => {
           My focus on performance and accessibility ensures that applications
           are not only visually appealing but also fast and scalable.
         </p>
-        <p className="mt-2 mb-6 text-left text-base sm:text-xl  leading-7 text-zinc-400">
+        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-7 text-zinc-400">
           With over four years of industry experience, I often share my
           knowledge on my{" "}
           <Link
@@ -59,7 +59,7 @@ const page = () => {
           . When I'm not working on personal projects, I spend time reading
           books or blog posts, playing games, or learning a new language.
         </p>
-        <p className="mt-2 mb-6 text-left text-base  sm:text-xl leading-7 text-zinc-400">
+        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-7 text-zinc-400">
           You can also check out my articles and tutorials on{" "}
           <Link
             href="https://freecodecamp.org"
