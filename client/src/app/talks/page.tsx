@@ -1,45 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { EventsList } from "../../../lib/types";
-
-const events: EventsList[] = [
-  {
-    id: 1,
-    category: "Conference",
-    date: "Feb 11 2021",
-    title: "FOSS Backstage 2021",
-    desc: "Going into this journey, I had a standard therapy regimen, based on looking at the research literature.",
-    link: "https://youtube.com",
-    slide: "/",
-  },
-  {
-    id: 2,
-    category: "Tech Meetup",
-    date: "Sep 10 2022",
-    title: "OSCA Abuja x FOF Abuja",
-    desc: "Going into this journey, I had a standard therapy regimen, based on looking at the research literature.",
-    link: "/",
-    slide: "/",
-  },
-  {
-    id: 3,
-    category: "Webinar",
-    date: "Jan 01 2024",
-    title: "Community 100",
-    desc: "Glossier echo park pug, church-key sartorial biodiesel vexillolog wolfvaporware kombucha  polaroid hoodie portland craft beer.",
-    link: "/",
-    slide: "/",
-  },
-  {
-    id: 4,
-    category: "Workshop",
-    date: "Jan 02 2022",
-    title: "Community 100",
-    desc: "Glossier echo park pug, church-key sartorial biodiesel vexillolog wolfvaporware kombucha  polaroid hoodie portland craft beer.",
-    link: "/",
-    slide: "/",
-  },
-];
+import { events } from "@/constants/speaking";
 
 const Talks = () => {
   return (
