@@ -16,6 +16,7 @@ import {
   UserCircle,
   X,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const NAVIGATION_LINKS = [
   ["About", "/about", UserCircle],
@@ -26,7 +27,7 @@ const NAVIGATION_LINKS = [
 ] as const;
 
 export default function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme, setTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -42,16 +43,18 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
+  // const [theme, setTheme] = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // This effect ensures that we only render the theme toggle UI after mounting
   useEffect(() => {
-    const isDark = localStorage.getItem("darkMode") === "true";
-    setIsDarkMode(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
+    setMounted(true);
   }, []);
 
+  if (!mounted) return null; // Prevents hydration issues
+
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem("darkMode", (!isDarkMode).toString());
-    document.documentElement.classList.toggle("dark");
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -102,10 +105,12 @@ export default function Header() {
                 onClick={toggleTheme}
                 className="p-2 rounded-full  transition-colors border border-gray-400 hover:border-blue-50 hover:bg-blue-50 hover:dark:border-gray-600 hover:dark:bg-white/10"
                 aria-label={
-                  isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+                  theme === "dark"
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
                 }
               >
-                {isDarkMode ? (
+                {theme === "dark" ? (
                   <Moon className="h-6 w-6" />
                 ) : (
                   <Sun className="h-6 w-6" />
@@ -132,7 +137,7 @@ export default function Header() {
                 className="p-2 mr-3 rounded-full text-gray-300 hover:text-white transition-colors border border-gray-400 hover:border-gray-600  hover:bg-white/10"
                 aria-label="Toggle theme"
               >
-                {isDarkMode ? (
+                {theme === "dark" ? (
                   <Moon className="h-5 w-5" />
                 ) : (
                   <Sun className="h-5 w-5" />
