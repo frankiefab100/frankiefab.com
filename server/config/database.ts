@@ -24,12 +24,12 @@ export default ({ env }) => {
     },
     postgres: {
       connection: {
-        connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
-        port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'strapi'),
-        user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        connectionString: env('STRAPI_URL'),
+        host: env('PGHOST'),
+        port: env.int('PGPORT', 5432),
+        database: env('PGDATABASE'),
+        user: env('PGUSER'),
+        password: env('PGPASSWORD'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
@@ -58,4 +58,26 @@ export default ({ env }) => {
     },
   };
 };
+
+
+// module.exports = ({ env }) => ({
+//   connection: {
+//     client: 'postgres',
+//     connection: {
+//       host: env('DATABASE_HOST'),
+//       port: env.int('DATABASE_PORT', 5432),
+//       database: env('DATABASE_NAME'),
+//       user: env('DATABASE_USERNAME'),
+//       password: env('DATABASE_PASSWORD'),
+//       schema: env('DATABASE_SCHEMA', 'public'),
+//       ssl: {
+//         rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
+//       },
+//     }, pool: {
+//       min: env.int('DATABASE_POOL_MIN', 2),
+//       max: env.int('DATABASE_POOL_MAX', 10)
+//     },
+//     debug: false,
+//   },
+// });
 
