@@ -16,15 +16,6 @@
       "type": "string",
       "required": true
     },
-    "coverImage": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
     "slug": {
       "type": "uid",
       "required": true
