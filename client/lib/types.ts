@@ -17,7 +17,7 @@ export interface RepoType {
   url: string;
   description: string;
   stars: number;
-  updatedAt: string | number;
+  updatedAt: number;
 }
 
 export interface FetchOptions {
@@ -88,8 +88,35 @@ export interface ProjectPageProps {
   params: {
     slug: string;
   };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
+export interface ProjectData {
+  title: string;
+  coverImage?: {
+    formats?: {
+      medium?: {
+        url: string;
+      };
+    };
+    alternativeText?: string;
+  };
+  githubUrl?: string;
+  liveUrl?: string;
+  overview?: string;
+  description?: string;
+  tools: Array<{ name: string }>;
+  techUse: Array<{ name: string; useCase: string }>;
+  keyFeatures?: any[];
+  challengesAndProcess?: any[];
+  screenshots?: Array<{
+    formats: {
+      medium: {
+        url: string;
+      };
+    };
+  }>;
+}
 
 export interface ImageProps {
   id: number;

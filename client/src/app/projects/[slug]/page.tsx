@@ -1,21 +1,39 @@
 import Image from "next/image";
-import { getProjectBySlug } from "../../../../lib/strapi";
+// import { fetchAPI } from "../../../../lib/strapi";
+// import { getProjectBySlug } from "../../../../lib/strapi";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Github, Link2 } from "lucide-react";
-import { ProjectPageProps } from "../../../../lib/types";
+import { ProjectPageProps, ProjectData } from "../../../../lib/types";
+import { getProjectBySlug } from "../../../../lib/getSlug";
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+// async function getProjectBySlug(slug: string) {
+//   return fetchAPI(`/projects?filters[slug][$eq]=${slug}&populate=*`);
+// }
+
+// // async function ProjectPage({ params }: { params: { slug: string } }) {
+// //   const slug = params.slug;
+// //   const response = await getProjectBySlug(slug);
+
+// export default async function ProjectPage({ params }: ProjectPageProps) {
+// const response = await getProjectBySlug(params.slug);
+
+export default async function ProjectPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
+  // const productID = params.slug[1];
+
   const response = await getProjectBySlug(params.slug);
 
   if (!response.data || response.data.length === 0) {
     notFound();
   }
-  const project = response.data[0];
+
+  const project: ProjectData = response.data[0];
 
   return (
-    <div className="bg-black min-h-screen text-white py-24 sm:py-16 lg:py-24  max-w-7xl mx-auto lg:px-16 px-8">
-      {/* <div className="bg-black min-h-screen text-white  px-14 py-24 sm:py-16 lg:py-24 md:px-24 lg:px-40"> */}
+    <div className="min-h-screen text-white py-24 sm:py-16 lg:py-24 max-w-7xl mx-auto lg:px-16 px-8">
       <div className="max-w-6xl mx-auto">
         <Link
           href="/projects"
@@ -29,13 +47,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {project.title}
         </h1>
 
-        {project.coverImage && (
+        {project.coverImage?.formats?.medium?.url && (
           <Image
-            src={project.coverImage?.formats?.medium?.url}
-            // className="w-full h-auto rounded-lg shadow-lg mb-8"
+            src={project.coverImage.formats.medium.url}
             className="rounded-lg shadow-lg mb-8"
             alt={
-              project.coverImage?.alternativeText ||
+              project.coverImage.alternativeText ||
               project.title ||
               "Project cover image"
             }
@@ -44,7 +61,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           />
         )}
 
-        {/* <h2 className="text-2xl font-semibold mb-2">Links</h2> */}
         <div className="flex gap-4 mb-8 mt-4">
           {project.githubUrl && (
             <a
@@ -78,7 +94,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
 
         <div className="my-8">
-          {project.tools.map((tool: any, index: number) => (
+          {project.tools.map((tool, index) => (
             <span
               key={index}
               className="mr-2 bg-gray-900 text-gray-400 px-2 py-2 rounded text-sm text-center"
@@ -93,10 +109,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             Core Technologies & Use
           </h2>
           <ul className="list-disc space-y-3 pl-5 text-base font-normal leading-7 text-gray-100">
-            {project.techUse.map((tech: any, index: number) => (
+            {project.techUse.map((tech, index) => (
               <li className="flex items-center" key={index}>
                 <a
-                  href="https://nextjs.org/"
+                  href="https://"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-cyan-500 hover:text-cyan-600 transition-colors"
@@ -140,13 +156,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {project.screenshots && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {project.screenshots.map((screenshot: any, index: number) => (
-                <img
-                  src={`${screenshot.formats.medium.url}` ?? "/placeholder.png"}
+              {project.screenshots.map((screenshot, index) => (
+                <Image
+                  key={index}
+                  src={screenshot.formats.medium.url ?? "/placeholder.png"}
                   alt={`Screenshot ${index + 1}`}
                   className="rounded-lg w-full h-auto"
-                  width={150}
-                  height={150}
+                  width={600}
+                  height={400}
                 />
               ))}
             </div>
@@ -161,7 +178,7 @@ function renderBlocks(blocks: any[]): string {
   return blocks
     .map((block) => {
       if (block.type === "paragraph") {
-        return `<p style="margin-bottom: 10px;" >${block.children
+        return `<p style="margin-bottom: 10px;">${block.children
           .map((child: any) => child.text)
           .join("")}</p>`;
       }

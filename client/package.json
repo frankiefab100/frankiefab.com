@@ -22,10 +22,9 @@
     "form-data": "^4.0.1",
     "framer-motion": "^11.11.17",
     "lucide-react": "^0.221.0",
-    "mailgun.js": "^10.2.4",
     "motion": "^11.11.17",
     "next": "^15.0.3",
-    "nodemailer": "^6.9.16",
+    "next-themes": "^0.4.4",
     "qs": "^6.13.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -36,8 +35,10 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.17",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
     "autoprefixer": "^10.4.20",
+    "eslint": "^8.41.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14"
   }

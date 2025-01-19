@@ -98,13 +98,13 @@ const ReadingList = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="py-16 max-w-7xl mx-auto md:px-16 px-6">
+    <div className="pt-8 pb-16 max-w-7xl mx-auto md:px-16 px-6">
       {/* <div className="w-full py-16 px-14 md:px-24 lg:px-34"> */}
-      <h2 className="font-bold text-white text-left mb-4 tracking-tight lg:text-4xl text-3xl">
+      <h2 className="font-bold text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
         What I&apos;m {""}
         <span className="text-cyan-600">Reading</span>
       </h2>
-      <p className="mb-6 text-left text-lg sm:text-xl  font-normal leading-7 text-zinc-400">
+      <p className="mb-6 text-left text-base sm:text-lg font-normal leading-7 text-zinc-400">
         Some great books in my reading list. I recommend you them check out
       </p>
 
@@ -113,11 +113,11 @@ const ReadingList = () => {
           <button
             key={tab.category}
             onClick={() => setActiveTab(index)}
-            className={`flex items-center justify-center w-full rounded-lg py-2.5 text-sm sm:text-base font-medium leading-5 text-cyan-700
+            className={`flex items-center justify-center w-full rounded-lg py-2.5 text-sm sm:text-base font-medium leading-5 text-gray-100
               ${
                 activeTab === index
                   ? "bg-blue-600/30 shadow"
-                  : "text-gray-100 hover:bg-blue-600/[0.12] hover:text-white"
+                  : "text-gray-100 hover:bg-blue-300/[0.12] hover:text-white"
               }`}
             aria-selected={activeTab === index}
             role="tab"
@@ -140,9 +140,9 @@ const ReadingList = () => {
               {tab.items.map((item, index) => (
                 <div
                   key={index}
-                  className="relative rounded-md p-3 bg-white/10 hover:bg-white/90 text-white backdrop-blur-sm transition-colors duration-200 "
+                  className="relative rounded-md p-3 bg-white/10 hover:bg-white/25 text-white backdrop-blur-sm transition-colors duration-200 "
                 >
-                  <h3 className="text-sm font-medium leading-5">{item}</h3>
+                  <h3 className="text-base font-medium leading-5">{item}</h3>
                 </div>
               ))}
             </div>

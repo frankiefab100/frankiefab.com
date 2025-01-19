@@ -3,6 +3,14 @@ import Image from "next/image";
 import { getAllProjects } from "../../../lib/strapi";
 import { ArrowRight } from "lucide-react";
 
+// import type { Viewport } from "next";
+
+// export function generateViewport(): Viewport {
+//   return {
+//     themeColor: "black",
+//   };
+// }
+
 export default async function ProjectsPage() {
   const { data: projects } = await getAllProjects();
 
@@ -14,23 +22,23 @@ export default async function ProjectsPage() {
       <div className="py-24 max-w-7xl mx-auto lg:px-16 px-8">
         {/* <div className="bg-black py-24 sm:py-16 lg:py-24 px-14 md:px-24 lg:px-40"> */}
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-bold text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
+          <h2 className="font-bold text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
             Project {""}
             <span className="text-cyan-600">Gallery</span>
           </h2>
-          <p className="text-lg font-normal text-gray-400">
+          <p className="text-lg font-normal text-gray-700 dark:text-gray-400">
             Selected projects I have worked on
           </p>
         </div>
 
         {projects && (
           // lg:flex grid grid-cols-[1fr_1fr] mt-4
-          <div className="grid gap-y-4 mt-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+          <div className="grid gap-y-4 mt-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project: any) => (
               // <div className="my-6 rounded-2xl p-2 sm:py-4 sm:px-4 backdrop-blur-[6px] backdrop-saturate-[180%] bg-[rgba(17,25,40,0.75)] border border-[rgba(255,255,255,0.125)]">
 
-              <div className="sm:my-6 sm:mx-4 p-2 sm:p-4 bg-[rgba(18,1,73,0.15)] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] rounded-[10px] border border-[rgba(255,255,255,0.18)]">
-                <div className="rounded-md bg-cyan-500 bg-gradient-to-t from-[rgb(65,176,198)] to-[#61c1f0] p-1 shadow-xl">
+              <div className="sm:my-6 sm:mx-4 p-2 sm:p-4 bg-[#f7f9ff] dark:bg-[rgba(18,1,73,0.15)] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] rounded-[10px] border border-gray-200 dark:border-gray-800">
+                <div className="rounded-md bg-gradient-to-t from-[rgb(65,176,198)] to-[#61c1f0] p-1 shadow-xl">
                   <Link href={`/projects/${project.slug || ""}`}>
                     {/* {project.coverImage && (
                     <Image
@@ -64,7 +72,7 @@ export default async function ProjectsPage() {
 
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="mt-3 inline-flex items-center text-base font-medium dark:text-gray-200 text-gray-900 hover:text-gray-700 transition-colors"
+                    className="mt-3 md:mt-0 inline-flex items-center text-sm md:text-base font-medium  text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-500 transition-colors"
                   >
                     View details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -79,7 +87,7 @@ export default async function ProjectsPage() {
           <Link
             href="https://github.com/frankiefab100?tab=repositories"
             aria-label=""
-            className="inline-flex items-center font-semibold transition-colors duration-200 text-gray-400 hover:text-gray-500"
+            className="inline-flex items-center font-semibold transition-colors duration-200 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-500"
           >
             See more projects
             <ArrowRight className="ml-1 h-4 w-4" />

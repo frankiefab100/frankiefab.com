@@ -1,76 +1,3 @@
-// "use client";
-
-// import Image from "next/image";
-// import Link from "next/link";
-// import { Moon, ChevronRight } from "lucide-react";
-// import { MobileNav } from "../MobileNav";
-// import { NavLink } from "../NavLink";
-// import { Button } from "../ui/Button";
-// // import { useState } from "react";
-
-// const NAVIGATION_ITEMS = [
-//   ["About", "/about"],
-//   ["Projects", "/projects"],
-//   ["Blog", "/blog"],
-//   ["Contact", "/contact"],
-//   ["Speaking", "/talks"],
-// ] as const;
-
-// export default function Header() {
-//   // const [isOpen, setIsOpen] = useState(false);
-
-//   return (
-//     <header className="sticky top-0 z-50">
-//       <nav className="border-b border-gray-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60 bg-gray-900 px-6 md:px-14 lg:px-30">
-//         {/* <nav className="border-b border-gray-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60"> */}
-//         <div className="mx-auto px-4 max-w-7xl">
-//           <div className="flex h-20 items-center justify-between">
-//             <Link
-//               href="/"
-//               // onClick={() => setIsOpen(false)}
-//               className="lg:flex md:flex items-center gap-2 sm:hidden hidden"
-//             >
-//               <div className="rounded-lg bg-white/10 p-2">
-//                 <Image
-//                   className="w-auto h-7"
-//                   src="/favicon/favicon-192x192.png"
-//                   alt="Frankiefab Logo"
-//                   height={200}
-//                   width={200}
-//                   priority
-//                 />
-//               </div>
-//               <span className="text-sm font-thin text-white">FRANKIEFAB</span>
-//             </Link>
-
-//             <div className="hidden md:flex items-center space-x-8">
-//               {NAVIGATION_ITEMS.map(([label, href]) => (
-//                 <NavLink key={href} href={href}>
-//                   {label}
-//                 </NavLink>
-//               ))}
-//             </div>
-
-//             <div className="hidden md:flex items-center gap-4">
-//               <button
-//                 className="p-2 rounded-full text-gray-300  hover:text-white transition-colors border border-gray-400 hover:border-gray-600  hover:bg-white/10"
-//                 aria-label="Toggle theme"
-//               >
-//                 <Moon className="h-5 w-5" />
-//               </button>
-//               <Button className="bg-primary hover:bg-primary/90 text-white flex items-center gap-2 transition-colors">
-//                 Resume <ChevronRight className="h-6 w-6" />
-//               </Button>
-//             </div>
-
-//             <MobileNav />
-//           </div>
-//         </div>
-//       </nav>
-//     </header>
-//   );
-// }
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -89,6 +16,7 @@ import {
   UserCircle,
   X,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const NAVIGATION_LINKS = [
   ["About", "/about", UserCircle],
@@ -99,7 +27,7 @@ const NAVIGATION_LINKS = [
 ] as const;
 
 export default function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme, setTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -115,21 +43,23 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
+  // const [theme, setTheme] = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // This effect ensures that we only render the theme toggle UI after mounting
   useEffect(() => {
-    const isDark = localStorage.getItem("darkMode") === "true";
-    setIsDarkMode(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
+    setMounted(true);
   }, []);
 
+  if (!mounted) return null; // Prevents hydration issues
+
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem("darkMode", (!isDarkMode).toString());
-    document.documentElement.classList.toggle("dark");
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
     <header className="sticky top-0 z-50">
-      <nav className="border-b border-gray-800 backdrop-blur">
+      <nav className="border-b border-gray-200 dark:border-gray-800 backdrop-blur">
         {/* <nav className="border-b border-gray-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60"> */}
         <div className="mx-auto max-w-7xl md:px-16 px-8">
           {/* <div className="mx-auto px-8 md:px-16 max-w-7xl"> */}
@@ -149,7 +79,9 @@ export default function Header() {
                 priority
               />
               {/* </div> */}
-              <span className="text-sm font-thin text-white">FRANKIEFAB</span>
+              <span className="text-sm font-thin text-gray-800 dark:text-gray-200">
+                FRANKIEFAB
+              </span>
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -157,8 +89,10 @@ export default function Header() {
                 <Link
                   key={href}
                   href={href}
-                  className={`text-sm font-medium transition-colors hover:text-white ${
-                    pathname === href ? "text-white" : "text-gray-300"
+                  className={`text-sm font-medium transition-colors hover:text-blue-500 ${
+                    pathname === href
+                      ? "text-blue-600"
+                      : "text-gray-700 dark:text-gray-300"
                   }`}
                 >
                   {label}
@@ -169,12 +103,14 @@ export default function Header() {
             <div className="hidden md:flex items-center gap-4">
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full text-gray-300 hover:text-white transition-colors border border-gray-400 hover:border-gray-600 hover:bg-white/10"
+                className="p-2 rounded-full  transition-colors border border-gray-400 hover:border-blue-50 hover:bg-blue-50 hover:dark:border-gray-600 hover:dark:bg-white/10"
                 aria-label={
-                  isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+                  theme === "dark"
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
                 }
               >
-                {isDarkMode ? (
+                {theme === "dark" ? (
                   <Moon className="h-6 w-6" />
                 ) : (
                   <Sun className="h-6 w-6" />
@@ -201,7 +137,7 @@ export default function Header() {
                 className="p-2 mr-3 rounded-full text-gray-300 hover:text-white transition-colors border border-gray-400 hover:border-gray-600  hover:bg-white/10"
                 aria-label="Toggle theme"
               >
-                {isDarkMode ? (
+                {theme === "dark" ? (
                   <Moon className="h-5 w-5" />
                 ) : (
                   <Sun className="h-5 w-5" />

@@ -6,17 +6,17 @@ import { ArrowRight, Twitter, Linkedin, Github, Dribbble } from "lucide-react";
 import ServicesSection from "@/components/templates/Specializations";
 import TechStacks from "@/components/templates/TechStacks";
 import { RepoCarousel } from "@/components/templates/RepoCarousel";
-import { CTA } from "@/components/templates/GetInTouch";
+import { GetInTouch } from "@/components/templates/GetInTouch";
 // import { motion } from "motion/react";
 
 export default function Home() {
   return (
     //   <main className="text-white min-h-screen mx-auto px-4 pt-35 text-center max-w-7xl">
-    <div className="relative bg-background min-h-screen">
+    <div className="relative bg-white dark:bg-background min-h-screen">
       {/* <main className="relative z-20 text-white mx-auto px-4 pt-35 text-center max-w-7xl"> */}
-      <main className="bg-black relative z-20 text-center text-white max-w-7xl mx-auto lg:px-16 px-8">
+      <main className="relative z-20 text-center text-gray-800 dark:text-white max-w-7xl mx-auto lg:px-16 px-8">
         {/* Hero Section */}
-        <div className="pt-48 pb-48 flex flex-col items-center justify-center space-y-8">
+        <div className="py-48 flex flex-col items-center justify-center space-y-8">
           <div className="relative w-20 h-20 rounded-2xl overflow-hidden">
             <Image
               src="/images/profile-photo.jpg"
@@ -48,12 +48,12 @@ export default function Home() {
             {/* </motion.div> */}
           </div>
 
-          <h1 className="font-Bitform text-4xl md:text-5xl max-w-4xl">
+          <h1 className="font-Bitform text-3xl md:text-5xl max-w-4xl">
             Frontend Engineer, Designer
             <br />& Technical Writer
           </h1>
 
-          <p className="text-lg leading-7 text-zinc-400 px-4 max-w-3xl">
+          <p className=" text-base md:text-lg leading-7 text-gray-700 dark:text-gray-400 px-4 max-w-3xl">
             With 4 years of professional experience in building responsive user
             interfaces and digital experiences to meet user&apos;s needs.
           </p>
@@ -61,28 +61,28 @@ export default function Home() {
           <div className="flex items-center justify-center space-x-6">
             <Link
               href="https://twitter.com/frankiefab100"
-              className="text-gray-300 hover:text-primary transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
             >
               <Twitter className="h-6 w-6" />
               <span className="sr-only">Twitter</span>
             </Link>
             <Link
               href="https://linkedin.com/in/frankiefab100"
-              className="text-gray-300 hover:text-primary transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
             >
               <Linkedin className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
               href="https://github.com/frankiefab100"
-              className="text-gray-300 hover:text-primary transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
             >
               <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
               href="https://dribbble.com/frankiefab100"
-              className="text-gray-300 hover:text-primary transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
             >
               <Dribbble className="h-6 w-6" />
               <span className="sr-only">Dribbble</span>
@@ -113,7 +113,7 @@ export default function Home() {
 
         <RepoCarousel username={"frankiefab100"} />
 
-        <CTA />
+        <GetInTouch />
       </main>
     </div>
   );

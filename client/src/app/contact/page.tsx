@@ -2,15 +2,13 @@
 
 import Toast from "@/components/ui/Toast";
 import { useForm, ValidationError } from "@formspree/react";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 const ContactPage = () => {
-  const [state, handleSubmit] = useForm(
-    process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID as string
-  );
+  const [state, handleSubmit] = useForm(`process.env.FORMSPREE_FORM_ID`);
   const [showToast, setShowToast] = useState(false);
 
-  const onSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleSubmit(e);
     // const result = await handleSubmit(e);

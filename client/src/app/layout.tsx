@@ -1,48 +1,93 @@
 import "./styles/globals.css";
-// import type { Metadata } from "next";
-import Head from "next/head";
 import { Montserrat } from "next/font/google";
+import { Metadata } from "next";
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
-// import BackgroundGrid from "@/components/shared/gridbg";
+import { ThemeProvider } from "next-themes";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
-// export const metadata: Metadata = {
-export const metadata = {
-  title: "Frankiefab | Portfolio Website",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://frankiefab.com"),
+  title: {
+    default: "Frankiefab | Portfolio Website",
+    template: "%s | Frankiefab",
+  },
   description:
     "A portfolio website by Franklin Ohaegbulam featuring his short bio, side projects, writing and talks",
-  applicationName: "Frankiefab",
+  keywords: [
+    "JavaScript",
+    "TypeScript",
+    "ReactJS",
+    "NextJS",
+    "Frontend Developer",
+    "Portfolio",
+    "Blog",
+    "Technical Writer",
+    "Open Source Developer",
+    "Design Engineer",
+  ],
+  authors: [{ name: "Franklin Ohaegbulam" }],
+  creator: "Franklin Ohaegbulam",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://frankiefab.com",
     title: "Frankiefab | Portfolio Website",
     description:
       "A portfolio website by Franklin Ohaegbulam featuring his bio, tech stacks, side projects, writing and talks",
-    url: "https://frankiefab.com",
-    type: "website",
+    siteName: "Frankiefab",
     images: [
       {
-        url: "",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        alt: "Frankiefab Portfolio",
       },
     ],
-    siteName: "https://frankiefab.com",
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://frankiefab.com",
+    site: "@frankiefab100",
+    creator: "@frankiefab100",
     title: "Frankiefab | Portfolio Website",
     description:
       "A portfolio website by Franklin Ohaegbulam featuring his bio, tech stacks, side projects, writing and talks",
     images: [
       {
-        url: "",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        alt: "Frankiefab Portfolio",
       },
     ],
   },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  // verification: {
+  //   google: "",
+  // },
 };
 
 export default function RootLayout({
@@ -52,37 +97,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <title>{metadata.title}</title>
-        <link rel="icon" href="./favicon.ico" />
-        <meta name="description" content={metadata.description} />
-        <meta name="author" content="Franklin Ohaegbulam" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="keywords"
-          content="JavaScript,Typescript, ReactJS, NextJS,frontend developer,website, portfolio, blog site, technical writer, Open source developer, Design engineer"
-        />
-      </Head>
       <body className={montserrat.className}>
-        <div className="relative min-h-screen">
-          {/* Background noise */}
-          {/* <div
-            className="fixed inset-0 bg-noise opacity-10 bg-repeat"
-            style={{ mixBlendMode: "multiply" }}
-          /> */}
-          {/* <BackgroundGrid /> */}
-          {/* <div
-            className="bg-background absolute bg-noise bg-cover bg-center"
-            style={{ mixBlendMode: "multiply" }}
-          /> */}
-
-          {/* Web content */}
-          <div className="bg-white dark:bg-black relative z-10 flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">{children}</main>
-            <Footer />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="relative min-h-screen">
+            <div className="relative z-10 flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </div>
           </div>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );
