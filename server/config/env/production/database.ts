@@ -1,16 +1,26 @@
-module.exports = ({ env }) => ({
+export default ({ env }) => ({
     connection: {
         client: 'postgres',
         connection: {
-            host: env('PGHOST', '127.0.0.1'),
-            port: env.int('PGPORT', 5432),
-            database: env('PGDATABASE', 'railway'),
-            user: env('PGUSER', 'postgres'),
-            password: env('PGPASSWORD', 'password'),
-            ssl: env.bool(true),
+            connectionString: env('DATABASE_URL')
         },
-    },
+        acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
+    }
 });
+
+// module.exports = ({ env }) => ({
+//     connection: {
+//         client: 'postgres',
+//         connection: {
+//             host: env('PGHOST', '127.0.0.1'),
+//             port: env.int('PGPORT', 5432),
+//             database: env('PGDATABASE', 'railway'),
+//             user: env('PGUSER', 'postgres'),
+//             password: env('PGPASSWORD', 'password'),
+//             ssl: env.bool(true),
+//         },
+//     },
+// });
 
 
 
