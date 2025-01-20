@@ -48,7 +48,8 @@ const ContactPage = () => {
                 <div>
                   <blockquote className="mt-6">
                     <p className="text-lg leading-relaxed text-white">
-                      "The best way to predict the future is to implement it."
+                      &quot;The best way to predict the future is to implement
+                      it.&quot;
                     </p>
                   </blockquote>
                   <div className="flex items-center mt-1">
