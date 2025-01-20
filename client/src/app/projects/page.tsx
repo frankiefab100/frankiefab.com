@@ -37,7 +37,10 @@ export default async function ProjectsPage() {
             {projects.map((project: any) => (
               // <div className="my-6 rounded-2xl p-2 sm:py-4 sm:px-4 backdrop-blur-[6px] backdrop-saturate-[180%] bg-[rgba(17,25,40,0.75)] border border-[rgba(255,255,255,0.125)]">
 
-              <div className="sm:my-6 sm:mx-4 p-2 sm:p-4 bg-[#f7f9ff] dark:bg-[rgba(18,1,73,0.15)] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] rounded-[10px] border border-gray-200 dark:border-gray-800">
+              <div
+                key={project.id}
+                className="sm:my-6 sm:mx-4 p-2 sm:p-4 bg-[#f7f9ff] dark:bg-[rgba(18,1,73,0.15)] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] rounded-[10px] border border-gray-200 dark:border-gray-800"
+              >
                 <div className="rounded-md bg-gradient-to-t from-[rgb(65,176,198)] to-[#61c1f0] p-1 shadow-xl">
                   <Link href={`/projects/${project.slug || ""}`}>
                     {/* {project.coverImage && (
