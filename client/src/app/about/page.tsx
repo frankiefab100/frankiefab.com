@@ -6,7 +6,7 @@ import { Expertise } from "@/components/templates/IndustryExperience";
 import { ArrowUpRight } from "lucide-react";
 import ReadingList from "@/components/templates/ReadingList";
 
-const page = () => {
+const About = () => {
   return (
     <section>
       {/* <section className="bg-black pt-12 relative lg:px-12"> */}
@@ -114,4 +114,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default About;
