@@ -31,7 +31,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
       const newIndex = isFirstSlide ? repos.length - 1 : currentIndex - 1;
       goToSlide(newIndex);
     }
-  }, [currentIndex, isAnimating, repos.length]);
+  }, [currentIndex, isAnimating, goToSlide, repos.length]);
 
   const goToNext = useCallback(() => {
     if (!isAnimating) {
@@ -39,7 +39,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
       goToSlide(newIndex);
     }
-  }, [currentIndex, isAnimating, repos.length]);
+  }, [currentIndex, isAnimating, goToSlide, repos.length]);
 
   useEffect(() => {
     const loadRepos = async () => {
