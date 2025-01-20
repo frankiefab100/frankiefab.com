@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import {
   Accessibility,
   AppWindow,
@@ -67,7 +67,7 @@ export const Expertise = () => {
             <ul className="grid grid-cols-1 mt-6 sm:grid-cols-2 sm:mt-6 gap-x-8 gap-y-4 sm:gap-y-8">
               {expertiseList.map((item, index) => (
                 <li
-                  key={index}
+                  key={`${item[0]}-${index}`}
                   className="flex items-start font-normal text-white"
                 >
                   <span className="w-6 h-6 shrink-0 text-cyan-500">
