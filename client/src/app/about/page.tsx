@@ -56,7 +56,7 @@ const page = () => {
               <ArrowUpRight className="inline h-4 w-4" />
             </span>
           </Link>
-          . When I'm not working on personal projects, I spend time reading
+          . When I&apos;m not working on personal projects, I spend time reading
           books or blog posts, playing games, or learning a new language.
         </p>
         <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-7 text-zinc-400">
