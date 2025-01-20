@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Github, Link2 } from "lucide-react";
 import { ProjectPageProps, ProjectData } from "../../../../lib/types";
-import { getProjectBySlug } from "../../../../lib/getSlug";
+import { getProjectBySlug } from "../../../../lib/getProjectBySlug";
 
 // async function getProjectBySlug(slug: string) {
 //   return fetchAPI(`/projects?filters[slug][$eq]=${slug}&populate=*`);
