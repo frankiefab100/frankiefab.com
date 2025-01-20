@@ -10,7 +10,7 @@ import Link from "next/link";
 import { formatDate } from "@/utils/dateFormat";
 import Loading from "../loading";
 
-const Page = () => {
+const Blog = () => {
   const [blogData, setBlogData] = useState<Posts>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -151,4 +151,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Blog;
