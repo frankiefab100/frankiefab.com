@@ -1,10 +1,10 @@
-// /** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
     return [
       {
         source: "/api/:path*",
-        destination: "/api/:path*",
+        destination: `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/:path*`,
       },
     ];
   },
@@ -30,6 +30,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: new URL(process.env.NEXT_PUBLIC_STRAPI_URL).hostname,
+        pathname: "/uploads/**/*",
       },
     ],
   },
