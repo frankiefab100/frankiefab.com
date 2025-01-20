@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, ArrowRight, Folder } from "lucide-react";
 import { getGithubRepos } from "../../../lib/getGithubRepos";
 import { RepoType } from "../../../lib/types";
@@ -13,6 +13,33 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
   const [repos, setRepos] = useState<RepoType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (!isAnimating) {
+        setIsAnimating(true);
+        setCurrentIndex(index);
+        setTimeout(() => setIsAnimating(false), 500);
+      }
+    },
+    [isAnimating]
+  );
+
+  const goToPrevious = useCallback(() => {
+    if (!isAnimating) {
+      const isFirstSlide = currentIndex === 0;
+      const newIndex = isFirstSlide ? repos.length - 1 : currentIndex - 1;
+      goToSlide(newIndex);
+    }
+  }, [currentIndex, isAnimating, repos.length]);
+
+  const goToNext = useCallback(() => {
+    if (!isAnimating) {
+      const isLastSlide = currentIndex === repos.length - 1;
+      const newIndex = isLastSlide ? 0 : currentIndex + 1;
+      goToSlide(newIndex);
+    }
+  }, [currentIndex, isAnimating, repos.length]);
 
   useEffect(() => {
     const loadRepos = async () => {
@@ -35,30 +62,6 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
     loadRepos();
   }, []);
 
-  const goToSlide = (index: number) => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentIndex(index);
-      setTimeout(() => setIsAnimating(false), 500);
-    }
-  };
-
-  const goToPrevious = () => {
-    if (!isAnimating) {
-      const isFirstSlide = currentIndex === 0;
-      const newIndex = isFirstSlide ? repos.length - 1 : currentIndex - 1;
-      goToSlide(newIndex);
-    }
-  };
-
-  const goToNext = () => {
-    if (!isAnimating) {
-      const isLastSlide = currentIndex === repos.length - 1;
-      const newIndex = isLastSlide ? 0 : currentIndex + 1;
-      goToSlide(newIndex);
-    }
-  };
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") goToPrevious();
@@ -66,7 +69,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [goToNext, goToPrevious]);
+  }, [goToPrevious, goToNext]);
 
   if (isLoading) return <Loading />;
   if (error)
@@ -110,7 +113,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
             {repos.map((repo) => (
               <div
                 key={repo.name}
-                className="w-full flex-shrink-0 px-4 md:w-1/3"
+                className="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3"
               >
                 <div className="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-lg overflow-hidden hover:border-cyan-500/50 transition-all duration-300 h-[400px] flex flex-col">
                   <div className="p-8">
