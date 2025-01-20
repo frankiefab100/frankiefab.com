@@ -66,7 +66,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex]);
+  }, [goToNext, goToPrevious]);
 
   if (isLoading) return <Loading />;
   if (error)
