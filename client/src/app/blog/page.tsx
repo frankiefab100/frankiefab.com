@@ -3,14 +3,14 @@ import { Newsletter } from "@/components/templates/Newsletter";
 import Pagination from "@/components/ui/Pagination";
 import { Calendar, BookOpen } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { FETCH_ARTICLES } from "../../../graphql/fetchHashnodePosts";
 import { Posts } from "../../../lib/types";
 import Link from "next/link";
 import { formatDate } from "@/utils/dateFormat";
 import Loading from "../loading";
 
-const page = () => {
+const Page = () => {
   const [blogData, setBlogData] = useState<Posts>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -19,69 +19,57 @@ const page = () => {
   const [cursors, setCursors] = useState<string[]>([""]);
   const itemsPerPage = 6;
 
-  const getPosts = async (after?: string) => {
-    try {
-      setLoading(true);
-      // const response = await fetch("https://gql.hashnode.com/", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     Authorization: process.env.HASHNODE_TOKEN,
-      //   },
-      //   body: JSON.stringify({
-      //     query: FETCH_ARTICLES,
-      //     variables: {
-      //       after,
-      //       host: "frankiefab.hashnode.dev",
-      //     },
-      //   }),
-      // });
+  const getPosts = useCallback(
+    async (after?: string) => {
+      try {
+        setLoading(true);
+        const headers: HeadersInit = {
+          "Content-Type": "application/json",
+        };
 
-      const headers: HeadersInit = {
-        "Content-Type": "application/json",
-      };
+        if (process.env.HASHNODE_TOKEN) {
+          headers.Authorization = process.env.HASHNODE_TOKEN;
+        }
 
-      if (process.env.HASHNODE_TOKEN) {
-        headers.Authorization = process.env.HASHNODE_TOKEN;
-      }
-
-      const response = await fetch("https://gql.hashnode.com/", {
-        method: "POST",
-        headers,
-        body: JSON.stringify({
-          query: FETCH_ARTICLES,
-          variables: {
-            after,
-            host: "frankiefab.hashnode.dev",
-          },
-        }),
-      });
-
-      const result = await response.json();
-      if (result.data?.publication?.posts?.edges) {
-        setBlogData(result.data.publication.posts.edges);
-        setHasNextPage(result.data.publication.posts.pageInfo.hasNextPage);
-
-        // Store the cursor for the next page
-        const newCursor = result.data.publication.posts.pageInfo.endCursor;
-        setCursors((prev) => {
-          const newCursors = [...prev];
-          newCursors[currentPage] = newCursor;
-          return newCursors;
+        const response = await fetch("https://gql.hashnode.com/", {
+          method: "POST",
+          headers,
+          body: JSON.stringify({
+            query: FETCH_ARTICLES,
+            variables: {
+              after,
+              host: "frankiefab.hashnode.dev",
+            },
+          }),
         });
-      } else {
-        console.error("Invalid response structure:", result);
+
+        const result = await response.json();
+        if (result.data?.publication?.posts?.edges) {
+          setBlogData(result.data.publication.posts.edges);
+          setHasNextPage(result.data.publication.posts.pageInfo.hasNextPage);
+
+          // Store the cursor for the next page
+          const newCursor = result.data.publication.posts.pageInfo.endCursor;
+          setCursors((prev) => {
+            const newCursors = [...prev];
+            newCursors[currentPage] = newCursor;
+            return newCursors;
+          });
+        } else {
+          console.error("Invalid response structure:", result);
+        }
+      } catch (error) {
+        setError("Failed to fetch blog posts");
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      setError("Failed to fetch blog posts");
-    } finally {
-      setLoading(false);
-    }
-  };
+    },
+    [currentPage]
+  );
 
   useEffect(() => {
     getPosts(cursors[currentPage - 1]);
-  }, [currentPage]);
+  }, [currentPage, cursors, getPosts]);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -95,12 +83,9 @@ const page = () => {
   return (
     <section>
       <div className="py-24 max-w-7xl mx-auto lg:px-16 px-8">
-        {/* <div className="max-w-screen-xl mx-auto px-4 md:px-8"> */}
         <div className="space-y-5 text-center mx-auto">
-          {/* <div className="space-y-5 sm:text-center sm:max-w-md sm:mx-auto"> */}
           <h2 className="font-bold text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
-            Featured {""}
-            <span className="text-cyan-600">Blog Posts</span>
+            Featured <span className="text-cyan-600">Blog Posts</span>
           </h2>
           <p className="text-lg font-normal text-gray-700">
             I write about web development, open source, blockchain technology,
@@ -113,7 +98,6 @@ const page = () => {
             <Link
               className="w-full mx-auto group sm:max-w-sm"
               href={article.node.url as string}
-              // href={(article.node.url as string) + `?ref=frankiefab.vercel.app`}
               key={index}
               target="_blank"
               rel="noopener noreferrer"
@@ -122,15 +106,11 @@ const page = () => {
                 src={article.node.coverImage.url || ""}
                 alt={article.node.title || ""}
                 className="w-full rounded-lg"
-                // loading="lazy"
                 priority
                 width={260}
                 height={260}
               />
               <div className="mt-3 space-y-2">
-                {/* <span className="block text-zinc-600 text-sm">
-                  {article.node.tags[0]?.slug}
-                </span> */}
                 <h3 className="text-lg text-gray-800 duration-150 group-hover:text-cyan-600 font-semibold">
                   {article.node.title}
                 </h3>
@@ -171,4 +151,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
