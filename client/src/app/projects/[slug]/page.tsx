@@ -1,35 +1,19 @@
 import Image from "next/image";
-// import { fetchAPI } from "../../../../lib/strapi";
-// import { getProjectBySlug } from "../../../../lib/strapi";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Github, Link2 } from "lucide-react";
-import { ProjectPageProps, ProjectData } from "../../../../lib/types";
+import { ProjectData } from "../../../../lib/types";
 import { getProjectBySlug } from "../../../../lib/getProjectBySlug";
-
-// async function getProjectBySlug(slug: string) {
-//   return fetchAPI(`/projects?filters[slug][$eq]=${slug}&populate=*`);
-// }
-
-// // async function ProjectPage({ params }: { params: { slug: string } }) {
-// //   const slug = params.slug;
-// //   const response = await getProjectBySlug(slug);
-
-// export default async function ProjectPage({ params }: ProjectPageProps) {
-// const response = await getProjectBySlug(params.slug);
 
 export default async function ProjectPage(props: {
   params: Promise<{ slug: string }>;
 }) {
   const params = await props.params;
-  // const productID = params.slug[1];
-
   const response = await getProjectBySlug(params.slug);
 
   if (!response.data || response.data.length === 0) {
     notFound();
   }
-
   const project: ProjectData = response.data[0];
 
   return (
