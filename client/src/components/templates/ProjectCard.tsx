@@ -364,25 +364,13 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { ProjectCardProps } from "../../../lib/types";
+import { ProjectCardProps, ProjectProps } from "../../../lib/types";
 
-interface Project {
-  id: string;
-  documentId: string;
-  slug: string;
-  description: string;
-  coverImage?: {
-    url: string;
-    alternativeText: string;
-  };
-  title: string;
-}
-
-const getImageSrc = (project: Project): string => {
+const getImageSrc = (project: ProjectProps): string => {
   if (project.coverImage && project.coverImage.url) {
     return `${process.env.NEXT_PUBLIC_STRAPI_URL}${project.coverImage.url}`;
   }
-  return "/placeholder.jpg"; // Ensure this path exists in your public folder
+  return "/placeholder.png";
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {

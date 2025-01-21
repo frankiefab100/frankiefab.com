@@ -84,11 +84,16 @@ export interface EventsList {
 
 
 // types for Strapi CMS
-export interface ProjectPageProps {
-  params: {
-    slug: string;
+export interface ProjectProps {
+  id: string;
+  documentId: string;
+  slug: string;
+  description: string;
+  coverImage?: {
+    url: string;
+    alternativeText: string;
   };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  title: string;
 }
 
 export interface ProjectData {
@@ -116,45 +121,6 @@ export interface ProjectData {
       };
     };
   }>;
-}
-
-export interface ImageProps {
-  id: number;
-  alternativeText: string;
-  url: string;
-  formats: {
-    medium: string;
-
-  }
-}
-
-
-export interface ToolsProps {
-  name: string;
-}
-
-export interface TechUseProps {
-  name: string;
-  useCase?: string;
-}
-
-
-export interface ProjectsProps {
-  id: number;
-  title: string;
-  description: string;
-  slug: string;
-  coverImage: string | ImageProps;
-  overview: string;
-  githubUrl: string;
-  liveUrl: string;
-  keyFeatures: string;
-  challengesAndProcess: string;
-
-  imageUrl: ImageProps;
-  tools: ToolsProps;
-  techUse?: TechUseProps;
-  screenshots?: ImageProps[];
 }
 
 
