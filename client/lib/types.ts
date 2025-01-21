@@ -56,7 +56,7 @@ export interface PaginationProps {
 
 export interface TabItem {
   category: string;
-  icon: React.ReactNode;
+  icon: any;
   items: string[];
 }
 
