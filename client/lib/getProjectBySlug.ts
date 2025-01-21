@@ -1,5 +1,5 @@
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
-const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+const STRAPI_URL = process.env.STRAPI_URL;
+const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN;
 
 async function fetchAPI(path: string) {
     const requestUrl = `${STRAPI_URL}/api${path}`;
