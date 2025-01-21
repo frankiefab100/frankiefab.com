@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/:path*`,
+        destination: `${process.env.STRAPI_URL}/api/:path*`,
       },
     ];
   },
@@ -33,7 +33,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: new URL(process.env.NEXT_PUBLIC_STRAPI_URL).hostname,
+        hostname: new URL(process.env.STRAPI_URL).hostname,
         pathname: "/uploads/**/*",
       },
     ],
