@@ -3,73 +3,85 @@ import { Newsletter } from "@/components/templates/Newsletter";
 import Pagination from "@/components/ui/Pagination";
 import { Calendar, BookOpen } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { FETCH_ARTICLES } from "../../../graphql/fetchHashnodePosts";
 import { Posts } from "../../../lib/types";
 import Link from "next/link";
 import { formatDate } from "@/utils/dateFormat";
 import Loading from "../loading";
 
-const Blog = () => {
+const BlogPage = () => {
   const [blogData, setBlogData] = useState<Posts>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [hasNextPage, setHasNextPage] = useState(true);
   const [cursors, setCursors] = useState<string[]>([""]);
   const itemsPerPage = 6;
 
-  const getPosts = useCallback(
-    async (after?: string) => {
-      try {
-        setLoading(true);
-        const headers: HeadersInit = {
-          "Content-Type": "application/json",
-        };
+  const getPosts = async (after?: string) => {
+    try {
+      setLoading(true);
+      setError(null);
 
-        if (process.env.HASHNODE_TOKEN) {
-          headers.Authorization = process.env.HASHNODE_TOKEN;
-        }
+      const headers: HeadersInit = {
+        "Content-Type": "application/json",
+      };
 
-        const response = await fetch("https://gql.hashnode.com/", {
-          method: "POST",
-          headers,
-          body: JSON.stringify({
-            query: FETCH_ARTICLES,
-            variables: {
-              after,
-              host: "frankiefab.hashnode.dev",
-            },
-          }),
-        });
-
-        const result = await response.json();
-        if (result.data?.publication?.posts?.edges) {
-          setBlogData(result.data.publication.posts.edges);
-          setHasNextPage(result.data.publication.posts.pageInfo.hasNextPage);
-
-          // Store the cursor for the next page
-          const newCursor = result.data.publication.posts.pageInfo.endCursor;
-          setCursors((prev) => {
-            const newCursors = [...prev];
-            newCursors[currentPage] = newCursor;
-            return newCursors;
-          });
-        } else {
-          console.error("Invalid response structure:", result);
-        }
-      } catch (error) {
-        setError("Failed to fetch blog posts");
-      } finally {
-        setLoading(false);
+      if (process.env.HASHNODE_TOKEN) {
+        headers.Authorization = process.env.HASHNODE_TOKEN;
       }
-    },
-    [currentPage]
-  );
+
+      const response = await fetch("https://gql.hashnode.com/", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          query: FETCH_ARTICLES,
+          variables: {
+            after,
+            host: "frankiefab.hashnode.dev",
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      if (result.errors) {
+        throw new Error(result.errors[0]?.message || "GraphQL Error");
+      }
+
+      if (result.data?.publication?.posts?.edges) {
+        setBlogData(result.data.publication.posts.edges);
+        setHasNextPage(result.data.publication.posts.pageInfo.hasNextPage);
+
+        // Store the cursor for the next page
+        const newCursor = result.data.publication.posts.pageInfo.endCursor;
+        setCursors((prev) => {
+          const newCursors = [...prev];
+          newCursors[currentPage] = newCursor;
+          return newCursors;
+        });
+      } else {
+        throw new Error("Invalid response structure");
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+      setError(
+        error instanceof Error ? error.message : "Failed to fetch blog posts"
+      );
+      setBlogData([]); // Reset blog data on error
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     getPosts(cursors[currentPage - 1]);
-  }, [currentPage, cursors, getPosts]);
+  }, [currentPage]);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -78,7 +90,23 @@ const Blog = () => {
 
   if (loading) return <Loading />;
   if (error)
-    return <div className="text-red-500 text-center py-16">Error: {error}</div>;
+    return (
+      <div className="text-red-500 text-center py-16 px-4">
+        <p>Error: {error}</p>
+        <button
+          onClick={() => getPosts(cursors[currentPage - 1])}
+          className="mt-4 px-4 py-2 bg-cyan-600 text-white rounded hover:bg-cyan-700"
+        >
+          Try Again
+        </button>
+      </div>
+    );
+
+  if (!blogData.length) {
+    return (
+      <div className="text-gray-500 text-center py-16">No blog posts found</div>
+    );
+  }
 
   return (
     <section>
@@ -106,7 +134,7 @@ const Blog = () => {
                 src={article.node.coverImage.url || ""}
                 alt={article.node.title || ""}
                 className="w-full rounded-lg"
-                priority
+                priority={index < 3}
                 width={260}
                 height={260}
               />
@@ -124,7 +152,7 @@ const Blog = () => {
                     {formatDate(article.node.publishedAt)}
                   </div>
                   <div className="inline-flex items-center mt-1 text-gray-500 text-sm">
-                    <BookOpen className=" pr-1 items-center h-5 w-5" />
+                    <BookOpen className="pr-1 items-center h-5 w-5" />
                     {article.node.readTimeInMinutes} min read
                   </div>
                 </div>
@@ -151,4 +179,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPage;
