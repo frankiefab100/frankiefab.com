@@ -13,9 +13,12 @@ module.exports = {
         primary: "#FF4088",
         background: "#000",
       },
-
       fontFamily: {
         Bitform: ["Bitform"],
+        CooperHewittMedium: ["CooperHewittMedium"],
+      },
+      boxShadow: {
+        shadow: "-14px 10px 44px -21px rgba(0, 0, 0, 0.24)",
       },
     },
   },
