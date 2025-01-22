@@ -76,32 +76,32 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
     return <div className="text-red-500 text-center py-24">Error: {error}</div>;
 
   return (
-    <div className="py-24 md:px-10 lg:px-16 px-4">
+    <div className="py-16 md:py-24">
       <div className="container mx-auto">
-        <div className="mb-12">
-          <h2 className="font-bold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
-            Explore {""}
-            <span className="text-cyan-600">Open-Source</span>
-            {""} Projects
+        <div>
+          <h2 className="font-inter font-semibold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl md:text-3xl text-2xl">
+            Some {""}
+            <span className="text-cyan-600">Open Source</span>
+            {""} Works
           </h2>
+        </div>
 
-          {/* Navigation Arrows */}
-          <div className="flex justify-end gap-4 pr-5">
-            <button
-              onClick={goToPrevious}
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm  text-white transition-colors"
-              aria-label="Previous slide"
-            >
-              <ArrowLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="p-2 rounded-full  bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white transition-colors"
-              aria-label="Next slide"
-            >
-              <ArrowRight className="w-6 h-6" />
-            </button>
-          </div>
+        {/* Navigation Arrows */}
+        <div className="my-4 flex justify-end gap-4 pr-4">
+          <button
+            onClick={goToPrevious}
+            className="p-2 rounded-full shadow bg-white hover:bg-[#f4f5f8] dark:bg-white/10 dark:hover:bg-white/20 backdrop-blur-sm text-gray-600 dark:text-white transition-colors"
+            aria-label="Previous slide"
+          >
+            <ArrowLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="p-2 rounded-full shadow bg-white hover:bg-[#f4f5f8] dark:bg-white/10 dark:hover:bg-white/20 backdrop-blur-sm text-gray-600 dark:text-white transition-colors"
+            aria-label="Next slide"
+          >
+            <ArrowRight className="w-6 h-6" />
+          </button>
         </div>
 
         {/* Carousel */}
@@ -113,14 +113,14 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
             {repos.map((repo) => (
               <div
                 key={repo.name}
-                className="w-full flex-shrink-0 sm:pr-2.5 md:w-1/2 lg:w-1/3"
+                className="w-full flex-shrink-0 md:pr-6 md:w-1/2 lg:w-1/3"
               >
-                <div className="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-lg overflow-hidden hover:border-cyan-500/50 transition-all duration-300 h-[400px] flex flex-col">
+                <div className="backdrop-blur-sm rounded-lg overflow-hidden border border-gray-200 bg-[#f4f5f8] hover:bg-[#f6f6f7] dark:border-gray-800  dark:bg-black/50  hover:border-cyan-500/50 dark:hover:border-cyan-500/50 transition-all duration-300 h-[400px] flex flex-col">
                   <div className="p-8">
                     <Folder className="w-6 h-6" text-gray-800 />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-xl font-semibold text-white mb-2 truncate">
+                    <h3 className="text-xl font-semibold text-gray-700 dark:text-white mb-2 truncate">
                       {repo.name}
                     </h3>
                     <p className="text-gray-700 dark:text-gray-400 text-base sm:text-xl mb-6 line-clamp-3">
@@ -131,7 +131,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
                         href={repo.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-6 py-3 rounded-full border border-red-500/20 transition-all duration-300 hover:border-red-500/40 text-white"
+                        className="inline-flex items-center px-6 py-3 rounded-full border border-cyan-500/50 transition-all duration-300 hover:border-cyan-500/30 text-gray-700 dark:text-white"
                       >
                         View project
                         <ArrowRight className="ml-2 w-4 h-4" />
@@ -146,7 +146,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
         </div>
 
         {/* Dot indicators */}
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex justify-center gap-2 mt-6 md:hidden">
           {repos.map((_, index) => (
             <button
               key={index}

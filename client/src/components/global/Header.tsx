@@ -79,7 +79,7 @@ export default function Header() {
                 priority
               />
               {/* </div> */}
-              <span className="text-sm font-thin text-gray-800 dark:text-gray-200">
+              <span className="md:block hidden text-sm font-inter font-light text-gray-800 dark:text-gray-200">
                 FRANKIEFAB
               </span>
             </Link>

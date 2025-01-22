@@ -16,6 +16,7 @@ module.exports = {
       fontFamily: {
         Bitform: ["Bitform"],
         CooperHewittMedium: ["CooperHewittMedium"],
+        inter: ["Inter", "sans-serif"],
       },
       boxShadow: {
         shadow: "-14px 10px 44px -21px rgba(0, 0, 0, 0.24)",

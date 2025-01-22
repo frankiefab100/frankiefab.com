@@ -1,11 +1,11 @@
 import "./styles/globals.css";
-import { Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
 import { ThemeProvider } from "next-themes";
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
@@ -97,7 +97,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative min-h-screen">
             <div className="relative z-10 flex flex-col min-h-screen">

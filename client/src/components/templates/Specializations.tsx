@@ -3,8 +3,8 @@ import { services } from "@/constants/services";
 
 export default function ServicesSection() {
   return (
-    <section className="w-full py-24 md:px-10 lg:px-16 px-4">
-      <h2 className="font-bold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
+    <section className="w-full">
+      <h2 className="font-inter font-semibold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
         What I {""}
         <span className="text-cyan-600">Do</span>
       </h2>
@@ -13,17 +13,17 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative flex flex-col items-start space-y-3 transition-all duration-300 hover:translate-y-[-4px]"
+              className="group relative flex flex-col items-start space-y-2 transition-all duration-300 hover:translate-y-[-4px]"
             >
-              <div className="flex justify-center items-center sm:block">
-                <div className="w-[60px] mr-3 rounded-2xl bg-gray-800/50 p-5 ring-1 ring-gray-700/50 backdrop-blur-sm transition-colors duration-300 group-hover:bg-gray-800/70 group-hover:ring-gray-600/70">
-                  <service.icon className="h-5 w-5 text-gray-200 dark:text-gray-400 transition-colors duration-300 hover:text-gray-100 hover:dark:text-gray-300" />
+              <div className="flex justify-center items-center">
+                <div className="max-w-9 rounded-2xl bg-[#f8f8f7] dark:bg-gray-800/50 p-2 ring-1 ring-[#fafafc] dark:ring-gray-700/50 backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#f4f5f8] group-hover:ring-[#ededed] dark:group-hover:bg-gray-800/70 dark:group-hover:ring-gray-600/70">
+                  <service.icon className="h-5 w-5 text-gray-400 dark:text-gray-400 transition-colors duration-300 hover:text-gray-500 hover:dark:text-gray-300" />
                 </div>
-                <h3 className="font-CooperHewittMedium mt-2 text-left md:text-xl text-lg tracking-tight text-gray-800 dark:text-gray-100">
+                <h3 className="font-CooperHewittMedium mt-2 ml-2 text-left md:text-xl text-lg tracking-tight text-gray-800 dark:text-gray-100">
                   {service.title}
                 </h3>
               </div>
-              <p className="text-left text-base leading-7 text-gray-700 dark:text-gray-400">
+              <p className="text-left text-base md:text-lg md:leading-7 leading-6 text-gray-700 dark:text-gray-400">
                 {service.description}
               </p>
             </div>
