@@ -9,6 +9,7 @@ import { Posts } from "../../../lib/types";
 import Link from "next/link";
 import { formatDate } from "@/utils/dateFormat";
 import Loading from "../loading";
+import ErrorPage from "../error";
 
 const BlogPage = () => {
   const [blogData, setBlogData] = useState<Posts>([]);
@@ -89,18 +90,7 @@ const BlogPage = () => {
   };
 
   if (loading) return <Loading />;
-  if (error)
-    return (
-      <div className="text-red-500 text-center py-16 px-4">
-        <p>Error: {error}</p>
-        <button
-          onClick={() => getPosts(cursors[currentPage - 1])}
-          className="mt-4 px-4 py-2 bg-cyan-600 text-white rounded hover:bg-cyan-700"
-        >
-          Try Again
-        </button>
-      </div>
-    );
+  if (error) return <ErrorPage />;
 
   if (!blogData.length) {
     return (
