@@ -7,32 +7,31 @@ const ReadingList = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="pt-8 pb-16 max-w-7xl mx-auto md:px-16 px-6">
-      {/* <div className="w-full py-16 px-14 md:px-24 lg:px-34"> */}
-      <h2 className="font-bold text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
+    <div className="pt-8 pb-16 px-0 md:px-10 lg:px-16">
+      <h2 className="font-bold text-[#131313] dark:text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
         What I&apos;m {""}
         <span className="text-cyan-600">Reading</span>
       </h2>
-      <p className="mb-6 text-left text-base sm:text-lg font-normal leading-7 text-zinc-400">
+      <p className="mb-6 text-left text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
         Some great books in my reading list. I recommend you them check out
       </p>
 
-      <div className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+      <div className="flex space-x-1 rounded-xl bg-[#f4f5f8] dark:bg-blue-900/20 p-1">
         {bookItems.map((tab, index) => (
           <button
             key={tab.category}
             onClick={() => setActiveTab(index)}
-            className={`flex items-center justify-center w-full rounded-lg py-2.5 text-sm sm:text-base font-medium leading-5 text-gray-100
+            className={`flex items-center justify-center w-full rounded-lg py-2.5 text-sm lg:text-base font-medium leading-5 text-gray-600dark:text-gray-100
               ${
                 activeTab === index
-                  ? "bg-blue-600/30 shadow"
-                  : "text-gray-100 hover:bg-blue-300/[0.12] hover:text-white"
+                  ? "bg-blue-50/80 dark:bg-blue-600/30 shadow"
+                  : "text-gray-600 dark:text-gray-100 hover:bg-white dark:hover:bg-blue-300/[0.12] hover:text-gray-700 dark:hover:text-white"
               }`}
             aria-selected={activeTab === index}
             role="tab"
           >
             <tab.icon size={14} />
-            <span className="ml-2">{tab.category}</span>
+            <span className="ml-2 hidden md:block">{tab.category}</span>
           </button>
         ))}
       </div>
@@ -40,18 +39,20 @@ const ReadingList = () => {
         {bookItems.map((tab, idx) => (
           <div
             key={idx}
-            className={`rounded-xl bg-gradient-to-r from-[#0a2227] to-[#00012e] shadow-2xl p-2 ${
+            className={`rounded-xl bg-gradient-to-r from-[#f8f9ff] to-[#f7f7f7] dark:bg-gradient-to-r dark:from-[#0a2227] dark:to-[#00012e] shadow-2xl p-2 ${
               activeTab === idx ? "block" : "hidden"
             }`}
             role="tabpanel"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4 gap-2">
               {tab.items.map((item, index) => (
                 <div
                   key={index}
-                  className="relative rounded-md p-3 bg-white/10 hover:bg-white/25 text-white backdrop-blur-sm transition-colors duration-200 "
+                  className="relative rounded-md p-3 bg-white hover:bg-[#f4f5f8] text-gray-600 dark:bg-white/10 dark:hover:bg-white/25 dark:text-white backdrop-blur-sm transition-colors duration-200 "
                 >
-                  <h3 className="text-base font-medium leading-5">{item}</h3>
+                  <p className="text-sm md:text-base font-medium leading-5">
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>

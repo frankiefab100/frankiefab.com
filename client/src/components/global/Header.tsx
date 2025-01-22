@@ -61,7 +61,7 @@ export default function Header() {
     <header className="sticky top-0 z-50">
       <nav className="border-b border-gray-200 dark:border-gray-800 backdrop-blur">
         {/* <nav className="border-b border-gray-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60"> */}
-        <div className="mx-auto max-w-7xl md:px-16 px-8">
+        <div className="mx-auto lg:px-32 md:px-16 px-4">
           {/* <div className="mx-auto px-8 md:px-16 max-w-7xl"> */}
           <div className="flex h-20 items-center justify-between">
             <Link

@@ -13,8 +13,8 @@ export default function Home() {
   return (
     //   <main className="text-white min-h-screen mx-auto px-4 pt-35 text-center max-w-7xl">
     <div className="relative bg-white dark:bg-background min-h-screen">
-      {/* <main className="relative z-20 text-white mx-auto px-4 pt-35 text-center max-w-7xl"> */}
-      <main className="relative z-20 text-center text-gray-800 dark:text-white max-w-7xl mx-auto lg:px-16 px-8">
+      {/* <main className="relative z-20 text-white mx-auto px-4 pt-35 text-center max-w-7xl"> max-w-7xl mx-auto lg:px-16 px-8 */}
+      <div className="relative z-20 text-center text-gray-800 dark:text-white mx-auto lg:px-16 md:px-8 sm:px-4">
         {/* Hero Section */}
         <div className="py-48 flex flex-col items-center justify-center space-y-8">
           <div className="relative w-20 h-20 rounded-2xl overflow-hidden">
@@ -114,7 +114,7 @@ export default function Home() {
         <RepoCarousel username={"frankiefab100"} />
 
         <GetInTouch />
-      </main>
+      </div>
     </div>
   );
 }

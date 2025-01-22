@@ -76,7 +76,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
     return <div className="text-red-500 text-center py-24">Error: {error}</div>;
 
   return (
-    <div className="py-24 px-4">
+    <div className="py-24 md:px-10 lg:px-16 px-4">
       <div className="container mx-auto">
         <div className="mb-12">
           <h2 className="font-bold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
@@ -113,7 +113,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
             {repos.map((repo) => (
               <div
                 key={repo.name}
-                className="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3"
+                className="w-full flex-shrink-0 sm:pr-2.5 md:w-1/2 lg:w-1/3"
               >
                 <div className="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-lg overflow-hidden hover:border-cyan-500/50 transition-all duration-300 h-[400px] flex flex-col">
                   <div className="p-8">

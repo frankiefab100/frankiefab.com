@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export const LogoGrid = () => {
   return (
-    <div className="py-8 max-w-7xl mx-auto md:px-16 px-6">
+    <div className="py-8 px-0 md:px-10 lg:px-16">
       {/* <div className="py-8 px-14 md:px-24 lg:px-34"> */}
       <div className="max-w-screen-x">
-        <h2 className="font-bold text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
+        <h2 className="font-bold text-[#131313] dark:text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
           Notable Contributions To {""}
           <span className="text-cyan-600">Open Source</span>
         </h2>
