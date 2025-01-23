@@ -18,15 +18,15 @@ export default async function ProjectsPage() {
   // console.log("imageurl", imageUrl);
 
   return (
-    <section>
-      <div className="py-24 max-w-7xl mx-auto lg:px-16 px-8">
+    <section id="projects">
+      <div className="py-24 max-w-7xl mx-auto lg:px-16 px-6">
         {/* <div className="bg-black py-24 sm:py-16 lg:py-24 px-14 md:px-24 lg:px-40"> */}
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-bold text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
+          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
             Project {""}
             <span className="text-cyan-600">Gallery</span>
           </h2>
-          <p className="text-lg font-normal text-gray-700 dark:text-gray-400">
+          <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
             Selected projects I have worked on
           </p>
         </div>
@@ -39,7 +39,7 @@ export default async function ProjectsPage() {
 
               <div
                 key={project.id}
-                className="sm:my-6 sm:mx-4 p-2 sm:p-4 bg-[#f7f9ff] dark:bg-[rgba(18,1,73,0.15)] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] rounded-[10px] border border-gray-200 dark:border-gray-800"
+                className="sm:my-6 sm:mx-4 p-2 sm:p-4 bg-[#f7f9ff] dark:bg-[#15171d] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] rounded-[10px] border border-gray-200 dark:border-gray-800"
               >
                 <div className="rounded-md bg-gradient-to-t from-[rgb(65,176,198)] to-[#61c1f0] p-1 shadow-xl">
                   <Link href={`/projects/${project.slug || ""}`}>

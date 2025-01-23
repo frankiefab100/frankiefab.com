@@ -11,7 +11,7 @@ import { GetInTouch } from "@/components/templates/GetInTouch";
 
 export default function Home() {
   return (
-    <div className="relative bg-white dark:bg-background min-h-screen z-20 text-gray-800 dark:text-white lg:px-32 md:px-16 px-4">
+    <div className="max-w-7xl mx-auto lg:px-16 px-6 relative min-h-screen z-20 text-gray-800 dark:text-white">
       {/* <div className="relative z-20 text-center text-gray-800 dark:text-white mx-auto lg:px-16 md:px-8 sm:px-4"> */}
       {/* Hero Section */}
       <div className="py-48 flex flex-col items-center justify-center space-y-8">
@@ -45,7 +45,7 @@ export default function Home() {
           {/* </motion.div> */}
         </div>
 
-        <div className="text-center lg:px-80 md:px-36">
+        <div className="text-center max-w3xl">
           <h1 className="font-Bitform text-2xl md:text-3xl lg:text-5xl text-center">
             Frontend Engineer, Designer & Technical Writer
           </h1>

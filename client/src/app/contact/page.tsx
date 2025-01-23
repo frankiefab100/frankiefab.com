@@ -18,13 +18,13 @@ const ContactPage = () => {
   };
 
   return (
-    <section>
-      <div className="py-24 max-w-7xl mx-auto lg:px-16 px-8">
-        <div className="max-w-2xl mx-auto text-center">
+    <section id="contact">
+      <div className="py-24 max-w-7xl mx-auto lg:px-16 px-6">
+        <div className="max-w-2xl mx-auto text-center mb-4">
           <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
             Contact <span className="text-cyan-600">Me</span>
           </h2>
-          <p className="text-base sm:text-lg font-normal text-gray-400">
+          <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
             Please fill out the form, if you need my services or for any
             inquiries
           </p>
@@ -37,7 +37,7 @@ const ContactPage = () => {
                 <h3 className="text-base sm:text-lg lg:text-left text-center font-mono text-[#131313] dark:text-white">
                   Let&apos;s bring that idea to life!
                 </h3>
-                <p className="text-sm sm:text-base lg:text-left text-center text-gray-400 max-w-3xl mt-1">
+                <p className="text-sm sm:text-base lg:text-left text-center text-gray-600 dark:text-gray-400 max-w-3xl mt-1">
                   Need help on your project, written documents for your product
                   or want me to speak at your event? Don&apos;t hesitate to
                   reach out.

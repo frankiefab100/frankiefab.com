@@ -115,15 +115,15 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
                 key={repo.name}
                 className="w-full flex-shrink-0 md:pr-6 md:w-1/2 lg:w-1/3"
               >
-                <div className="backdrop-blur-sm rounded-lg overflow-hidden border border-gray-200 bg-[#f4f5f8] hover:bg-[#f6f6f7] dark:border-gray-800  dark:bg-black/50  hover:border-cyan-500/50 dark:hover:border-cyan-500/50 transition-all duration-300 h-[400px] flex flex-col">
+                <div className="backdrop-blur-sm rounded-lg overflow-hidden border border-gray-200 bg-[#fafafa] hover:bg-[#f4f4f4] dark:border-gray-800  dark:bg-black/50  hover:border-cyan-500/50 dark:hover:border-cyan-500/50 transition-all duration-300 h-[400px] flex flex-col">
                   <div className="p-8">
                     <Folder className="w-6 h-6" text-gray-800 />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-xl font-semibold text-gray-700 dark:text-white mb-2 truncate">
+                    <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-2 truncate">
                       {repo.name}
                     </h3>
-                    <p className="text-gray-700 dark:text-gray-400 text-base sm:text-xl mb-6 line-clamp-3">
+                    <p className="text-gray-700 dark:text-gray-400 text-base mb-6 line-clamp-3">
                       {repo.description}
                     </p>
                     <div className="mt-auto flex justify-between items-center">

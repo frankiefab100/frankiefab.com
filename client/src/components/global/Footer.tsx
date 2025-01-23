@@ -14,8 +14,8 @@ import { SiBehance, SiProducthunt } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <section className="py-12 px-0 md:px-10 lg:px-16 bg-gradient-to-r from-gray-100 via-gray-200 to-white dark:bg-gradient-to-r dark:from-gray-950 dark:via-gray-900 dark:to-black">
-      <div className="mx-auto max-w-7xl">
+    <section className="py-12 bg-gradient-to-r from-gray-100 via-gray-200 to-white dark:bg-gradient-to-r dark:from-gray-950 dark:via-gray-900 dark:to-black">
+      <div className="max-w-7xl mx-auto lg:px-16 px-6">
         <div className="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
           <div className="xl:flex xl:items-center xl:justify-start">
             <Image

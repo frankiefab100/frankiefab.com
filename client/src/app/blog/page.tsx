@@ -99,13 +99,13 @@ const BlogPage = () => {
   }
 
   return (
-    <section>
-      <div className="py-24 max-w-7xl mx-auto lg:px-16 px-8">
-        <div className="space-y-5 text-center mx-auto">
-          <h2 className="font-bold text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
+    <section id="blog">
+      <div className="py-24 max-w-7xl mx-auto lg:px-16 px-6">
+        <div className="max-w-2xl mx-auto text-center mb-4">
+          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
             Featured <span className="text-cyan-600">Blog Posts</span>
           </h2>
-          <p className="text-lg font-normal text-gray-700">
+          <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
             I write about web development, open source, blockchain technology,
             programming tips, and more.
           </p>
@@ -129,19 +129,19 @@ const BlogPage = () => {
                 height={260}
               />
               <div className="mt-3 space-y-2">
-                <h3 className="text-lg text-gray-800 duration-150 group-hover:text-cyan-600 font-semibold">
+                <h3 className="text-lg leading-6 text-gray-800 dark:text-gray-200 duration-150 group-hover:text-cyan-500 font-semibold">
                   {article.node.title}
                 </h3>
-                <p className="text-gray-600 text-sm duration-150 group-hover:text-gray-800 pb-3">
+                <p className="text-gray-600 dark:text-gray-400 text-sm duration-150 group-hover:text-gray-500 pb-3">
                   {article.node.brief}
                 </p>
 
                 <div className="flex justify-between">
-                  <div className="inline-flex items-center mt-1 text-gray-500 text-sm">
+                  <div className="inline-flex items-center mt-1 text-gray-500 dark:text-gray-400 text-sm">
                     <Calendar className="pr-1 h-5 w-5" />
                     {formatDate(article.node.publishedAt)}
                   </div>
-                  <div className="inline-flex items-center mt-1 text-gray-500 text-sm">
+                  <div className="inline-flex items-center mt-1 text-gray-500 dark:text-gray-400 text-sm">
                     <BookOpen className="pr-1 items-center h-5 w-5" />
                     {article.node.readTimeInMinutes} min read
                   </div>

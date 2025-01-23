@@ -1,19 +1,19 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { events } from "@/constants/speaking";
 
 const Talks = () => {
   return (
-    <section>
+    <section id="talks">
       {/* <section className="bg-black text-gray-400 overflow-hidden px-14 py-24 sm:py-16 lg:py-24 md:px-24 lg:px-40"> */}
       {/* <section className="bg-gray-900 text-gray-400 overflow-hidden px-16 py-24"> */}
-      <div className="text-gray-700 dark:text-gray-400 py-24 max-w-7xl mx-auto lg:px-16 px-8">
-        <div className="mb-6 flex flex-col text-center w-full">
-          <h2 className="font-bold text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
+      <div className="text-gray-700 dark:text-gray-400 py-24 max-w-7xl mx-auto lg:px-16 px-6">
+        <div className="max-w-2xl mx-auto text-center mb-4">
+          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
             Speaking {""}
             <span className="text-cyan-600">Engagements</span>
           </h2>
-          <p className="text-lg font-normal text-gray-700 dark:text-gray-400">
+          <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
             Some of my talks and workshop at tech events, meetups, conferences
             and online webinars.
           </p>
@@ -40,10 +40,10 @@ const Talks = () => {
                   <p className="text-base leading-relaxed">{talk.desc}</p>
                   <Link
                     href={`talk.slide`}
-                    className="text-blue-500 inline-flex items-center mt-4 hover:text-blue-600"
+                    className="text-cyan-500 inline-flex items-center mt-3 hover:text-cyan-600"
                   >
                     Slide
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ChevronRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </div>

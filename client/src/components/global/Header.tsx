@@ -61,7 +61,7 @@ export default function Header() {
     <header className="sticky top-0 z-50">
       <nav className="border-b border-gray-200 dark:border-gray-800 backdrop-blur">
         {/* <nav className="border-b border-gray-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60"> */}
-        <div className="mx-auto lg:px-32 md:px-16 px-4">
+        <div className="max-w-7xl mx-auto lg:px-16 px-6">
           {/* <div className="mx-auto px-8 md:px-16 max-w-7xl"> */}
           <div className="flex h-20 items-center justify-between">
             <Link
@@ -103,7 +103,7 @@ export default function Header() {
             <div className="hidden md:flex items-center gap-4">
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full  transition-colors border border-gray-400 hover:border-blue-50 hover:bg-blue-50 hover:dark:border-gray-600 hover:dark:bg-white/10"
+                className="p-2 rounded-full transition-colors border border-gray-200 dark:border-gray-600 hover:bg-gray-50/80 hover:border-none hover:dark:bg-gray-800/90"
                 aria-label={
                   theme === "dark"
                     ? "Switch to light mode"
@@ -134,7 +134,7 @@ export default function Header() {
             <div className="md:hidden flex">
               <button
                 onClick={toggleTheme}
-                className="p-2 mr-3 rounded-full text-gray-300 hover:text-white transition-colors border border-gray-400 hover:border-gray-600  hover:bg-white/10"
+                className="p-2 mr-3 rounded-full  border border-gray-200 dark:border-gray-300 hover:bg-gray-50/80 hover:border-none hover:dark:bg-gray-800/90"
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
@@ -146,7 +146,7 @@ export default function Header() {
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-md text-gray-300 hover:text-white transition-colors border border-gray-400 hover:border-gray-600  hover:bg-white/10"
+                className="p-2 rounded-md  border border-gray-200 dark:border-gray-300 hover:bg-gray-50/80 hover:border-none hover:dark:bg-gray-800/90"
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
@@ -164,12 +164,12 @@ export default function Header() {
       {isMobileMenuOpen && (
         // <div className="md:hidden">
         //  <div className="md:hidden flex flex-col h-full bg-gray-900 px-10 pb-16">
-        <div className="absolute w-full h-[50vh] px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-950">
+        <div className="absolute w-full h-[50vh] px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#fafafa] dark:bg-[#000]">
           <div className="flex flex-col mt-14 space-y-6">
             {NAVIGATION_LINKS.map(([label, href, Icon]) => (
               <div
                 key={href}
-                className="flex items-center gap-3  hover:text-white hover:bg-gray-900"
+                className="flex items-center gap-3 hover:text-white hover:bg-gray-900"
               >
                 <Link
                   key={href}
@@ -177,12 +177,12 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex  justify-start px-3 py-2 rounded-md text-base font-medium ${
                     pathname === href
-                      ? "text-white bg-gray-900 w-full"
-                      : "text-gray-300 hover:text-white hover:bg-gray-900"
+                      ? "text-[#131313] dark:text-white bg-[#f4f4f4] dark:bg-gray-900 w-full"
+                      : "text-gray-400 dark:text-gray-300 hover:text-[#131313] dark:hover:text-white hover:bg-[#f8f8f7] dark:hover:bg-gray-900"
                   }
                       `}
                 >
-                  <Icon className="h-5 w-5 text-gray-400 mr-2" />
+                  <Icon className="h-5 w-5 text-gray-600 dark:text-gray-400 mr-2" />
                   {label}
                 </Link>
               </div>

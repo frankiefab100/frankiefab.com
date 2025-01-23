@@ -53,16 +53,16 @@ const Pagination = ({
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto m-12 px-4 text-gray-600">
+    <div className="max-w-screen-xl mx-auto m-12">
       <div className="hidden justify-between text-sm md:flex">
-        <div>
+        <div className="px-8 text-gray-600 dark:text-gray-400">
           SHOWING {startItem}-{endItem} OF {totalItems}+
         </div>
-        <div className="flex items-center gap-12" aria-label="Pagination">
+        <div className="flex items-center gap-12 px-4" aria-label="Pagination">
           <button
             onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="hover:text-cyan-600 disabled:opacity-50 disabled:hover:text-gray-600"
+            className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 disabled:opacity-50 disabled:hover:text-gray-500"
           >
             Previous
           </button>
@@ -92,18 +92,18 @@ const Pagination = ({
           <button
             onClick={() => hasNextPage && onPageChange(currentPage + 1)}
             disabled={!hasNextPage}
-            className="hover:text-cyan-600 disabled:opacity-50 disabled:hover:text-gray-600"
+            className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 disabled:opacity-50 disabled:hover:text-gray-500"
           >
             Next
           </button>
         </div>
       </div>
       {/* Mobile version */}
-      <div className="flex items-center justify-between text-sm text-gray-200 font-medium md:hidden">
+      <div className="flex items-center justify-between text-sm text-gray-800 dark:text-gray-200 font-medium md:hidden">
         <button
           onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-4 py-2 border rounded-lg duration-150 hover:bg-cyan-600 hover:border-none disabled:opacity-50"
+          className="px-4 py-2 border border-gray-200 rounded-lg duration-150 hover:bg-cyan-600 hover:border-none disabled:opacity-50"
         >
           Previous
         </button>
@@ -113,7 +113,7 @@ const Pagination = ({
         <button
           onClick={() => hasNextPage && onPageChange(currentPage + 1)}
           disabled={!hasNextPage}
-          className="px-4 py-2 border rounded-lg duration-150 hover:bg-cyan-600 hover:border-none disabled:opacity-50"
+          className="px-4 py-2 border border-gray-200 rounded-lg duration-150 hover:bg-cyan-600 hover:border-none disabled:opacity-50"
         >
           Next
         </button>
