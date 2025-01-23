@@ -45,11 +45,11 @@ export default function Home() {
           {/* </motion.div> */}
         </div>
 
-        <div className="text-center max-w3xl">
+        <div className="text-center max-w-3xl space-y-2">
           <h1 className="font-Bitform text-2xl md:text-3xl lg:text-5xl text-center">
             Frontend Engineer, Designer & Technical Writer
           </h1>
-          <p className="mt-3 text-base md:text-lg leading-5 text-gray-500 dark:text-gray-400">
+          <p className="text-base md:text-lg md:leading-7 leading-6 text-gray-500 dark:text-gray-400">
             With 4 years of professional experience in building responsive user
             interfaces and digital experiences to meet user&apos;s needs.
           </p>
