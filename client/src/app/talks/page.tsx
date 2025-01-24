@@ -3,10 +3,12 @@ import { ChevronRight } from "lucide-react";
 import { events } from "@/constants/speaking";
 
 const Talks = () => {
+  let sortedEvents = events.sort((a, b) => {
+    return b.id - a.id;
+  });
+
   return (
     <section id="talks">
-      {/* <section className="bg-black text-gray-400 overflow-hidden px-14 py-24 sm:py-16 lg:py-24 md:px-24 lg:px-40"> */}
-      {/* <section className="bg-gray-900 text-gray-400 overflow-hidden px-16 py-24"> */}
       <div className="text-gray-700 dark:text-gray-400 py-24 max-w-7xl mx-auto lg:px-16 px-6">
         <div className="max-w-2xl mx-auto text-center mb-4">
           <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
@@ -21,7 +23,7 @@ const Talks = () => {
 
         <div className="container py-10 mx-auto">
           <div className="-my-8 divide-y-2 divide-gray-200 dark:divide-gray-800">
-            {events.map((talk) => (
+            {sortedEvents.map((talk) => (
               <div key={talk.id} className="py-6 flex flex-wrap md:flex-nowrap">
                 <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                   <span className="font-semibold title-font text-gray-500 dark:text-gray-300">
@@ -37,7 +39,7 @@ const Talks = () => {
                       {talk.title}
                     </h3>
                   </Link>
-                  <p className="mt-1 mb-3 font-light uppercase text-sm leading-relaxed">
+                  <p className="mt-1 mb-3 font-light uppercase md:text-sm text-xs leading-relaxed">
                     {talk.desc}
                   </p>
                   <Link
