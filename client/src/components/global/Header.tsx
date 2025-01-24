@@ -60,16 +60,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       <nav className="border-b border-gray-200 dark:border-gray-800 backdrop-blur">
-        {/* <nav className="border-b border-gray-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60"> */}
         <div className="max-w-7xl mx-auto lg:px-16 px-6">
-          {/* <div className="mx-auto px-8 md:px-16 max-w-7xl"> */}
           <div className="flex h-20 items-center justify-between">
             <Link
               href="/"
               className="flex items-center gap-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {/* <div className="rounded-lg bg-white/10 p-2"> */}
               <Image
                 className="w-auto h-7"
                 src="/icons/favicon-32x32.png"
@@ -78,7 +75,6 @@ export default function Header() {
                 width={200}
                 priority
               />
-              {/* </div> */}
               <span className="md:block hidden text-sm font-inter font-light text-gray-800 dark:text-gray-200">
                 FRANKIEFAB
               </span>
@@ -91,8 +87,8 @@ export default function Header() {
                   href={href}
                   className={`text-sm font-medium transition-colors hover:text-blue-500 ${
                     pathname === href
-                      ? "text-blue-600"
-                      : "text-gray-700 dark:text-gray-300"
+                      ? "text-blue-400"
+                      : "text-gray-700 dark:text-gray-300 hover:text-gray-500 hover:dark:text-gray-400"
                   }`}
                 >
                   {label}

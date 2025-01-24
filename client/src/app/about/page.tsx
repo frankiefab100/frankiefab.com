@@ -28,8 +28,10 @@ const About = () => {
       {/* <div className="text-center max-w-2xl mx-auto"> */}
       <div className="text-center">
         <h1 className="text-gray-800 dark:text-gray-200 font-semibold lg:text-5xl md:text-3xl text-2xl tracking-tight lg:leading-tight mb-8">
-          I&apos;m Franklin Ohaegbulam. <br /> I ideate, design, and build
-          softwares.
+          I&apos;m Franklin Ohaegbulam. <br />{" "}
+          <span className="text-gray-800/50 dark:text-gray-200/40">
+            I ideate, design, and build softwares.
+          </span>
         </h1>
         <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">
           I am an independent web developer specializing in building

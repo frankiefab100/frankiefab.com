@@ -51,9 +51,9 @@ export const Expertise = () => {
               project workflows.
             </p>
 
-            <hr className="mt-4 border-gray-800 sm:mt-10" />
+            <hr className="mt-4 bg-gray-300 dark:border-gray-800 sm:mt-10" />
 
-            <ul className="grid grid-cols-1 mt-6 sm:grid-cols-2 sm:mt-6 gap-x-8 gap-y-4 sm:gap-y-8">
+            <ul className="grid grid-cols-1 md:mt-6 mt-4 sm:grid-cols-2 sm:mt-6 gap-x-8 gap-y-4 sm:gap-y-4">
               {expertiseList.map((item) => (
                 <li
                   key={item.id}

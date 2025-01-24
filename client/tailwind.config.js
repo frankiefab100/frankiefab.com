@@ -19,7 +19,16 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
       },
       boxShadow: {
-        shadow: "-14px 10px 44px -21px rgba(0, 0, 0, 0.24)",
+        custom: "-14px 10px 44px -21px rgba(0, 0, 0, 0.24)",
+      },
+      keyframes: {
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-50% - 1rem))" },
+        },
+      },
+      animation: {
+        scroll: "scroll 30s linear infinite",
       },
     },
   },

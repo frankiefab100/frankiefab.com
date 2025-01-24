@@ -62,7 +62,7 @@ const ContactPage = () => {
               </div>
             </div>
             <div>
-              <div className="overflow-hidden bg-white rounded-md shadow-shadow">
+              <div className="overflow-hidden bg-white rounded-md shadow-custom">
                 <div className="p-6 sm:p-10">
                   <form onSubmit={onSubmit} className="md:space-y-5 space-y-4">
                     <div>

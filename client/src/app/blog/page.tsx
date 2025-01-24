@@ -137,11 +137,11 @@ const BlogPage = () => {
                 </p>
 
                 <div className="flex justify-between">
-                  <div className="inline-flex items-center mt-1 text-gray-500 dark:text-gray-400 text-sm">
+                  <div className="inline-flex items-center text-gray-500 dark:text-gray-400 text-sm">
                     <Calendar className="pr-1 h-5 w-5" />
                     {formatDate(article.node.publishedAt)}
                   </div>
-                  <div className="inline-flex items-center mt-1 text-gray-500 dark:text-gray-400 text-sm">
+                  <div className="inline-flex items-center mt text-gray-500 dark:text-gray-400 text-sm">
                     <BookOpen className="pr-1 items-center h-5 w-5" />
                     {article.node.readTimeInMinutes} min read
                   </div>

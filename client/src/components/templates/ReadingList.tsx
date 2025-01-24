@@ -12,11 +12,11 @@ const ReadingList = () => {
         What I&apos;m {""}
         <span className="text-cyan-600">Reading</span>
       </h2>
-      <p className="mt-1 mb-3 text-left text-base md:text-lg font-normal text-gray-700 dark:text-gray-400">
+      <p className="mb-4 text-left text-base md:text-lg font-normal text-gray-700 dark:text-gray-400">
         Some great books in my reading list. I recommend you them check out
       </p>
 
-      <div className="flex space-x-1 rounded-xl bg-[#f4f5f8] dark:bg-blue-900/20 p-1">
+      <div className="flex space-x-1 rounded-xl bg-[#fafafa] dark:bg-[#202022] p-1">
         {bookItems.map((tab, index) => (
           <button
             key={tab.category}
@@ -24,8 +24,8 @@ const ReadingList = () => {
             className={`flex items-center justify-center w-full rounded-lg py-2.5 text-sm lg:text-base font-medium leading-5 text-gray-600dark:text-gray-100
               ${
                 activeTab === index
-                  ? "bg-blue-50/80 dark:bg-blue-600/30 shadow"
-                  : "text-gray-600 dark:text-gray-100 hover:bg-white dark:hover:bg-blue-300/[0.12] hover:text-gray-700 dark:hover:text-white"
+                  ? "bg-[#fff] dark:bg-[#373737] shadow"
+                  : "text-gray-600 dark:text-gray-100 hover:bg-[#f4f4f5] dark:hover:bg-[#282829] hover:text-gray-700 dark:hover:text-white"
               }`}
             aria-selected={activeTab === index}
             role="tab"
@@ -39,7 +39,7 @@ const ReadingList = () => {
         {bookItems.map((tab, idx) => (
           <div
             key={idx}
-            className={`rounded-xl bg-gradient-to-r from-[#f8f9ff] to-[#f7f7f7] dark:bg-gradient-to-r dark:from-[#0a2227] dark:to-[#00012e] shadow-2xl p-2 ${
+            className={`rounded-xl bg-gradient-to-r from-[#f8f9ff] to-[#f4f4f5] dark:bg-gradient-to-r dark:from-[#202022] dark:to-[#1e1e1e] shadow-custom p-2 ${
               activeTab === idx ? "block" : "hidden"
             }`}
             role="tabpanel"
@@ -48,7 +48,7 @@ const ReadingList = () => {
               {tab.items.map((item, index) => (
                 <div
                   key={index}
-                  className="relative rounded-md p-3 bg-white hover:bg-[#f4f5f8] text-gray-600 dark:bg-white/10 dark:hover:bg-white/25 dark:text-white backdrop-blur-sm transition-colors duration-200 "
+                  className="relative rounded-md p-3 bg-white hover:bg-[#f4f4f5] text-gray-600 dark:bg-white/10 dark:hover:bg-white/25 dark:text-white backdrop-blur-sm transition-colors duration-200 "
                 >
                   <p className="text-sm md:text-base font-medium leading-5">
                     {item}

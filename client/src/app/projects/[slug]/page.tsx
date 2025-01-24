@@ -79,34 +79,18 @@ export default async function ProjectPage(props: {
           </div>
         </div>
 
-        <div className="my-8">
-          {project.tools.map((tool, index) => (
-            <span
-              key={index}
-              className="mr-2 border-gray-600 bg-gray-800 text-gray-700 dark:text-gray-400 px-2 py-2 rounded text-sm text-center"
-            >
-              {tool.name}
-            </span>
-          ))}
-        </div>
-
         <div className="mb-8">
           <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-            Core Technologies & Use
+            Technologies Built With
           </h2>
           <ul className="list-disc space-y-3 pl-5 text-base sm:text-lg font-normal leading-6 text-gray-700 dark:text-gray-400">
-            {project.techUse.map((tech, index) => (
-              <li className="flex items-center" key={index}>
-                <a
-                  href="https://"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-cyan-500 hover:text-cyan-600 transition-colors"
-                >
-                  <span>{tech.name}</span>
-                </a>
-                <span>{tech.useCase}</span>
-              </li>
+            {project.tools.map((tool, index) => (
+              <span
+                key={index}
+                className="mr-2 border-gray-600 bg-gray-800 text-gray-300 dark:text-gray-400 px-2 py-2 rounded text-sm text-center"
+              >
+                {tool.name}
+              </span>
             ))}
           </ul>
         </div>

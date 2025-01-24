@@ -15,16 +15,18 @@ export default function Home() {
       {/* Hero Section */}
       <div className="py-60 flex flex-col items-center justify-center">
         <div className="mb-2 relative w-20 h-20 rounded-2xl overflow-hidden">
-          <Image
-            src="/images/profile-photo.jpg"
-            alt="Profile image"
-            className="object-cover relative z-0"
-            fill
-          />
+          <div className="bg-cyan-50">
+            <Image
+              src="/images/profile-photo.jpg"
+              alt="Profile image"
+              className="object-cover relative z-0"
+              fill
+            />
+          </div>
 
           <div
             // <motion.div
-            className="absolute bottom-4 right-4 flex items-center justify-center h-8 w-8 rounded-full bg-white/90 text-lg z-30"
+            className="relative flex items-center justify-center"
             // animate={{
             //   rotate: [0, 20, 0, 20, 0],
             // }}
@@ -39,7 +41,9 @@ export default function Home() {
             //   originY: 0.7,
             // }}
           >
-            👋
+            <span className="absolute -bottom-5 right-1 h-8 w-8 rounded-full bg-white/90 z-30 flex justify-center items-center">
+              👋
+            </span>
           </div>
           {/* </motion.div> */}
         </div>
@@ -57,28 +61,28 @@ export default function Home() {
         <div className="flex items-center justify-center space-x-6 my-3">
           <Link
             href="https://twitter.com/frankiefab100"
-            className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
+            className="text-gray-600 dark:text-gray-300 dark:hover:text-blue-500 hover:text-blue-500 transition-colors"
           >
             <Twitter className="h-6 w-6" />
             <span className="sr-only">Twitter</span>
           </Link>
           <Link
             href="https://linkedin.com/in/frankiefab100"
-            className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
+            className="text-gray-600 dark:text-gray-300 dark:hover:text-blue-500 hover:text-blue-500 transition-colors"
           >
             <Linkedin className="h-6 w-6" />
             <span className="sr-only">LinkedIn</span>
           </Link>
           <Link
             href="https://github.com/frankiefab100"
-            className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
+            className="text-gray-600 dark:text-gray-300 dark:hover:text-blue-500 hover:text-blue-500 transition-colors"
           >
             <Github className="h-6 w-6" />
             <span className="sr-only">GitHub</span>
           </Link>
           <Link
             href="https://dribbble.com/frankiefab100"
-            className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
+            className="text-gray-600 dark:text-gray-300 dark:hover:text-blue-500 hover:text-blue-500 transition-colors"
           >
             <Dribbble className="h-6 w-6" />
             <span className="sr-only">Dribbble</span>

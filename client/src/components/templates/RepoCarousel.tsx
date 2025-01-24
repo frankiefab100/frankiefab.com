@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { ArrowLeft, ArrowRight, ChevronUp, Folder } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Folder } from "lucide-react";
 import { getGithubRepos } from "../../../lib/getGithubRepos";
 import { RepoType } from "../../../lib/types";
 import { FetchOptions } from "../../../lib/types";
@@ -115,7 +115,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
                 key={repo.name}
                 className="w-full flex-shrink-0 md:pr-6 md:w-1/2 lg:w-1/3"
               >
-                <div className="backdrop-blur-sm rounded-lg overflow-hidden border border-gray-200 bg-[#fafafa] hover:bg-[#f4f4f4] dark:border-gray-800  dark:bg-black/50  hover:border-gray-600 dark:hover:border-gray-200 transition-all duration-300 h-[400px] flex flex-col">
+                <div className="backdrop-blur-sm rounded-lg overflow-hidden border border-gray-200 bg-[#fafafa] hover:bg-[#f4f4f4] dark:border-gray-800  dark:bg-black/50  hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 h-[400px] flex flex-col">
                   <div className="p-8">
                     <Folder className="w-6 h-6" text-gray-800 />
                   </div>
@@ -131,10 +131,10 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
                         href={repo.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-6 py-3 rounded-full border transition-all duration-300 hover:border-gray-600 dark:hover:border-gray-200 text-gray-700 dark:text-white"
+                        className="inline-flex items-center px-6 py-3 rounded-full border transition-all duration-300 border-gray-200 dark:border-gray-800  hover:border-gray-300 dark:hover:border-gray-600 text-gray-700 dark:text-white"
                       >
                         View project
-                        <ChevronUp className="ml-2 w-4 h-4" />
+                        <ArrowUpRight className="ml-2 w-4 h-4" />
                       </a>
                       <span className="text-gray-400">⭐ {repo.stars}</span>
                     </div>
