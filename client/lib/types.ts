@@ -37,9 +37,6 @@ interface Post {
     url: string | null;
     publishedAt: string;
     readTimeInMinutes: number;
-    // tags: {
-    //   slug: string;
-    // }[];
   };
 }
 
@@ -81,6 +78,13 @@ export interface EventsList {
   link?: string;
   slide?: string;
 }
+
+export interface ToastProps {
+  message: string;
+  isVisible: boolean;
+  onClose: () => void;
+}
+
 
 
 // types for Strapi CMS

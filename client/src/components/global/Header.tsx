@@ -125,7 +125,7 @@ export default function Header() {
             <div className="md:hidden flex">
               <button
                 onClick={toggleTheme}
-                className="p-2 mr-3 rounded-full  border border-gray-200 dark:border-gray-800 hover:bg-gray-50/80 hover:border-none hover:dark:bg-gray-800/90"
+                className="p-2 mr-3 rounded-full border border-gray-200 dark:border-gray-800 hover:bg-gray-50/80 hover:border-none hover:dark:bg-gray-800/90"
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (

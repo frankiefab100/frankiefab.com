@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Twitter, Linkedin, Github, Dribbble } from "lucide-react";
+import { ArrowRight, Linkedin, Github, Dribbble } from "lucide-react";
+import { SiX } from "react-icons/si";
 import ServicesSection from "@/components/templates/Specializations";
 import TechStacks from "@/components/templates/TechStacks";
 import { RepoCarousel } from "@/components/templates/RepoCarousel";
@@ -49,7 +50,7 @@ export default function Home() {
 
         <div className="text-center max-w-3xl space-y-2">
           <h1 className="font-Bitform font-bold text-2xl md:text-3xl lg:text-5xl text-center">
-            Frontend Engineer, Designer & Technical Writer
+            Frontend Engineer, Designer <br /> & Technical Writer
           </h1>
           <p className="italic text-base md:text-lg md:leading-7 leading-6 text-gray-500 dark:text-gray-400">
             With 4+ years of professional experience in building responsive user
@@ -57,13 +58,13 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex items-center justify-center space-x-6 my-3">
+        <div className="flex items-center justify-center md:space-x-6 space-x-4 my-3">
           <Link
             href="https://twitter.com/frankiefab100"
             className="text-gray-600 dark:text-gray-300 dark:hover:text-blue-500 hover:text-blue-500 transition-colors"
           >
-            <Twitter className="md:h-6 md:w-6 h-5 w-5" />
-            <span className="sr-only">Twitter</span>
+            <SiX className="md:h-6 md:w-6 h-5 w-5" />
+            <span className="sr-only">Twitter/X</span>
           </Link>
           <Link
             href="https://linkedin.com/in/frankiefab100"

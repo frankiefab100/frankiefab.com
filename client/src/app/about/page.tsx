@@ -12,7 +12,6 @@ const About = () => {
       id="about"
       className="py-5 md:py-24 max-w-7xl mx-auto lg:px-16 px-6"
     >
-      {/* <section id="about" className="px-4 md:px-10 lg:px-16"> */}
       <div className="relative overflow-hidden py-24 max-w-7xl mx-auto">
         <div className="inset-0 w-full h-full">
           <Image
@@ -25,7 +24,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* <div className="text-center max-w-2xl mx-auto"> */}
       <div className="text-center">
         <h1 className="text-gray-800 dark:text-gray-200 font-semibold lg:text-5xl md:text-3xl text-2xl tracking-tight lg:leading-tight mb-8">
           I&apos;m Franklin Ohaegbulam. <br />{" "}

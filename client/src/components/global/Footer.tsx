@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Twitter,
   Github,
   Linkedin,
   Instagram,
@@ -10,7 +9,7 @@ import {
   Codesandbox,
   Wallet,
 } from "lucide-react";
-import { SiBehance, SiProducthunt } from "react-icons/si";
+import { SiBehance, SiBluesky, SiProducthunt, SiX } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -67,8 +66,8 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
+                <SiX className="h-5 w-5" />
+                <span className="sr-only">Twitter/X</span>
               </Link>
               <Link
                 href="https://github.com/frankiefab100"
@@ -79,16 +78,6 @@ const Footer = () => {
               >
                 <Github className="h-5 w-5" />
                 <span className="sr-only">Github</span>
-              </Link>
-              <Link
-                href="https://linkedin.com/in/frankiefab100"
-                title="linkedin"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">Linkedin</span>
               </Link>
               <Link
                 href="https://instagram.com/frankiefab100"
@@ -109,6 +98,16 @@ const Footer = () => {
               >
                 <SiBehance className="h-5 w-5" />
                 <span className="sr-only">Behance</span>
+              </Link>
+              <Link
+                href="https://bsky.app/profile/frankiefab.bsky.social"
+                title="bluesky"
+                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiBluesky className="h-5 w-5" />
+                <span className="sr-only">Bluesky</span>
               </Link>
               <Link
                 href="https://producthunt.com/frankiefab100"

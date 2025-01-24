@@ -59,11 +59,10 @@ const Talks = () => {
 
         {/* Background gradient effect */}
         <div
-          className="absolute inset-0 blur-[118px] max-w-lg h-[100px] mx-auto md:max-w-3xl md:h-[400px]"
+          className="absolute inset-0 blur-[118px] max-w-lg h-[100px] mx-auto md:max-w-3xl md:h-[400px] opacity-50"
           style={{
             background:
               "linear-gradient(106.89deg, rgba(192, 132, 252, 0.11) 15.73%, rgba(14, 165, 233, 0.41) 15.74%, rgba(232, 121, 249, 0.26) 56.49%, rgba(79, 70, 229, 0.4) 115.91%)",
-            opacity: "70%",
           }}
         ></div>
       </div>

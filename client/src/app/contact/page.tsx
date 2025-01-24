@@ -11,7 +11,7 @@ const ContactPage = () => {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleSubmit(e);
-    // const result = await handleSubmit(e);
+
     if (state.succeeded) {
       setShowToast(true);
     }
@@ -34,26 +34,25 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             <div className="flex flex-col justify-between lg:py-5">
               <div>
-                <h3 className="text-base sm:text-lg lg:text-left text-center font-mono text-[#131313] dark:text-white">
+                <h3 className="md:text-xl lg:text-left text-center font-mono text-[#131313] dark:text-white">
                   Let&apos;s bring that idea to life!
                 </h3>
-                <p className="text-sm sm:text-base lg:text-left text-center text-gray-600 dark:text-gray-400 max-w-3xl mt-1">
-                  Need help on your project, written documents for your product
-                  or want me to speak at your event? Don&apos;t hesitate to
-                  reach out.
+                <p className="text-base md:text-lg lg:text-left text-center text-gray-600 dark:text-gray-400 max-w-3xl mt-1">
+                  Do you need professional assistance for your project?
+                  Don&apos;t hesitate to reach out.
                 </p>
               </div>
               <div className="hidden md:mt-auto md:block">
                 <div>
                   <blockquote className="mt-6">
-                    <p className="text-base sm:text-lg leading-relaxed text-[#131313] dark:text-white">
+                    <p className="text-sm md:text-lg italic leading-relaxed text-[#131313] dark:text-white">
                       &quot;The best way to predict the future is to implement
                       it.&quot;
                     </p>
                   </blockquote>
                   <div className="flex items-center mt-1">
                     <div>
-                      <p className="text-base sm:text-lg font-semibold text-cyan-500">
+                      <p className="text-base md:text-lg font-normal text-cyan-500">
                         David Heinemeier Hansson
                       </p>
                     </div>

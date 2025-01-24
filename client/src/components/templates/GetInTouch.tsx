@@ -19,7 +19,7 @@ export const GetInTouch = () => {
               href="https://cal.com/frankiefab/free-consultation"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200 font-medium"
+              className="inline-flex items-center px-4 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200 font-medium"
             >
               <CalendarDays className="w-5 h-5 mr-2" />
               Schedule a call
@@ -31,9 +31,9 @@ export const GetInTouch = () => {
               href="https://t.me/frankiefab"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-4 rounded-xl border bg-[#fafafa] hover:bg-[#fdfdfd] dark:border-gray-800 text-gray-600 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white backdrop-blur-sm transition-colors duration-200 group w-full md:w-auto"
+              className="inline-flex items-center md:px-6 md:py-4 px-4 py-3 rounded-xl border bg-[#fafafa] hover:bg-[#fdfdfd] dark:border-gray-800 text-gray-600 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white backdrop-blur-sm transition-colors duration-200 group w-full md:w-auto"
             >
-              <Send className="w-6 h-6 mr-4" />
+              <Send className="md:w-6 md:h-6 w-4 h-4 mr-4" />
               <span className="font-medium">Telegram</span>
               <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -42,9 +42,9 @@ export const GetInTouch = () => {
 
             <Link
               href="mailto:ohaegbulamfrank@gmail.com"
-              className="inline-flex items-center px-6 py-4 rounded-xl border bg-[#fafafa] hover:bg-[#fdfdfd] dark:border-gray-800 text-gray-600 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white backdrop-blur-sm transition-colors duration-200 group w-full md:w-auto"
+              className="inline-flex items-center md:px-6 md:py-4 px-4 py-3 rounded-xl border bg-[#fafafa] hover:bg-[#fdfdfd] dark:border-gray-800 text-gray-600 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white backdrop-blur-sm transition-colors duration-200 group w-full md:w-auto"
             >
-              <Mail className="w-6 h-6 mr-4" />
+              <Mail className="md:w-6 md:h-6 w-4 h-4 mr-4" />
               <span className="font-medium">Email</span>
               <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <ArrowRight className="w-4 h-4 ml-2" />
