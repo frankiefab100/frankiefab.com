@@ -31,7 +31,7 @@ const ContactPage = () => {
         </div>
 
         <div className="py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             <div className="flex flex-col justify-between lg:py-5">
               <div>
                 <h3 className="text-base sm:text-lg lg:text-left text-center font-mono text-[#131313] dark:text-white">
@@ -64,7 +64,7 @@ const ContactPage = () => {
             <div>
               <div className="overflow-hidden bg-white rounded-md shadow-shadow">
                 <div className="p-6 sm:p-10">
-                  <form onSubmit={onSubmit} className="space-y-5">
+                  <form onSubmit={onSubmit} className="md:space-y-5 space-y-4">
                     <div>
                       <label
                         htmlFor="name"
@@ -77,7 +77,7 @@ const ContactPage = () => {
                         type="text"
                         name="name"
                         required
-                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-cyan-500 shadow-sm rounded-lg"
+                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
                       />
                       <ValidationError
                         prefix="Name"
@@ -98,7 +98,7 @@ const ContactPage = () => {
                         type="email"
                         name="email"
                         required
-                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-cyan-500 shadow-sm rounded-lg"
+                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
                       />
                       <ValidationError
                         prefix="Email"
@@ -119,7 +119,7 @@ const ContactPage = () => {
                         type="text"
                         name="subject"
                         required
-                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-cyan-500 shadow-sm rounded-lg"
+                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
                       />
                       <ValidationError
                         prefix="Subject"
@@ -139,7 +139,7 @@ const ContactPage = () => {
                         id="message"
                         name="message"
                         required
-                        className="resize-y block w-full px-2 py-2 sm:px-4 sm:py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-cyan-500 focus:border-cyan-500"
+                        className="resize-y block w-full px-2 py-2 sm:px-4 sm:py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-gray-400"
                         rows={4}
                       ></textarea>
                       <ValidationError

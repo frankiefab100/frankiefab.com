@@ -8,11 +8,11 @@ const ReadingList = () => {
 
   return (
     <div className="pt-8">
-      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
+      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left tracking-tight md:text-3xl text-2xl">
         What I&apos;m {""}
         <span className="text-cyan-600">Reading</span>
       </h2>
-      <p className="mb-6 text-left text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">
+      <p className="mt-1 mb-3 text-left text-base md:text-lg font-normal text-gray-700 dark:text-gray-400">
         Some great books in my reading list. I recommend you them check out
       </p>
 

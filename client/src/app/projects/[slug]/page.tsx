@@ -71,7 +71,7 @@ export default async function ProjectPage(props: {
         </div>
 
         <div className="mb-8">
-          <h2 className="font-CooperHewittMedium md:text-2xl text-xl mb-2">
+          <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
             Project Overview
           </h2>
           <div className="space-y-6 text-gray-700 dark:text-gray-400">
@@ -91,10 +91,10 @@ export default async function ProjectPage(props: {
         </div>
 
         <div className="mb-8">
-          <h2 className="font-CooperHewittMedium md:text-2xl text-xl mb-2">
+          <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
             Core Technologies & Use
           </h2>
-          <ul className="list-disc space-y-3 pl-5 text-base font-normal leading-6 text-gray-700 dark:text-gray-400">
+          <ul className="list-disc space-y-3 pl-5 text-base sm:text-lg font-normal leading-6 text-gray-700 dark:text-gray-400">
             {project.techUse.map((tech, index) => (
               <li className="flex items-center" key={index}>
                 <a
@@ -113,11 +113,11 @@ export default async function ProjectPage(props: {
 
         {project.keyFeatures && (
           <div className="mb-8">
-            <h2 className="font-CooperHewittMedium md:text-2xl text-xl mb-2">
+            <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
               Features
             </h2>
             <div
-              className="prose max-w-none text-gray-700 dark:text-gray-400"
+              className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
               dangerouslySetInnerHTML={{
                 __html: renderBlocks(project.keyFeatures),
               }}
@@ -127,11 +127,11 @@ export default async function ProjectPage(props: {
 
         {project.challengesAndProcess && (
           <div className="mb-8">
-            <h2 className="font-CooperHewittMedium md:text-2xl text-xl mb-2">
+            <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
               Challenges and Process
             </h2>
             <div
-              className="prose max-w-none text-gray-700 dark:text-gray-400"
+              className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
               dangerouslySetInnerHTML={{
                 __html: renderBlocks(project.challengesAndProcess),
               }}
@@ -140,7 +140,7 @@ export default async function ProjectPage(props: {
         )}
 
         <div className="mb-8">
-          <h2 className="font-CooperHewittMedium md:text-2xl text-xl mb-2">
+          <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
             Screenshots
           </h2>
 

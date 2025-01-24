@@ -8,8 +8,8 @@ export const GetInTouch = () => {
     <div id="getintouch" className="w-full py-16">
       <div className="w-full rounded-3xl overflow-hidden dark:bg-gradient-to-r dark:from-[#020817] dark:to-[#00001f] p-6 md:p-12 shadow-2xl">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:gap-8 gap-4">
-          <div className="text-left md:space-y-2 space-y-1">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#131313] dark:text-white">
+          <div className="text-left space-y-1">
+            <h2 className="font-CooperHewittMedium text-2xl md:text-3xl font-semibold text-[#131313] dark:text-white">
               Have Project Ideas?
             </h2>
             <p className="pb-3 md:text-base text-sm text-gray-600 dark:text-gray-400 leading-5 flex-wrap">

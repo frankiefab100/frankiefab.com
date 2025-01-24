@@ -5,11 +5,11 @@ export const LogoGrid = () => {
   return (
     <div className="py-8">
       <div className="max-w-screen-x">
-        <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
+        <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left tracking-tight md:text-3xl text-2xl">
           Notable Contributions To {""}
           <span className="text-cyan-600">Open Source</span>
         </h2>
-        <div className="mt-6">
+        <div className="mt-2">
           <ul className="bg-[#fafafa] dark:bg-gray-400 flex gap-y-1 flex-wrap items-center justify-center">
             <Link
               href="https://freecodecamp.org"

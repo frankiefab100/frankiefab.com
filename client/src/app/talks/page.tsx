@@ -27,22 +27,26 @@ const Talks = () => {
                   <span className="font-semibold title-font text-gray-500 dark:text-gray-300">
                     {talk.category}
                   </span>
-                  <span className="mt-1 text-gray-400 dark:text-gray-500 text-sm">
+                  <span className="mt-1 font-normal text-gray-400 dark:text-gray-500 text-sm">
                     {talk.date}
                   </span>
                 </div>
                 <div className="md:flex-grow">
                   <Link href={`talk.link`}>
-                    <h2 className="text-lg sm:text-2xl font-medium  text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-500 hover:dark:text-gray-200 title-font mb-2">
+                    <h3 className="text-lg md:text-xl font-medium text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-500 hover:dark:text-gray-200 title-font">
                       {talk.title}
-                    </h2>
+                    </h3>
                   </Link>
-                  <p className="text-base leading-relaxed">{talk.desc}</p>
+                  <p className="mt-1 mb-3 font-light uppercase text-sm leading-relaxed">
+                    {talk.desc}
+                  </p>
                   <Link
                     href={`talk.slide`}
-                    className="text-cyan-500 inline-flex items-center mt-3 hover:text-cyan-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-500 inline-flex items-center hover:text-cyan-600"
                   >
-                    Slide
+                    See Slide
                     <ChevronRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>

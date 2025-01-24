@@ -25,7 +25,7 @@ const expertiseList = [
 export const Expertise = () => {
   return (
     <div className="py-8">
-      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left mb-4 tracking-tight md:text-3xl text-2xl">
+      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left tracking-tight md:text-3xl text-2xl">
         Industry <span className="text-cyan-600">Knowledge</span>
       </h2>
 
@@ -45,7 +45,7 @@ export const Expertise = () => {
           </div>
 
           <div className="lg:col-span-4">
-            <p className="text-sm md:text-base font-normal text-gray-400">
+            <p className="text-base md:text-lg font-normal text-gray-700 dark:text-gray-400">
               I bring extensive industry experience in developing innovative
               digital solutions that enhance user engagement and streamline
               project workflows.
@@ -62,7 +62,9 @@ export const Expertise = () => {
                   <span className="w-6 h-6 shrink-0 text-cyan-500">
                     {item.icon}
                   </span>
-                  <span className="ml-2 text-sm">{item.title}</span>
+                  <span className="ml-2 text-sm md:text-base">
+                    {item.title}
+                  </span>
                 </li>
               ))}
             </ul>

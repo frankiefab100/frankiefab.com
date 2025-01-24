@@ -8,7 +8,10 @@ import ReadingList from "@/components/templates/ReadingList";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 max-w-7xl mx-auto lg:px-16 px-6">
+    <section
+      id="about"
+      className="py-5 md:py-24 max-w-7xl mx-auto lg:px-16 px-6"
+    >
       {/* <section id="about" className="px-4 md:px-10 lg:px-16"> */}
       <div className="relative overflow-hidden py-24 max-w-7xl mx-auto">
         <div className="inset-0 w-full h-full">
@@ -24,16 +27,16 @@ const About = () => {
 
       {/* <div className="text-center max-w-2xl mx-auto"> */}
       <div className="text-center">
-        <h1 className="text-gray-800 dark:text-gray-200 font-semibold tracking-tight sm:text-5xl text-3xl lg:leading-tight mb-8">
+        <h1 className="text-gray-800 dark:text-gray-200 font-semibold lg:text-5xl md:text-3xl text-2xl tracking-tight lg:leading-tight mb-8">
           I&apos;m Franklin Ohaegbulam. <br /> I ideate, design, and build
           softwares.
         </h1>
-        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-7 text-gray-700 dark:text-gray-400">
+        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">
           I am an independent web developer specializing in building
           high-quality, intuitive websites and web applications using modern
           technologies frameworks like JavaScript, React, and Next.js.
         </p>
-        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-7 text-gray-700 dark:text-gray-400">
+        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">
           My journey in tech has been marked by a commitment to enhancing user
           experiences. I thrive in collaborative environments, working closely
           with UX designers to transform wireframes and designs from tools like
@@ -41,7 +44,7 @@ const About = () => {
           My focus on performance and accessibility ensures that applications
           are not only visually appealing but also fast and scalable.
         </p>
-        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-7 text-gray-700 dark:text-gray-400">
+        <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">
           With over four years of industry experience, I often share my
           knowledge on my{" "}
           <Link

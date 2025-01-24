@@ -17,6 +17,8 @@ import {
     SiMarkdown,
     SiNetlify,
     SiGitlab,
+    SiPython,
+    SiMongodb,
 } from "react-icons/si";
 import { TechToolsProps } from "../../lib/types";
 
@@ -39,4 +41,6 @@ export const tools: TechToolsProps[] = [
     { name: "Markdown", icon: SiMarkdown, color: "#0f0f0f" },
     { name: "Netlify", icon: SiNetlify, color: "#00C48C" },
     { name: "GitLab", icon: SiGitlab, color: "#E24329" },
+    { name: "Python", icon: SiPython, color: "#00C48C" },
+    { name: "MongoDB", icon: SiMongodb, color: "#E24329" },
 ];

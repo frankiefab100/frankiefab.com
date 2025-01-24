@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { ArrowLeft, ArrowRight, Folder } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronUp, Folder } from "lucide-react";
 import { getGithubRepos } from "../../../lib/getGithubRepos";
 import { RepoType } from "../../../lib/types";
 import { FetchOptions } from "../../../lib/types";
@@ -79,7 +79,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
     <div className="py-16 md:py-24">
       <div className="container mx-auto">
         <div>
-          <h2 className="font-inter font-semibold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl md:text-3xl text-2xl">
+          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl md:text-3xl text-2xl">
             Some {""}
             <span className="text-cyan-600">Open Source</span>
             {""} Works
@@ -115,7 +115,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
                 key={repo.name}
                 className="w-full flex-shrink-0 md:pr-6 md:w-1/2 lg:w-1/3"
               >
-                <div className="backdrop-blur-sm rounded-lg overflow-hidden border border-gray-200 bg-[#fafafa] hover:bg-[#f4f4f4] dark:border-gray-800  dark:bg-black/50  hover:border-cyan-500/50 dark:hover:border-cyan-500/50 transition-all duration-300 h-[400px] flex flex-col">
+                <div className="backdrop-blur-sm rounded-lg overflow-hidden border border-gray-200 bg-[#fafafa] hover:bg-[#f4f4f4] dark:border-gray-800  dark:bg-black/50  hover:border-gray-600 dark:hover:border-gray-200 transition-all duration-300 h-[400px] flex flex-col">
                   <div className="p-8">
                     <Folder className="w-6 h-6" text-gray-800 />
                   </div>
@@ -131,10 +131,10 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
                         href={repo.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-6 py-3 rounded-full border border-cyan-500/50 transition-all duration-300 hover:border-cyan-500/30 text-gray-700 dark:text-white"
+                        className="inline-flex items-center px-6 py-3 rounded-full border transition-all duration-300 hover:border-gray-600 dark:hover:border-gray-200 text-gray-700 dark:text-white"
                       >
                         View project
-                        <ArrowRight className="ml-2 w-4 h-4" />
+                        <ChevronUp className="ml-2 w-4 h-4" />
                       </a>
                       <span className="text-gray-400">⭐ {repo.stars}</span>
                     </div>

@@ -4,7 +4,7 @@ import { services } from "@/constants/services";
 export default function ServicesSection() {
   return (
     <section className="w-full">
-      <h2 className="font-inter font-semibold text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
+      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
         What I {""}
         <span className="text-cyan-600">Do</span>
       </h2>

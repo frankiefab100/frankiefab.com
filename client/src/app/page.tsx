@@ -12,10 +12,9 @@ import { GetInTouch } from "@/components/templates/GetInTouch";
 export default function Home() {
   return (
     <div className="max-w-7xl mx-auto lg:px-16 px-6 relative min-h-screen z-20 text-gray-800 dark:text-white">
-      {/* <div className="relative z-20 text-center text-gray-800 dark:text-white mx-auto lg:px-16 md:px-8 sm:px-4"> */}
       {/* Hero Section */}
-      <div className="py-48 flex flex-col items-center justify-center space-y-8">
-        <div className="relative w-20 h-20 rounded-2xl overflow-hidden">
+      <div className="py-60 flex flex-col items-center justify-center">
+        <div className="mb-2 relative w-20 h-20 rounded-2xl overflow-hidden">
           <Image
             src="/images/profile-photo.jpg"
             alt="Profile image"
@@ -46,16 +45,16 @@ export default function Home() {
         </div>
 
         <div className="text-center max-w-3xl space-y-2">
-          <h1 className="font-Bitform text-2xl md:text-3xl lg:text-5xl text-center">
+          <h1 className="font-Bitform font-bold text-2xl md:text-3xl lg:text-5xl text-center">
             Frontend Engineer, Designer & Technical Writer
           </h1>
-          <p className="text-base md:text-lg md:leading-7 leading-6 text-gray-500 dark:text-gray-400">
-            With 4 years of professional experience in building responsive user
+          <p className="italic text-base md:text-lg md:leading-7 leading-6 text-gray-500 dark:text-gray-400">
+            With 4+ years of professional experience in building responsive user
             interfaces and digital experiences to meet user&apos;s needs.
           </p>
         </div>
 
-        <div className="flex items-center justify-center space-x-6">
+        <div className="flex items-center justify-center space-x-6 my-3">
           <Link
             href="https://twitter.com/frankiefab100"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
@@ -111,7 +110,6 @@ export default function Home() {
       <RepoCarousel username={"frankiefab100"} />
 
       <GetInTouch />
-      {/* </div> */}
     </div>
   );
 }
