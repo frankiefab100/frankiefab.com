@@ -13,7 +13,7 @@ export default function NotFound() {
           alt="error illustration"
           priority
         />
-        <h1 className="font-black text-gray-800 dark:text-gray-200 text-9xl">
+        <h1 className="font-black text-gray-800 dark:text-gray-200 lg:text-9xl text-6xl">
           Oops!
         </h1>
 
@@ -21,13 +21,13 @@ export default function NotFound() {
           Page Not Found
         </p>
 
-        <p className="mt-4 text-gray-500 dark:text-gray-300">
+        <p className="my-2 text-gray-500 dark:text-gray-300">
           We couldn&apos;t find the page you&apos;re looking for
         </p>
 
         <Link
           href="/"
-          className="inline-block px-5 py-3 mt-6 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 focus:outline-none"
+          className="inline-block px-5 py-3 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 focus:outline-none"
           role="button"
         >
           Back to Home

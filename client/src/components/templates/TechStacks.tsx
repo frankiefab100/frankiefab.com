@@ -30,7 +30,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content, children }) => {
 export default function TechStacks() {
   return (
     <div className="py-16 md:py-24 flex flex-col items-center justify-center md:px-10">
-      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center my-8 tracking-tight lg:text-4xl text-3xl">
+      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center md:my-8 my-3 tracking-tight lg:text-4xl text-3xl">
         Core {""}
         <span className="text-cyan-600">Technologies</span>
       </h2>
