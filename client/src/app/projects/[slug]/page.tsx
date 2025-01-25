@@ -70,19 +70,10 @@ export default async function ProjectPage(props: {
           )}
         </div>
 
-        <div className="mb-8">
-          <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-            Project Overview
-          </h2>
-          <div className="text-base sm:text-lg space-y-6 text-gray-700 dark:text-gray-400">
-            <p>{project.overview1}</p>
-          </div>
-        </div>
-
         {project.overview && (
           <div className="mb-8">
             <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-              Features
+              Project Overview
             </h2>
             <div
               className="text-base sm:text-lg text-gray-700 dark:text-gray-400"

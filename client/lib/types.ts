@@ -108,7 +108,6 @@ export interface ProjectData {
   githubUrl?: string;
   liveUrl?: string;
   overview?: any[];
-  overview1?: string;
   description?: string;
   techUse: Array<{ name: string; useCase: string }>;
   keyFeatures?: any[];

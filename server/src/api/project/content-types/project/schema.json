@@ -24,9 +24,6 @@
       "type": "text",
       "required": true
     },
-    "overview1": {
-      "type": "text"
-    },
     "keyFeatures": {
       "type": "blocks"
     },

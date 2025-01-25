@@ -399,7 +399,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
-    overview: Schema.Attribute.Text;
+    overview: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
     screenshots: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
