@@ -17,7 +17,7 @@ export default async function ProjectPage(props: {
   const project: ProjectData = response.data[0];
 
   return (
-    <div className="min-h-screen py-24 sm:py-16 lg:py-24 max-w-7xl mx-auto lg:px-16 px-8">
+    <div className="min-h-screen md:py-24 py-16 lg:py-24 max-w-7xl mx-auto lg:px-16 px-6">
       <div className="max-w-6xl mx-auto">
         <Link
           href="/projects"
@@ -79,9 +79,9 @@ export default async function ProjectPage(props: {
           </div>
         </div>
 
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-            Technologies
+            Tools
           </h2>
           <ul className="list-disc space-y-3 pl-5 text-base sm:text-lg font-normal leading-6 text-gray-700 dark:text-gray-400">
             {project.tools.map((tool, index) => (
@@ -93,7 +93,25 @@ export default async function ProjectPage(props: {
               </span>
             ))}
           </ul>
-        </div>
+        </div> */}
+
+        {project.techUse && (
+          <div className="mb-8">
+            <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
+              Technologies
+            </h2>
+            <ul className="text-base sm:text-lg text-gray-700 dark:text-gray-400">
+              {project.techUse.map((techUse, index) => (
+                <li key={index} className="mb-2">
+                  <span className="font-bold">
+                    {techUse.name}: {""}
+                  </span>
+                  {techUse.useCase}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {project.keyFeatures && (
           <div className="mb-8">
