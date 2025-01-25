@@ -1,4 +1,3 @@
-
 export interface TechToolsProps {
   name: string;
   icon: any;
@@ -10,7 +9,6 @@ export interface TooltipProps {
   content: string;
   children: React.ReactNode;
 }
-
 
 export interface RepoType {
   name: string;
@@ -50,7 +48,6 @@ export interface PaginationProps {
   hasNextPage: boolean;
 }
 
-
 export interface TabItem {
   category: string;
   icon: any;
@@ -85,8 +82,6 @@ export interface ToastProps {
   onClose: () => void;
 }
 
-
-
 // types for Strapi CMS
 export interface ProjectProps {
   id: string;
@@ -112,9 +107,9 @@ export interface ProjectData {
   };
   githubUrl?: string;
   liveUrl?: string;
-  overview?: string;
+  overview?: any[];
+  overview1?: string;
   description?: string;
-  tools: Array<{ name: string }>;
   techUse: Array<{ name: string; useCase: string }>;
   keyFeatures?: any[];
   challengesAndProcess?: any[];

@@ -75,25 +75,23 @@ export default async function ProjectPage(props: {
             Project Overview
           </h2>
           <div className="text-base sm:text-lg space-y-6 text-gray-700 dark:text-gray-400">
-            <p>{project.overview}</p>
+            <p>{project.overview1}</p>
           </div>
         </div>
 
-        {/* <div className="mb-8">
-          <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-            Tools
-          </h2>
-          <ul className="list-disc space-y-3 pl-5 text-base sm:text-lg font-normal leading-6 text-gray-700 dark:text-gray-400">
-            {project.tools.map((tool, index) => (
-              <span
-                key={index}
-                className="mr-2 border-gray-600 bg-gray-800 text-gray-300 dark:text-gray-400 px-2 py-2 rounded text-sm text-center"
-              >
-                {tool.name}
-              </span>
-            ))}
-          </ul>
-        </div> */}
+        {project.overview && (
+          <div className="mb-8">
+            <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
+              Features
+            </h2>
+            <div
+              className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
+              dangerouslySetInnerHTML={{
+                __html: renderBlocks(project.overview),
+              }}
+            />
+          </div>
+        )}
 
         {project.techUse && (
           <div className="mb-8">
