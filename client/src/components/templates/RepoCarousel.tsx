@@ -82,7 +82,7 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
           <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center md:my-8 my-3 tracking-tight lg:text-4xl md:text-3xl text-2xl">
             Some {""}
             <span className="text-cyan-600">Open Source</span>
-            {""} Works
+            {""} Work
           </h2>
         </div>
 

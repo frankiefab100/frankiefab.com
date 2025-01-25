@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Linkedin, Github, Dribbble } from "lucide-react";
-import { SiX } from "react-icons/si";
+import { SiHashnode, SiX } from "react-icons/si";
 import ServicesSection from "@/components/templates/Specializations";
 import TechStacks from "@/components/templates/TechStacks";
 import { RepoCarousel } from "@/components/templates/RepoCarousel";
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="max-w-7xl mx-auto lg:px-16 px-6 relative z-20 text-gray-800 dark:text-white">
       {/* Hero Section */}
-      <div className="py-60 flex flex-col items-center justify-center">
+      <div className="pt-52 pb-64 flex flex-col items-center justify-center">
         <div className="mb-2 relative w-20 h-20">
           <div className="rounded-2xl overflow-hidden h-full w-full bg-cyan-50">
             <Image
@@ -58,7 +58,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex items-center justify-center md:space-x-6 space-x-4 my-3">
+        <div className="flex items-center justify-center md:space-x-6 space-x-4 my-4">
           <Link
             href="https://twitter.com/frankiefab100"
             className="text-gray-600 dark:text-gray-300 dark:hover:text-blue-500 hover:text-blue-500 transition-colors"
@@ -79,6 +79,13 @@ export default function Home() {
           >
             <Github className="md:h-6 md:w-6 h-5 w-5" />
             <span className="sr-only">GitHub</span>
+          </Link>
+          <Link
+            href="https://frankiefab.hashnode.dev"
+            className="text-gray-600 dark:text-gray-300 dark:hover:text-blue-500 hover:text-blue-500 transition-colors"
+          >
+            <SiHashnode className="md:h-6 md:w-6 h-5 w-5" />
+            <span className="sr-only">Hashnode</span>
           </Link>
           <Link
             href="https://dribbble.com/frankiefab100"

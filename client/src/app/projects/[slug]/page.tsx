@@ -74,14 +74,14 @@ export default async function ProjectPage(props: {
           <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
             Project Overview
           </h2>
-          <div className="space-y-6 text-gray-700 dark:text-gray-400">
-            <p>{project.overview || project.description}</p>
+          <div className="text-base sm:text-lg space-y-6 text-gray-700 dark:text-gray-400">
+            <p>{project.overview}</p>
           </div>
         </div>
 
         <div className="mb-8">
           <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-            Technologies Built With
+            Technologies
           </h2>
           <ul className="list-disc space-y-3 pl-5 text-base sm:text-lg font-normal leading-6 text-gray-700 dark:text-gray-400">
             {project.tools.map((tool, index) => (

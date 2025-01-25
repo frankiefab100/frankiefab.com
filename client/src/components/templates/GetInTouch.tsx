@@ -6,7 +6,7 @@ import Link from "next/link";
 export const GetInTouch = () => {
   return (
     <div id="getintouch" className="w-full pb-16">
-      <div className="w-full rounded-3xl overflow-hidden dark:bg-gradient-to-r dark:from-[#020817] dark:to-[#00001f] p-6 md:p-12 shadow-custom">
+      <div className="w-full rounded-3xl overflow-hidden bg-gradient-to-r from-[#f1f1f1] to-[#f4f4f4] dark:bg-gradient-to-r dark:from-[#020817] dark:to-[#00001f] p-6 md:p-12 shadow-custom">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between md:gap-8 gap-4">
           <div className="text-left space-y-1">
             <h2 className="font-CooperHewittMedium text-2xl md:text-3xl font-semibold text-[#131313] dark:text-white">

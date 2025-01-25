@@ -102,7 +102,7 @@ export default function RootLayout({
           <div className="relative min-h-screen">
             <div className="relative z-10 flex flex-col min-h-screen">
               <Header />
-              <main className="flex-grow bg-white dark:bg-background ">
+              <main className="bg-noise flex-grow bg-white dark:bg-background ">
                 {children}
               </main>
               <Footer />
