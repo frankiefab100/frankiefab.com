@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#FF4088",
+        background: "#000",
+      },
       fontFamily: {
         Bitform: ["Bitform"],
         CooperHewittMedium: ["CooperHewittMedium"],
