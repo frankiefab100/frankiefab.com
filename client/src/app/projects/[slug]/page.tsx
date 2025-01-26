@@ -187,14 +187,18 @@ function renderBlocks(blocks: any[]): string {
             if (child.underline) {
               text = `<u>${text}</u>`;
             }
-            if (child.type === "inline-code" || "code") {
+            if (child.inlinecode || child.type === "inline code") {
               text = `<code>${text}</code>`;
             }
             if (child.strikethrough) {
               text = `<del>${text}</del>`;
             }
             if (child.type === "url") {
-              return `<a href="${child.url}" class="text-blue-500 hover:text-blue-700 underline">${text}</a>`;
+              return `<a href="${
+                child.url
+              }" class="text-blue-500 hover:text-blue-700 underline">${
+                child.text || child.url
+              }</a>`;
             }
             return text;
           })
