@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Github, Link2 } from "lucide-react";
 import { ProjectData } from "../../../../lib/types";
 import { getProjectBySlug } from "../../../../lib/getProjectBySlug";
+import { Marked } from "marked";
 
 export default async function ProjectPage(props: {
   params: Promise<{ slug: string }>;
@@ -155,14 +156,81 @@ export default async function ProjectPage(props: {
   );
 }
 
+// function renderBlocks(blocks: any[]): string {
+//   return blocks
+//     .map((block) => {
+//       if (block.type === "paragraph") {
+//         return `<p style="margin-bottom: 10px;">${block.children
+//           .map((child: any) => child.text)
+//           .join("")}</p>`;
+//       }
+//       return "";
+//     })
+//     .join("");
+// }
+
 function renderBlocks(blocks: any[]): string {
   return blocks
     .map((block) => {
       if (block.type === "paragraph") {
-        return `<p style="margin-bottom: 10px;">${block.children
-          .map((child: any) => child.text)
-          .join("")}</p>`;
+        const content = block.children
+          .map((child: any) => {
+            let text = child.text;
+
+            // Apply text formatting
+            if (child.bold) {
+              text = `<strong>${text}</strong>`;
+            }
+            if (child.italic) {
+              text = `<em>${text}</em>`;
+            }
+            if (child.underline) {
+              text = `<u>${text}</u>`;
+            }
+            if (child.code) {
+              text = `<code>${text}</code>`;
+            }
+            if (child.strikethrough) {
+              text = `<del>${text}</del>`;
+            }
+
+            if (child.type === "link") {
+              return `<a href="${child.url}" class="text-blue-500 hover:text-blue-700 underline">${text}</a>`;
+            }
+
+            return text;
+          })
+          .join("");
+
+        return `<p class="mb-4">${content}</p>`;
       }
+
+      if (block.type === "list") {
+        const listItems = block.children
+          .map((item: any) => {
+            const itemContent = item.children
+              .map((child: any) => child.text)
+              .join("");
+            return `<li class="ml-4">${itemContent}</li>`;
+          })
+          .join("");
+
+        return block.format === "ordered"
+          ? `<ol class="list-decimal mb-4 pl-4">${listItems}</ol>`
+          : `<ul class="list-disc mb-4 pl-4">${listItems}</ul>`;
+      }
+
+      if (block.type === "heading") {
+        const level = block.level;
+        const content = block.children.map((child: any) => child.text).join("");
+        return `<h${level} class="text-2xl font-bold mb-4">${content}</h${level}>`;
+      }
+
+      if (block.type === "quote") {
+        const content = block.children.map((child: any) => child.text).join("");
+        return `<blockquote class="border-l-4 border-gray-300 pl-4 italic mb-4">${content}</blockquote>`;
+      }
+
       return "";
     })
     .join("");
