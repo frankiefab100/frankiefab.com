@@ -4,10 +4,16 @@ import { services } from "@/constants/services";
 export default function ServicesSection() {
   return (
     <section className="w-full pt-7">
-      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center md:my-8 my-3 tracking-tight lg:text-4xl text-3xl">
-        What I {""}
-        <span className="text-cyan-600">Do</span>
-      </h2>
+      <div className="text-center md:my-8 my-3">
+        <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white tracking-tight lg:text-4xl text-3xl">
+          What I {""}
+          <span className="text-cyan-600">Do</span>
+        </h2>
+        <p className="mb-1 text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
+          I develop innovative digital solutions that meets real needs.
+        </p>
+      </div>
+
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {services.map((service, index) => (
