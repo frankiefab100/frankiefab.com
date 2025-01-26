@@ -37,14 +37,14 @@ export default function TechStacks() {
           <span className="text-cyan-600">Technologies</span>
         </h2>
         <p className="mb-1 text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
-          Favorite tools that help me bring ideas to life. See my
+          Favorite tools that help me bring ideas to life. See my {""}
           <Link
             href="https://stackshare.io/frankiefab"
-            className="text-cyan-500 italic"
+            className="text-base sm:text-lg italic hover:underline"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {""} StackShare{""}
+            Stackshare
           </Link>{" "}
           for more.
         </p>

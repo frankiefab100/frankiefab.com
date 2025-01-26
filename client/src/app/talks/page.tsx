@@ -16,8 +16,8 @@ const Talks = () => {
             <span className="text-cyan-600">Engagements</span>
           </h2>
           <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
-            Some of my talks and workshop at tech events, meetups, conferences
-            and online webinars.
+            I&apos;ve had the privilege of sharing my knowledge and experiences
+            with diverse audiences at conferences, meetups, and workshops.
           </p>
         </div>
 
@@ -34,23 +34,39 @@ const Talks = () => {
                   </span>
                 </div>
                 <div className="md:flex-grow">
-                  <Link href={`talk.link`}>
-                    <h3 className="text-lg md:text-xl font-medium text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-500 hover:dark:text-gray-200 title-font">
+                  {talk.link ? (
+                    <Link
+                      href={talk.link as string}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <h3 className="text-lg md:text-xl font-medium text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 title-font">
+                        {talk.title}
+                      </h3>
+                    </Link>
+                  ) : (
+                    <h3 className="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-200 title-font">
                       {talk.title}
                     </h3>
-                  </Link>
+                  )}
                   <p className="mt-1 mb-3 font-light uppercase md:text-sm text-xs leading-relaxed">
                     {talk.desc}
                   </p>
-                  <Link
-                    href={`talk.slide`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-cyan-500 inline-flex items-center hover:text-cyan-600"
-                  >
-                    See Slide
-                    <ChevronRight className="w-4 h-4 ml-2" />
-                  </Link>
+                  {talk.slide ? (
+                    <Link
+                      href={talk.slide as string}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-500 inline-flex items-center hover:text-cyan-600"
+                    >
+                      See Slide
+                      <ChevronRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  ) : (
+                    <div className="flex items-center">
+                      See Slide <ChevronRight className="w-4 h-4 ml-2" />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

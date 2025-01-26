@@ -4,9 +4,9 @@ import { Code2, Palette, ScrollText } from "lucide-react";
 export const services = [
     {
         icon: Code2,
-        title: "Web App Development",
+        title: "Web Development",
         description:
-            "I specialize in developing user-friendly web applications with modern frameworks like React, delivering high-quality code that meets design specifications.",
+            "I specialize in developing user-friendly web applications and websites with modern frameworks, delivering high-quality code that meets design specifications.",
     },
     {
         icon: Palette,
