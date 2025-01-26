@@ -212,16 +212,18 @@ function renderBlocks(blocks: any[]): string {
       if (block.type === "heading") {
         const level = block.level;
         const content = block.children.map((child: any) => child.text).join("");
-        const fontSize: { [key: number]: string } = {
-          1: "2rem",
-          2: "1.5rem",
-          3: "1.17rem",
-          4: "1rem",
-          5: "0.83rem",
-          6: "0.67rem",
+        const headingClasses: { [key: number]: string } = {
+          1: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6",
+          2: "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-5",
+          3: "text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4",
+          4: "text-base sm:text-lg md:text-xl lg:text-2xl font-medium mb-3",
+          5: "text-sm sm:text-base md:text-lg lg:text-xl font-medium mb-2",
+          6: "text-xs sm:text-sm md:text-base lg:text-lg font-medium mb-2",
         };
 
-        return `<h${level} style="font-size: ${fontSize}; font-weight: bold; margin-bottom: 1rem;">${content}</h${level}>`;
+        return `<h${level} class="${
+          headingClasses[level] || headingClasses[6]
+        }">${content}</h${level}>`;
       }
 
       if (block.type === "quote") {
