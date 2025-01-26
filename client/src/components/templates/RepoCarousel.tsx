@@ -85,7 +85,8 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
             {""} Work
           </h2>
           <p className="mb-1 text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
-            A selection of open source projects I've built or contributed to.
+            A selection of open source projects I&apos;ve built or contributed
+            to.
           </p>
         </div>
 
