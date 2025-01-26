@@ -187,24 +187,22 @@ function renderBlocks(blocks: any[]): string {
             if (child.underline) {
               text = `<u>${text}</u>`;
             }
-            if (child.inlinecode || child.type === "inline code") {
+            if (child.type === "code") {
               text = `<code>${text}</code>`;
             }
             if (child.strikethrough) {
               text = `<del>${text}</del>`;
             }
-            if (child.type === "url") {
-              return `<a href="${
-                child.url
-              }" class="text-blue-500 hover:text-blue-700 underline">${
-                child.text || child.url
-              }</a>`;
+            if (child.type === "link" || child.link) {
+              return `<a href="${child.url}" class="text-blue-500 hover:text-blue-700 underline">${child.text}</a>`;
             }
             return text;
           })
           .join("");
 
-        return `<p class="mb-4">${content}</p>`;
+        // return `<p class="mb-4">${content}</p>`;
+        const markdownContent = marked.parse(content);
+        return `<p class="mb-4">${markdownContent}</p>`;
       }
 
       if (block.type === "list") {
