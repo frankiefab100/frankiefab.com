@@ -156,19 +156,6 @@ export default async function ProjectPage(props: {
   );
 }
 
-// function renderBlocks(blocks: any[]): string {
-//   return blocks
-//     .map((block) => {
-//       if (block.type === "paragraph") {
-//         return `<p style="margin-bottom: 10px;">${block.children
-//           .map((child: any) => child.text)
-//           .join("")}</p>`;
-//       }
-//       return "";
-//     })
-//     .join("");
-// }
-
 function renderBlocks(blocks: any[]): string {
   return blocks
     .map((block) => {
@@ -225,7 +212,16 @@ function renderBlocks(blocks: any[]): string {
       if (block.type === "heading") {
         const level = block.level;
         const content = block.children.map((child: any) => child.text).join("");
-        return `<h${level} class="text-2xl font-bold mb-4">${content}</h${level}>`;
+        const fontSize: { [key: number]: string } = {
+          1: "2rem",
+          2: "1.5rem",
+          3: "1.17rem",
+          4: "1rem",
+          5: "0.83rem",
+          6: "0.67rem",
+        };
+
+        return `<h${level} style="font-size: ${fontSize}; font-weight: bold; margin-bottom: 1rem;">${content}</h${level}>`;
       }
 
       if (block.type === "quote") {
