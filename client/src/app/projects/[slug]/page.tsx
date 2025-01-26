@@ -175,6 +175,12 @@ function renderBlocks(blocks: any[]): string {
       if (block.type === "paragraph") {
         const content = block.children
           .map((child: any) => {
+            // Handle link type first
+            if (child.type === "link") {
+              const linkText = child.children?.[0]?.text || child.url;
+              return `<a href="${child.url}" class="text-blue-500 hover:text-blue-700 underline">${linkText}</a>`;
+            }
+
             let text = child.text;
 
             // Apply text formatting
@@ -187,19 +193,13 @@ function renderBlocks(blocks: any[]): string {
             if (child.underline) {
               text = `<u>${text}</u>`;
             }
-            if (child.type === "inlinecode") {
-              text = `<code>${text.inline || child.code}</code>`;
+            if (child.code) {
+              text = `<code class="bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5 font-mono text-sm">${text}</code>`;
             }
             if (child.strikethrough) {
               text = `<del>${text}</del>`;
             }
-            if (child.type === "link" || child.link) {
-              return `<a href="${
-                child.url
-              }" class="text-blue-500 hover:text-blue-700 underline">${
-                child.text || child.link
-              }</a>`;
-            }
+
             return text;
           })
           .join("");
