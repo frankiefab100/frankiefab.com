@@ -72,9 +72,6 @@ export default async function ProjectPage(props: {
 
         {project.overview && (
           <div className="mb-8">
-            {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-              Project Overview
-            </h2> */}
             <div
               className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
               dangerouslySetInnerHTML={{
@@ -86,9 +83,6 @@ export default async function ProjectPage(props: {
 
         {project.techUse && (
           <div className="mb-8">
-            {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-              Technologies
-            </h2> */}
             <ul className="text-base sm:text-lg text-gray-700 dark:text-gray-400">
               {project.techUse.map((techUse, index) => (
                 <li key={index} className="mb-2">
@@ -104,9 +98,6 @@ export default async function ProjectPage(props: {
 
         {project.keyFeatures && (
           <div className="mb-8">
-            {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-              Features
-            </h2> */}
             <div
               className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
               dangerouslySetInnerHTML={{
@@ -116,25 +107,7 @@ export default async function ProjectPage(props: {
           </div>
         )}
 
-        {project.challengesAndProcess && (
-          <div className="mb-8">
-            {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-              Challenges and Process
-            </h2> */}
-            <div
-              className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
-              dangerouslySetInnerHTML={{
-                __html: renderBlocks(project.challengesAndProcess),
-              }}
-            />
-          </div>
-        )}
-
         <div className="mb-8">
-          {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
-            Screenshots
-          </h2> */}
-
           {project.screenshots && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {project.screenshots.map((screenshot, index) => (
@@ -150,6 +123,17 @@ export default async function ProjectPage(props: {
             </div>
           )}
         </div>
+
+        {project.challengesAndProcess && (
+          <div className="mb-8">
+            <div
+              className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
+              dangerouslySetInnerHTML={{
+                __html: renderBlocks(project.challengesAndProcess),
+              }}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -204,8 +188,8 @@ function renderBlocks(blocks: any[]): string {
           .join("");
 
         return block.format === "ordered"
-          ? `<ol class="list-decimal mb-4 pl-4">${listItems}</ol>`
-          : `<ul class="list-disc mb-4 pl-4">${listItems}</ul>`;
+          ? `<ol class="list-decimal mb-2 pl-4">${listItems}</ol>`
+          : `<ul class="list-disc mb-2 pl-4">${listItems}</ul>`;
       }
 
       if (block.type === "heading") {
@@ -220,14 +204,14 @@ function renderBlocks(blocks: any[]): string {
           6: "text-xs sm:text-sm md:text-base lg:text-lg font-medium",
         };
 
-        return `<h${level} class="font-CooperHewittMedium mb-2 text-[#131313] dark:text-white ${
+        return `<h${level} class="font-CooperHewittMedium mb-1 text-[#131313] dark:text-white ${
           headingClasses[level] || headingClasses[6]
         }">${content}</h${level}>`;
       }
 
       if (block.type === "quote") {
         const content = block.children.map((child: any) => child.text).join("");
-        return `<blockquote class="border-l-4 border-gray-300 pl-4 italic mb-4">${content}</blockquote>`;
+        return `<blockquote class="border-l-4 border-gray-300 pl-4 italic mb-2">${content}</blockquote>`;
       }
 
       return "";
