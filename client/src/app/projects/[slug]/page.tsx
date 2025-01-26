@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowLeft, Github, Link2 } from "lucide-react";
 import { ProjectData } from "../../../../lib/types";
 import { getProjectBySlug } from "../../../../lib/getProjectBySlug";
-import { marked } from "marked";
 
 export default async function ProjectPage(props: {
   params: Promise<{ slug: string }>;
@@ -73,9 +72,9 @@ export default async function ProjectPage(props: {
 
         {project.overview && (
           <div className="mb-8">
-            <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
+            {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
               Project Overview
-            </h2>
+            </h2> */}
             <div
               className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
               dangerouslySetInnerHTML={{
@@ -87,9 +86,9 @@ export default async function ProjectPage(props: {
 
         {project.techUse && (
           <div className="mb-8">
-            <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
+            {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
               Technologies
-            </h2>
+            </h2> */}
             <ul className="text-base sm:text-lg text-gray-700 dark:text-gray-400">
               {project.techUse.map((techUse, index) => (
                 <li key={index} className="mb-2">
@@ -105,9 +104,9 @@ export default async function ProjectPage(props: {
 
         {project.keyFeatures && (
           <div className="mb-8">
-            <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
+            {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
               Features
-            </h2>
+            </h2> */}
             <div
               className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
               dangerouslySetInnerHTML={{
@@ -119,9 +118,9 @@ export default async function ProjectPage(props: {
 
         {project.challengesAndProcess && (
           <div className="mb-8">
-            <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
+            {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
               Challenges and Process
-            </h2>
+            </h2> */}
             <div
               className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
               dangerouslySetInnerHTML={{
@@ -132,9 +131,9 @@ export default async function ProjectPage(props: {
         )}
 
         <div className="mb-8">
-          <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
+          {/* <h2 className="font-CooperHewittMedium lg:text-3xl md:text-2xl text-xl">
             Screenshots
-          </h2>
+          </h2> */}
 
           {project.screenshots && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -221,7 +220,7 @@ function renderBlocks(blocks: any[]): string {
           6: "text-xs sm:text-sm md:text-base lg:text-lg font-medium",
         };
 
-        return `<h${level} class="font-CooperHewittMedium mb-2 ${
+        return `<h${level} class="font-CooperHewittMedium mb-2 text-[#131313] dark:text-white ${
           headingClasses[level] || headingClasses[6]
         }">${content}</h${level}>`;
       }
