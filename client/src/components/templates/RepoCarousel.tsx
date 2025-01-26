@@ -78,12 +78,15 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
   return (
     <div className="py-16 md:py-24">
       <div className="container mx-auto">
-        <div>
-          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center md:my-8 my-3 tracking-tight lg:text-4xl md:text-3xl text-2xl">
+        <div className="text-center md:my-8 my-3">
+          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white tracking-tight lg:text-4xl md:text-3xl text-2xl">
             Some {""}
             <span className="text-cyan-600">Open Source</span>
             {""} Work
           </h2>
+          <p className="mb-1 text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
+            A selection of open source projects I've built or contributed to.
+          </p>
         </div>
 
         {/* Navigation Arrows */}
