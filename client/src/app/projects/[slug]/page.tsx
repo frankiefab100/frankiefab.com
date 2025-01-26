@@ -213,15 +213,15 @@ function renderBlocks(blocks: any[]): string {
         const level = block.level;
         const content = block.children.map((child: any) => child.text).join("");
         const headingClasses: { [key: number]: string } = {
-          1: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6",
-          2: "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-5",
-          3: "text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4",
-          4: "text-base sm:text-lg md:text-xl lg:text-2xl font-medium mb-3",
-          5: "text-sm sm:text-base md:text-lg lg:text-xl font-medium mb-2",
-          6: "text-xs sm:text-sm md:text-base lg:text-lg font-medium mb-2",
+          1: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold",
+          2: "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold",
+          3: "text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold",
+          4: "text-base sm:text-lg md:text-xl lg:text-2xl font-medium",
+          5: "text-sm sm:text-base md:text-lg lg:text-xl font-medium",
+          6: "text-xs sm:text-sm md:text-base lg:text-lg font-medium",
         };
 
-        return `<h${level} class="${
+        return `<h${level} class="font-CooperHewittMedium mb-2 ${
           headingClasses[level] || headingClasses[6]
         }">${content}</h${level}>`;
       }
