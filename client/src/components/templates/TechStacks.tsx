@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { TooltipProps } from "../../../lib/types";
 import { tools } from "@/constants/techstacks";
+import Link from "next/link";
 
 const Tooltip: React.FC<TooltipProps> = ({ content, children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,21 +31,30 @@ const Tooltip: React.FC<TooltipProps> = ({ content, children }) => {
 export default function TechStacks() {
   return (
     <div className="py-16 md:py-24 flex flex-col items-center justify-center md:px-10">
-      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center md:my-8 my-3 tracking-tight lg:text-4xl text-3xl">
-        Core {""}
-        <span className="text-cyan-600">Technologies</span>
-      </h2>
+      <div className="text-center md:my-8 my-3">
+        <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white tracking-tight lg:text-4xl text-3xl">
+          Core {""}
+          <span className="text-cyan-600">Technologies</span>
+        </h2>
+        <p className="mb-1 text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
+          Favorite tools that help me bring ideas to life. See my
+          <Link
+            href="https://stackshare.io/frankiefab"
+            className="text-cyan-500 italic"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {""} StackShare{""}
+          </Link>{" "}
+          for more.
+        </p>
+      </div>
+
       <div className="grid grid-cols-5 md:grid-cols-10 gap-4 justify-center items-center text-center">
         {tools.map((tool) => (
           <Tooltip key={tool.name} content={tool.name}>
-            <div className="shadow bg-[#fff] dark:bg-[#1c1f2e] rounded-full md:p-4 md:w-16 md:h-16 p-3 w-12 h-12 flex items-center justify-center cursor-pointer">
-              <tool.icon
-                // width={20}
-                // height={20}
-                size={40}
-                color={tool.color}
-                aria-hidden="true"
-              />
+            <div className="bg-[#fff] dark:bg-[#15171d] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] border border-gray-200 dark:border-gray-800 rounded-full md:p-4 md:w-16 md:h-16 p-3 w-12 h-12 flex items-center justify-center cursor-pointer">
+              <tool.icon size={40} color={tool.color} aria-hidden="true" />
               <span className="sr-only">{tool.name}</span>
             </div>
           </Tooltip>
