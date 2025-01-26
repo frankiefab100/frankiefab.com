@@ -53,8 +53,8 @@ export default function Home() {
             Frontend Engineer, Designer <br /> & Technical Writer
           </h1>
           <p className="italic text-base md:text-lg md:leading-7 leading-6 text-gray-500 dark:text-gray-400">
-            With 4+ years of professional experience in building responsive user
-            interfaces and digital experiences to meet user&apos;s needs.
+            With over 4 years of professional experience in crafting responsive
+            user interfaces that drive meaningful digital experiences.
           </p>
         </div>
 
