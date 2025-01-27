@@ -13,8 +13,21 @@ const ReadingList = () => {
         <span className="text-cyan-600">Reading</span>
       </h2>
       <p className="mb-4 text-left text-base md:text-lg font-normal text-gray-700 dark:text-gray-400">
-        Some great books in my reading list. I recommend you them check out
+        A curated selection of books on personal development, design,
+        programming, AI, business, and more.
       </p>
+
+      {/* <div className="text-left mb-4">
+        <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white mb-2 tracking-tight lg:text-4xl text-3xl">
+          What I&apos;m {""}
+          <span className="text-cyan-600">Reading</span>
+        </h2>
+        <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
+          A collection of great books about personal development, design
+          principles, programming, cryptocurrency, artificial intelligence,
+          business, and more.
+        </p>
+      </div> */}
 
       <div className="flex space-x-1 rounded-xl bg-[#fafafa] dark:bg-[#141414] p-1">
         {bookItems.map((tab, index) => (

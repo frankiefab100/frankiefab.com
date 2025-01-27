@@ -25,24 +25,19 @@ const ContactPage = () => {
             Contact <span className="text-cyan-600">Me</span>
           </h2>
           <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
-            Please fill out the form, if you need my services or for any
-            inquiries
+            Ready to collaborate? Fill out the form for inquiries or to discuss
+            your project needs.
           </p>
         </div>
 
-        <div className="py-10">
+        <div className="py-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-            <div className="flex flex-col justify-between lg:py-5">
-              <div>
-                <h3 className="md:text-xl lg:text-left text-center font-mono text-[#131313] dark:text-white">
-                  Let&apos;s bring that idea to life!
-                </h3>
-                <p className="text-base md:text-lg lg:text-left text-center text-gray-600 dark:text-gray-400 max-w-3xl mt-1">
-                  Do you need professional assistance for your project?
-                  Don&apos;t hesitate to reach out.
-                </p>
-              </div>
-              <div className="hidden md:mt-auto md:block">
+            <div className="hidden md:flex flex-col justify-between lg:py-5">
+              <h3 className="text-base md:text-lg lg:text-left text-center font-mono text-[#131313] dark:text-white">
+                Need professional help to make your project a success? Let's
+                collaborate and bring it to life.
+              </h3>
+              <div className="md:mt-auto">
                 <div>
                   <blockquote className="mt-6">
                     <p className="text-sm md:text-lg italic leading-relaxed text-[#131313] dark:text-white">
@@ -60,107 +55,106 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <div className="overflow-hidden bg-white rounded-md shadow-custom">
-                <div className="p-6 sm:p-10">
-                  <form onSubmit={onSubmit} className="md:space-y-5 space-y-4">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="text-gray-700 font-normal text-sm sm:text-base"
-                      >
-                        Name
-                      </label>
-                      <input
-                        id="name"
-                        type="text"
-                        name="name"
-                        required
-                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
-                      />
-                      <ValidationError
-                        prefix="Name"
-                        field="name"
-                        errors={state.errors}
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="text-gray-700 font-normal text-sm sm:text-base"
-                      >
-                        Email
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        name="email"
-                        required
-                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
-                      />
-                      <ValidationError
-                        prefix="Email"
-                        field="email"
-                        errors={state.errors}
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="subject"
-                        className="text-gray-700 font-normal text-sm sm:text-base"
-                      >
-                        Subject
-                      </label>
-                      <input
-                        id="subject"
-                        type="text"
-                        name="subject"
-                        required
-                        className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
-                      />
-                      <ValidationError
-                        prefix="Subject"
-                        field="subject"
-                        errors={state.errors}
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="text-gray-700 font-normal text-sm sm:text-base"
-                      >
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        className="resize-y block w-full px-2 py-2 sm:px-4 sm:py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-gray-400"
-                        rows={4}
-                      ></textarea>
-                      <ValidationError
-                        prefix="Message"
-                        field="message"
-                        errors={state.errors}
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={state.submitting}
-                      className="w-full px-3 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded-lg cursor-pointer font-normal bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
+
+            <div className="overflow-hidden bg-white rounded-md shadow-custom">
+              <div className="p-6 sm:p-10">
+                <form onSubmit={onSubmit} className="md:space-y-5 space-y-4">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="text-gray-700 font-normal text-sm sm:text-base"
                     >
-                      {state.submitting ? "Sending..." : "Send"}
-                    </button>
+                      Name
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      required
+                      className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
+                    />
                     <ValidationError
+                      prefix="Name"
+                      field="name"
                       errors={state.errors}
                       className="text-red-500 text-sm mt-1"
                     />
-                  </form>
-                </div>
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="text-gray-700 font-normal text-sm sm:text-base"
+                    >
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      required
+                      className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
+                    />
+                    <ValidationError
+                      prefix="Email"
+                      field="email"
+                      errors={state.errors}
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="subject"
+                      className="text-gray-700 font-normal text-sm sm:text-base"
+                    >
+                      Subject
+                    </label>
+                    <input
+                      id="subject"
+                      type="text"
+                      name="subject"
+                      required
+                      className="w-full mt-1 px-1.5 py-1 sm:px-3 sm:py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-400 shadow-sm rounded-lg"
+                    />
+                    <ValidationError
+                      prefix="Subject"
+                      field="subject"
+                      errors={state.errors}
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="text-gray-700 font-normal text-sm sm:text-base"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      className="resize-y block w-full px-2 py-3 sm:px-4 sm:py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-gray-400"
+                      rows={4}
+                    ></textarea>
+                    <ValidationError
+                      prefix="Message"
+                      field="message"
+                      errors={state.errors}
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="w-full px-3 py-3 sm:px-6 sm:py-3 text-sm sm:text-base rounded-lg cursor-pointer font-normal bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
+                  >
+                    {state.submitting ? "Sending..." : "Send"}
+                  </button>
+                  <ValidationError
+                    errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </form>
               </div>
             </div>
           </div>

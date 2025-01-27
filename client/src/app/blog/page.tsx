@@ -103,15 +103,16 @@ const BlogPage = () => {
       <div className="py-24 max-w-7xl mx-auto lg:px-16 px-6">
         <div className="max-w-2xl mx-auto text-center mb-4">
           <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
-            Featured <span className="text-cyan-600">Blog Posts</span>
+            Featured {""}
+            <span className="text-cyan-600">Blog Posts</span>
           </h2>
           <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">
-            I write about web development, open source, blockchain technology,
-            programming tips, and more.
+            Articles, guides, and resources on web development, design,
+            blockchain, open source, and career tips.
           </p>
         </div>
 
-        <ul className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-x-8 gap-y-10 mt-10 sm:grid-cols-2 lg:grid-cols-3">
           {blogData.map((article, index) => (
             <Link
               className="w-full mx-auto group sm:max-w-sm"
