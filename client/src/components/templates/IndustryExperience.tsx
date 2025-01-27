@@ -19,7 +19,7 @@ const expertiseList = [
     icon: <MonitorSmartphone />,
   },
   { id: 5, title: "Application Programming Interface", icon: <AppWindow /> },
-  { id: 6, title: "Web Performance Optimization", icon: <Globe /> },
+  { id: 6, title: "Content Management System", icon: <Globe /> },
 ];
 
 export const Expertise = () => {
@@ -46,9 +46,8 @@ export const Expertise = () => {
 
           <div className="lg:col-span-4">
             <p className="text-base md:text-lg font-normal text-gray-700 dark:text-gray-400">
-              I bring extensive industry experience in developing innovative
-              digital solutions that enhance user engagement and streamline
-              project workflows.
+              Proficient in a range of web technologies and software development
+              methodologies.
             </p>
 
             <hr className="mt-4 bg-gray-300 dark:border-gray-800 sm:mt-10" />

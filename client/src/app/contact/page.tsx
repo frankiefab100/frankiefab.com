@@ -34,8 +34,8 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             <div className="hidden md:flex flex-col justify-between lg:py-5">
               <h3 className="text-base md:text-lg lg:text-left text-center font-mono text-[#131313] dark:text-white">
-                Need professional help to make your project a success? Let's
-                collaborate and bring it to life.
+                Need professional help to make your project a success?
+                Let&apos;s collaborate and bring it to life.
               </h3>
               <div className="md:mt-auto">
                 <div>

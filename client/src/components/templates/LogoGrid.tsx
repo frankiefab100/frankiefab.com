@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const LogoGrid = () => {
   return (
-    <div className="py-8">
+    <div className="md:py-8 py-2">
       <div className="max-w-screen-x">
         <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left tracking-tight md:text-3xl text-2xl">
           Notable Contributions To {""}
