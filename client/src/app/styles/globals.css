@@ -50,11 +50,10 @@ h4 {
   font-family: "Bitform", sans-serif;
 }
 
-/* :root {
-  --background: 255, 255, 255;
+svg:not(.preserve-colors) {
+  fill: color(display-p3 0 0 0 / 0) !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: 255, 255, 255;
-} */
+.preserve-colors {
+  fill: currentColor;
+}
