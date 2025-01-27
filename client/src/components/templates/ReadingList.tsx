@@ -28,7 +28,7 @@ const ReadingList = () => {
               ${
                 activeTab === index
                   ? "bg-[#fff] dark:bg-[#222] shadow"
-                  : "text-gray-600 dark:text-gray-100 hover:bg-[#f4f4f5] dark:hover:bg-[#141414] hover:text-gray-700 dark:hover:text-white"
+                  : "text-gray-600 dark:text-gray-100 hover:bg-[#f4f4f5] dark:hover:bg-[#252525] hover:text-gray-700 dark:hover:text-white"
               }`}
             aria-selected={activeTab === index}
             role="tab"
