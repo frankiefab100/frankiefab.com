@@ -49,11 +49,3 @@ h3,
 h4 {
   font-family: "Bitform", sans-serif;
 }
-
-svg:not(.preserve-colors) {
-  fill: color(display-p3 0 0 0 / 0) !important;
-}
-
-.preserve-colors {
-  fill: currentColor;
-}

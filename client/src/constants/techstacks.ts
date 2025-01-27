@@ -4,7 +4,7 @@ import { CSS, Figma, Firebase, Git, GraphQL, HTML5, JavaScript, MongoDB, Motion,
 export const tools: TechToolsProps[] = [
     { name: "HTML5", icon: HTML5 },
     { name: "CSS3", icon: CSS },
-    { name: "Javascript", icon: JavaScript },
+    { name: "JavaScript", icon: JavaScript },
     { name: "React", icon: React },
     { name: "TypeScript", icon: TypeScript },
     { name: "Tailwind CSS", icon: TailwindCSS },
