@@ -1,9 +1,9 @@
 "use client";
 import { services } from "@/constants/services";
 
-export default function ServicesSection() {
+export default function Services() {
   return (
-    <section className="w-full pt-7">
+    <section className="w-full py-16 md:py-24">
       <div className="text-center md:my-8 my-3">
         <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white tracking-tight lg:text-4xl text-3xl">
           What I {""}

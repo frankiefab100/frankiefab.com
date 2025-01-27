@@ -9,97 +9,9 @@ export const LogoGrid = () => {
           Notable Contributions To {""}
           <span className="text-cyan-600">Open Source</span>
         </h2>
-        {/* <div className="mt-2">
-          <ul className="bg-[#fff] dark:bg-gray-400 flex gap-y-1 items-center justify-center">
-            <Link
-              href="https://freecodecamp.org"
-              className="flex-none"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/icons/freecodecamp.svg"
-                alt="Freecodecamp Logo"
-                height={160}
-                width={160}
-              />
-            </Link>
-
-            <Link
-              href="https://reactplay.io"
-              className="flex-none"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/icons/ReactPlay.svg"
-                alt="ReactPlay Logo"
-                height={160}
-                width={160}
-              />
-            </Link>
-
-            <Link
-              href="https://ethereum.org"
-              className="flex-none"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/icons/Ethereum-Logo.svg"
-                alt="ethereum Logo"
-                height={160}
-                width={160}
-              />
-            </Link>
-
-            <Link
-              href="https://astro.buuild"
-              className="flex-none"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/icons/astro-logo-dark.svg"
-                alt="Astro Logo"
-                height={160}
-                width={160}
-              />
-            </Link>
-
-            <Link
-              href="https://developerdao.com"
-              className="flex-none"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/icons/DeveloperDAO.png"
-                alt="Developerdao Logo"
-                height={160}
-                width={160}
-              />
-            </Link>
-
-            <Link
-              href="https://developer.mozilla.org/en-US/"
-              className="flex-none"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/icons/Mozilla-MDN.svg"
-                alt="Mozilla-MDN Logo"
-                height={160}
-                width={160}
-              />
-            </Link>
-          </ul>
-        </div> */}
-
-        <div className="overflow-hidden bg-[#fff] dark:bg-gray-400">
+        <div className="overflow-hidden bg-none dark:bg-gray-400">
           {/* Static on Desktop view */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <ul className="flex gap-8 items-center justify-center">
               <Link
                 href="https://freecodecamp.org"
@@ -188,7 +100,7 @@ export const LogoGrid = () => {
           </div>
 
           {/* Scroll on Mobile view*/}
-          <div className="md:hidden relative w-full">
+          <div className="lg:hidden relative w-full">
             <div className="flex animate-scroll whitespace-nowrap">
               <div className="flex items-center gap-4 pr-4">
                 <Link

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Linkedin, Github, Dribbble } from "lucide-react";
 import { SiHashnode, SiX } from "react-icons/si";
-import ServicesSection from "@/components/templates/Specializations";
+import Services from "@/components/templates/Specializations";
 import TechStacks from "@/components/templates/TechStacks";
 import { RepoCarousel } from "@/components/templates/RepoCarousel";
 import { GetInTouch } from "@/components/templates/GetInTouch";
@@ -114,7 +114,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <ServicesSection />
+      <Services />
 
       <TechStacks />
 
