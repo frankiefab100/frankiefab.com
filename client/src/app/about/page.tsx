@@ -46,10 +46,10 @@ const About = () => {
             <p className="md:my-4 my-3">
               I focus on crafting user interfaces that are user-friendly,
               responsive, and visually appealing for web and mobile
-              applications. I'm particularly interested in software engineering,
-              blockchain technology, artificial intelligence, renewable energy,
-              and the Internet of Things. Recently, I&apos;ve been honing my
-              skills in design engineering and learning {""}
+              applications. I&apos;m particularly interested in software
+              engineering, blockchain technology, artificial intelligence,
+              renewable energy, and the Internet of Things. Recently, I&apos;ve
+              been honing my skills in design engineering and learning {""}
               <Link
                 href="https://www.python.org"
                 className="italic hover:underline"
