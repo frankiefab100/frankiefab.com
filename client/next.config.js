@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "https://frankiefab.vercel.app",
+        destination: "https://frankiefab.com",
+        permanent: true, // 301 redirect
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {
