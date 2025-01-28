@@ -29,82 +29,95 @@ const About = () => {
               I ideate, design, and build softwares.
             </span>
           </h1>
-          <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">
-            I am an independent web developer specializing in building
-            high-quality, intuitive websites and web applications using modern
-            technologies frameworks like JavaScript, React, and Next.js.
-          </p>
-          <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">
-            My journey in tech has been marked by a commitment to enhancing user
-            experiences. I thrive in collaborative environments, working closely
-            with UX designers to transform wireframes and designs from tools
-            like Figma into intuitive user interfaces that meet user needs
-            effectively. My focus on performance and accessibility ensures that
-            applications are not only visually appealing but also fast and
-            scalable.
-          </p>
-          <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">
-            With over four years of industry experience, I often share my
-            knowledge on my{" "}
-            <Link
-              className="text-cyan-500"
-              href="https://frankiefab.hashnode.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              blog{" "}
-              <span>
-                <ArrowUpRight className="inline h-4 w-4" />
-              </span>
-            </Link>
-            . When I&apos;m not working on personal projects, I spend time
-            reading books or blog posts, playing games, or learning a new
-            language.
-          </p>
-          <p className="mt-2 mb-6 text-left text-base sm:text-lg leading-7 text-gray-700 dark:text-gray-400">
-            You can also check out my articles and tutorials on{" "}
-            <Link
-              href="https://freecodecamp.org"
-              className="text-cyan-500"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              FreeCodeCamp.org,{" "}
-            </Link>
-            <Link
-              href="https://inplainenglish.io"
-              className="text-cyan-500"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              In Plain English,{" "}
-            </Link>
-            <Link
-              href="https://developerdao.com"
-              className="text-cyan-500"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Developer DAO,{" "}
-            </Link>
-            <Link
-              href="https://reactplay.io"
-              className="text-cyan-500"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React Play,{" "}
-            </Link>
-            and {""}
-            <Link
-              href="https://web3afrika.com"
-              className="text-cyan-500"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Web3 Afrika{" "}
-            </Link>
-          </p>
+          <div className="my-4 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">
+            <p className="md:my-4 my-3">
+              Hi, I&apos;m a Frontend Software Engineer with a passion for
+              building innovative projects. My curiosity about technology led me
+              to learn programming and ultimately choose it as my career path.
+            </p>
+            <p>
+              Before diving into web and software development, I worked as a
+              graphic designer, providing branding and social media design
+              services. This experience deepened my understanding of design
+              principles such as color theory, visual hierarchy, Jakob&apos;s
+              Usability Heuristics, and concepts like the golden ratio and the
+              rule of thirds.
+            </p>
+            <p className="md:my-4 my-3">
+              I focus on crafting user interfaces that are user-friendly,
+              responsive, and visually appealing for web and mobile
+              applications. I'm particularly interested in software engineering,
+              blockchain technology, artificial intelligence, renewable energy,
+              and the Internet of Things. Recently, I&apos;ve been honing my
+              skills in design engineering and learning {""}
+              <Link
+                href="https://www.python.org"
+                className="italic hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Python
+              </Link>
+              .
+            </p>
+            <p className="md:my-4 my-3">
+              Outside of work, I love reading and expanding my vocabulary in new
+              languages—I aspire to be a polyglot. In my free time, I love
+              playing games, listening to{" "}
+              <Link
+                href="https://open.spotify.com/user/31atuvd2zlnivkukklqff2deltgy"
+                className="italic hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                music
+              </Link>{" "}
+              , and traveling. I enjoy sharing my knowledge and experiences
+              through my {""}
+              <Link
+                href="https://frankiefab.hashnode.dev"
+                className="italic hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                blog
+              </Link>{" "}
+              and have had the opportunity to write for platforms like{" "}
+              <Link
+                href="https://freecodecamp.org"
+                className="italic hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                FreeCodeCamp.org,{" "}
+              </Link>
+              <Link
+                href="https://inplainenglish.io"
+                className="italic hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                In Plain English,{" "}
+              </Link>
+              <Link
+                href="https://developerdao.com"
+                className="italic hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Developer DAO,{" "}
+              </Link>
+              <Link
+                href="https://reactplay.io"
+                className="italic hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                React Play,{" "}
+              </Link>{" "}
+              and contribute to open-source projects.
+            </p>
+          </div>
         </div>
         <LogoSlider />
         <Expertise />
