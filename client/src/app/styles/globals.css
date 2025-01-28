@@ -7,13 +7,13 @@ html {
 }
 
 ::-webkit-scrollbar {
-  background: #0f1321;
+  background: #d1deff;
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-image: linear-gradient(to bottom, #03018b, #020817);
+  background-image: linear-gradient(to bottom, #040188, #0030ab);
 }
 
 @font-face {

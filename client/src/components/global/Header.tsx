@@ -99,7 +99,7 @@ export default function Header() {
             <div className="hidden md:flex items-center gap-4">
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full transition-colors border border-gray-200 dark:border-gray-800 hover:bg-gray-50/80 hover:border-none hover:dark:bg-gray-800/90"
+                className="p-2 rounded-full transition-colors border border-gray-200 dark:border-gray-800 hover:bg-gray-50/80 hover:dark:bg-gray-800/90"
                 aria-label={
                   theme === "dark"
                     ? "Switch to light mode"
@@ -127,7 +127,7 @@ export default function Header() {
             <div className="md:hidden flex">
               <button
                 onClick={toggleTheme}
-                className="p-2 mr-3 rounded-full border border-gray-200 dark:border-gray-800 hover:bg-gray-50/80 hover:border-none hover:dark:bg-gray-800/90"
+                className="p-2 mr-3 rounded-full border border-gray-200 dark:border-gray-800 hover:bg-gray-50/80 hover:dark:bg-gray-800/90"
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
@@ -139,7 +139,7 @@ export default function Header() {
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-md  border border-gray-200 dark:border-gray-800 hover:bg-gray-50/80 hover:border-none hover:dark:bg-gray-800/90"
+                className="p-2 rounded-md  border border-gray-200 dark:border-gray-800 hover:bg-gray-50/80 hover:dark:bg-gray-800/90"
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
