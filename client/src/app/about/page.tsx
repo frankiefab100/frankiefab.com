@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { LogoGrid } from "@/components/templates/LogoGrid";
+import { LogoSlider } from "@/components/templates/LogoSlider";
 import { Expertise } from "@/components/templates/IndustryExperience";
 import { ArrowUpRight } from "lucide-react";
 import ReadingList from "@/components/templates/ReadingList";
@@ -106,9 +106,9 @@ const About = () => {
             </Link>
           </p>
         </div>
-        <LogoGrid />
+        <LogoSlider />
         <Expertise />
-        <ReadingList />{" "}
+        <ReadingList />
       </div>
     </section>
   );
