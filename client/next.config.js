@@ -3,7 +3,13 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "https://frankiefab.vercel.app",
+        source: "/", // The root path
+        has: [
+          {
+            type: "host",
+            value: "frankiefab.vercel.app",
+          },
+        ],
         destination: "https://frankiefab.com",
         permanent: true, // 301 redirect
       },
