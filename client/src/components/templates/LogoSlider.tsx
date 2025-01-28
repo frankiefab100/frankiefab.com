@@ -119,7 +119,7 @@ export const LogoSlider = () => {
     <div className="md:py-8 py-2">
       <div className="max-w-screen-x">
         <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left tracking-tight md:text-3xl text-2xl">
-          Notable Contributions{""}
+          Notable Contributions {""}
           <span className="text-cyan-600">Open Source</span>
         </h2>
         <div className="relative m-auto overflow-hidden bg-none dark:bg-gray-200 before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[100px] dark:before:bg-[linear-gradient(to_right,white_0%,rgba(255,255,255,0)_100%)] before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[100px] after:-scale-x-100 dark:after:bg-[linear-gradient(to_right,white_0%,rgba(255,255,255,0)_100%)] after:content-['']">
