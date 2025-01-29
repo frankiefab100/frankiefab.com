@@ -29,23 +29,15 @@ export default async function ProjectsPage() {
               >
                 <div className="rounded-md bg-gradient-to-t from-[rgb(65,176,198)] to-[#61c1f0] p-1 shadow-xl">
                   <Link href={`/projects/${project.slug || ""}`}>
-                    {/* {project.coverImage && (
-                    <Image
-                      src={
-                        project.coverImage?.url ||
-                        project.coverImage?.formats?.medium?.url
-                      }
-                      alt={project.title}
-                      width={100}
-                      height={100}
-                      className="w-full h-full object-cover"
-                    />
-                  )} */}
-
-                    {project.imageUrl && (
+                    {project.coverImage && (
                       <Image
-                        src={project.imageUrl || project.coverImage?.url}
-                        alt={project.title}
+                        src={
+                          project.coverImage?.formats?.medium?.url ||
+                          project.coverImage?.url
+                        }
+                        alt={
+                          project.coverImage.alternativeText || project.title
+                        }
                         width={100}
                         height={100}
                         className="w-full h-full object-cover"
@@ -56,7 +48,7 @@ export default async function ProjectsPage() {
 
                 <div className="my-4 grid grid-cols-[1fr] lg:gap-4 ">
                   <p className="text-base leading-6 dark:text-gray-200 text-gray-700">
-                    {project.description || "No description available"}
+                    {project.description}
                   </p>
 
                   <Link

@@ -381,6 +381,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    achievementsAndSolution: Schema.Attribute.Blocks;
     challengesAndProcess: Schema.Attribute.Blocks;
     coverImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -390,6 +391,12 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     githubUrl: Schema.Attribute.String;
+    headerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    ideationImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     imageUrl: Schema.Attribute.String;
     keyFeatures: Schema.Attribute.Blocks;
     liveUrl: Schema.Attribute.String;
@@ -399,12 +406,12 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
-    overview: Schema.Attribute.Blocks;
-    publishedAt: Schema.Attribute.DateTime;
-    screenshots: Schema.Attribute.Media<
+    otherImages: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    overview: Schema.Attribute.Blocks;
+    publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     techUse: Schema.Attribute.Component<'stacks-use.core-stack', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;

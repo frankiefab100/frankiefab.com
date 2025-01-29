@@ -99,26 +99,55 @@ export interface ProjectData {
   title: string;
   coverImage?: {
     formats?: {
+      large?: {
+        url: string;
+      };
       medium?: {
         url: string;
       };
     };
     alternativeText?: string;
   };
-  githubUrl?: string;
-  liveUrl?: string;
+  headerImage?: {
+    formats?: {
+      large?: {
+        url: string;
+      };
+      medium?: {
+        url: string;
+      };
+    };
+    alternativeText?: string;
+  };
   overview?: any[];
   description?: string;
+  githubUrl?: string;
+  liveUrl?: string;
+  ideationImage?: {
+    formats?: {
+      large?: {
+        url: string;
+      };
+      medium?: {
+        url: string;
+      };
+    };
+    alternativeText?: string;
+  };
   techUse: Array<{ name: string; useCase: string }>;
   keyFeatures?: any[];
   challengesAndProcess?: any[];
-  screenshots?: Array<{
+  otherImages?: Array<{
     formats: {
+      large: {
+        url: string;
+      };
       medium: {
         url: string;
       };
     };
   }>;
+  achievementsAndSolution?: any[]
 }
 
 

@@ -30,7 +30,7 @@
     "challengesAndProcess": {
       "type": "blocks"
     },
-    "screenshots": {
+    "otherImages": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -72,6 +72,31 @@
       ]
     },
     "overview": {
+      "type": "blocks"
+    },
+    "headerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ideationImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "achievementsAndSolution": {
       "type": "blocks"
     }
   }

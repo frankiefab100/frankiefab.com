@@ -31,14 +31,14 @@ export default async function ProjectPage(props: {
           {project.title}
         </h1>
 
-        {project.coverImage?.formats?.medium?.url && (
+        {project.headerImage?.formats?.large?.url && (
           <Image
-            src={project.coverImage.formats.medium.url}
+            src={project.headerImage.formats.large.url}
             className="rounded-lg shadow-lg mb-8"
             alt={
-              project.coverImage.alternativeText ||
+              project.headerImage.alternativeText ||
               project.title ||
-              "Project cover image"
+              "Project header image"
             }
             width={1200}
             height={600}
@@ -96,6 +96,20 @@ export default async function ProjectPage(props: {
           </div>
         )}
 
+        {project.ideationImage?.formats?.medium?.url && (
+          <Image
+            src={project.ideationImage.formats.medium.url}
+            className="rounded-lg shadow-lg mb-8"
+            alt={
+              project.ideationImage.alternativeText ||
+              project.title ||
+              "Project ideation image"
+            }
+            width={1200}
+            height={600}
+          />
+        )}
+
         {project.keyFeatures && (
           <div className="mb-8">
             <div
@@ -107,14 +121,25 @@ export default async function ProjectPage(props: {
           </div>
         )}
 
+        {project.challengesAndProcess && (
+          <div className="mb-8">
+            <div
+              className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
+              dangerouslySetInnerHTML={{
+                __html: renderBlocks(project.challengesAndProcess),
+              }}
+            />
+          </div>
+        )}
+
         <div className="mb-8">
-          {project.screenshots && (
+          {project.otherImages && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {project.screenshots.map((screenshot, index) => (
+              {project.otherImages.map((image, index) => (
                 <Image
                   key={index}
-                  src={screenshot.formats.medium.url ?? "/placeholder.png"}
-                  alt={`Screenshot ${index + 1}`}
+                  src={image.formats.large.url ?? "/placeholder.png"}
+                  alt={`image ${index + 1}`}
                   className="rounded-lg w-full h-auto"
                   width={600}
                   height={400}
@@ -124,12 +149,12 @@ export default async function ProjectPage(props: {
           )}
         </div>
 
-        {project.challengesAndProcess && (
+        {project.achievementsAndSolution && (
           <div className="mb-8">
             <div
               className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
               dangerouslySetInnerHTML={{
-                __html: renderBlocks(project.challengesAndProcess),
+                __html: renderBlocks(project.achievementsAndSolution),
               }}
             />
           </div>
