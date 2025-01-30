@@ -47,11 +47,6 @@
     "liveUrl": {
       "type": "string"
     },
-    "techUse": {
-      "type": "component",
-      "repeatable": true,
-      "component": "stacks-use.core-stack"
-    },
     "imageUrl": {
       "type": "string"
     },
