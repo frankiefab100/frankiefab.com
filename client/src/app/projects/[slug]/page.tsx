@@ -81,18 +81,14 @@ export default async function ProjectPage(props: {
           </div>
         )}
 
-        {project.techUse && (
+        {project.technologies && (
           <div className="mb-8">
-            <ul className="text-base sm:text-lg text-gray-700 dark:text-gray-400">
-              {project.techUse.map((techUse, index) => (
-                <li key={index} className="mb-2">
-                  <span className="font-bold">
-                    {techUse.name}: {""}
-                  </span>
-                  {techUse.useCase}
-                </li>
-              ))}
-            </ul>
+            <div
+              className="text-base sm:text-lg text-gray-700 dark:text-gray-400"
+              dangerouslySetInnerHTML={{
+                __html: renderBlocks(project.technologies),
+              }}
+            />
           </div>
         )}
 

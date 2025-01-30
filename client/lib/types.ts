@@ -134,7 +134,7 @@ export interface ProjectData {
     };
     alternativeText?: string;
   };
-  techUse: Array<{ name: string; useCase: string }>;
+  technologies?: any[];
   keyFeatures?: any[];
   challengesAndProcess?: any[];
   otherImages?: Array<{
