@@ -8,10 +8,7 @@ import ReadingList from "@/components/templates/ReadingList";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      // className="py-5 md:py-24 max-w-7xl mx-auto lg:px-16 px-6"
-    >
+    <section id="about">
       <div className="relative overflow-hidden py-24 max-w-7xl mx-auto lg:px-16 px-6">
         <div className="inset-0 w-full h-full">
           <Image

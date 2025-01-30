@@ -9,9 +9,8 @@ const ReadingList = () => {
   return (
     <div className="pt-8">
       <div className="text-left mb-4">
-        <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white tracking-tight md:text-3xl text-2xl">
-          What I&apos;m {""}
-          <span className="text-cyan-600">Reading</span>
+        <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white tracking-tight lg:text-3xl md:text-2xl text-lg">
+          What I&apos;m Reading
         </h2>
         <p className="text-base md:text-lg font-normal text-gray-700 dark:text-gray-400">
           A curated selection of books on personal development, design,

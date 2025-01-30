@@ -27,7 +27,7 @@ export default async function ProjectsPage() {
                 key={project.id}
                 className="sm:my-6 sm:mx-4 p-2 sm:p-4 bg-[#f7f9ff] dark:bg-[#15171d] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] rounded-[10px] border border-gray-200 dark:border-gray-800"
               >
-                <div className="rounded-md bg-gradient-to-t from-[rgb(65,176,198)] to-[#61c1f0] p-1 shadow-xl">
+                <div className="rounded-md p-1 shadow-xl">
                   <Link href={`/projects/${project.slug || ""}`}>
                     {project.coverImage && (
                       <Image

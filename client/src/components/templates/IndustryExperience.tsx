@@ -25,8 +25,8 @@ const expertiseList = [
 export const Expertise = () => {
   return (
     <div className="py-8">
-      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left tracking-tight md:text-3xl text-2xl">
-        Industry <span className="text-cyan-600">Knowledge</span>
+      <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left tracking-tight lg:text-3xl md:text-2xl text-lg">
+        Industry Knowledge
       </h2>
 
       <div className="max-w-7xl">
