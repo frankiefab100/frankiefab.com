@@ -1,7 +1,7 @@
 <div align="center">
- <img width="50px" src="../frankiefab.com/client/public/icons/favicon-32x32.png" alt="logo" />
+ <img width="50px" src="https://github.com/user-attachments/assets/20fd141d-2f50-4139-b249-0652d3fbca38" alt="logo" />
 
- <h1>Personal Website</h1>
+ <h2>Personal Website</h2>
  <p>A portfolio website featuring my bio, tech stacks, projects, writing, and talks.</p>
 </div>
 
@@ -32,3 +32,4 @@
 
 - Lucide Icons: <https://lucide.dev>
 - SVGL: <https://svgl.app>
+- Octokit SDK
