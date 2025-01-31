@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import Link from "next/link";
 import {
   Accessibility,
   AppWindow,
@@ -9,7 +8,7 @@ import {
   TabletIcon,
 } from "lucide-react";
 
-const expertiseList = [
+const EXPERTISE_LIST = [
   { id: 1, title: "Web Accessibility", icon: <Accessibility /> },
   { id: 2, title: "Progressive Web App", icon: <TabletIcon /> },
   { id: 3, title: "Browser Extension Development", icon: <Chrome /> },
@@ -53,7 +52,7 @@ export const Expertise = () => {
             <hr className="mt-4 bg-gray-300 dark:border-gray-800 sm:mt-10" />
 
             <ul className="grid grid-cols-1 md:mt-6 mt-4 sm:grid-cols-2 sm:mt-6 gap-x-8 gap-y-4 sm:gap-y-4">
-              {expertiseList.map((item) => (
+              {EXPERTISE_LIST.map((item) => (
                 <li
                   key={item.id}
                   className="flex items-start font-normal text-gray-600 dark:text-white"

@@ -1,7 +1,8 @@
 
 import { Code2, Palette, ScrollText } from "lucide-react";
+import { ServicesProps } from "../../lib/types";
 
-export const services = [
+export const SERVICES: ServicesProps[] = [
     {
         icon: Code2,
         title: "Web Development",

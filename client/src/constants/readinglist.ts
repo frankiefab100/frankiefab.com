@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { TabItem } from "../../lib/types";
 
-export const bookItems: TabItem[] = [
+export const BOOK_ITEMS: TabItem[] = [
     {
         category: "Self Development",
         icon: BookIcon,

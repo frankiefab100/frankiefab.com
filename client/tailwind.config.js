@@ -21,7 +21,7 @@ module.exports = {
         custom: "-14px 10px 44px -21px rgba(0, 0, 0, 0.24)",
       },
       backgroundImage: {
-        noise: "url('/images/background-noise.png')",
+        noise: "url('/images/background-noise.webp')",
       },
       animation: {
         ["infinite-slider"]: "infiniteSlider 20s linear infinite",

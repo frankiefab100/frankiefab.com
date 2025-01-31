@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
 
           <div className="items-center mt-8 xl:mt-0 xl:flex xl:justify-end xl:space-x-6">
-            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 xl:justify-end">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 xl:justify-end">
               <Link href="/about">
                 <span className="text-sm text-gray-700 dark:text-gray-200 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500 cursor-pointer">
                   About
@@ -54,11 +54,11 @@ const Footer = () => {
                   Contact
                 </span>
               </Link>
-            </ul>
+            </div>
 
             <div className="w-full h-px mt-8 mb-5 xl:w-px xl:m-0 xl:h-5 bg-gray-300 dark:bg-gray-800"></div>
 
-            <ul className="flex items-center justify-center space-x-4 md:space-x-5 xl:justify-end">
+            <div className="flex items-center justify-center space-x-4 md:space-x-5 xl:justify-end">
               <Link
                 href="https://twitter.com/frankiefab100"
                 title="Twitter"
@@ -149,7 +149,7 @@ const Footer = () => {
                 <Wallet className="h-5 w-5" />
                 <span className="sr-only">Crypto Wallet</span>
               </Link>
-            </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ export default async function ProjectsPage() {
     <section id="projects">
       <div className="py-24 max-w-7xl mx-auto lg:px-16 px-6">
         <div className="max-w-2xl mx-auto text-center mb-4">
-          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
+          <h2 className="text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
             Project {""}
             <span className="text-cyan-600">Gallery</span>
           </h2>

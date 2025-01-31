@@ -17,12 +17,18 @@ export default function Home() {
       <div className="pt-52 pb-64 flex flex-col items-center justify-center">
         <div className="mb-2 relative w-20 h-20">
           <div className="rounded-2xl overflow-hidden h-full w-full bg-cyan-50">
-            <Image
-              src="/images/profile-photo.jpg"
-              alt="Profile image"
-              className="rounded-2xl object-cover"
-              fill
-            />
+            <picture>
+              <source srcSet="/images/profile-photo.webp" type="image/webp" />
+              <source srcSet="/images/profile-photo.jpg" type="image/jpeg" />
+              <Image
+                src="/images/profile-photo.jpg"
+                alt="Profile image"
+                className="object-cover"
+                layout="responsive"
+                width={120}
+                height={120}
+              />
+            </picture>
           </div>
 
           <div className="relative">

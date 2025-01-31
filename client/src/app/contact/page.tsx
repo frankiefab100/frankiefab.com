@@ -22,7 +22,7 @@ const ContactPage = () => {
     <section id="contact">
       <div className="py-24 max-w-7xl mx-auto lg:px-16 px-6">
         <div className="max-w-2xl mx-auto text-center mb-4">
-          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
+          <h2 className="text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
             Contact <span className="text-cyan-600">Me</span>
           </h2>
           <p className="text-base sm:text-lg font-normal text-gray-700 dark:text-gray-400">

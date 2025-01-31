@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { TooltipProps } from "../../../lib/types";
-import { tools } from "@/constants/techstacks";
+import { TECH_TOOLS } from "@/constants/techstacks";
 import Link from "next/link";
 
 const Tooltip: React.FC<TooltipProps> = ({ content, children }) => {
@@ -51,7 +51,7 @@ export default function TechStacks() {
       </div>
 
       <div className="grid grid-cols-5 md:grid-cols-10 gap-4 justify-center items-center text-center">
-        {tools.map((tool) => (
+        {TECH_TOOLS.map((tool) => (
           <Tooltip key={tool.name} content={tool.name}>
             <div className="text-4xl bg-[#fff] dark:bg-[#15171d] shadow-[0_2px_2px_0_rgba(7, 10, 45, 0.37)] backdrop-blur-[2.5px] border border-gray-200 dark:border-gray-800 rounded-full md:p-4 md:w-16 md:h-16 p-3 w-12 h-12 flex items-center justify-center cursor-pointer">
               <tool.icon size={40} aria-hidden="true" />

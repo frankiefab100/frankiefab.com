@@ -76,6 +76,12 @@ export interface EventsList {
   slide?: string;
 }
 
+export interface ServicesProps {
+  icon: any;
+  title: string;
+  description: string;
+}
+
 export interface ToastProps {
   message: string;
   isVisible: boolean;

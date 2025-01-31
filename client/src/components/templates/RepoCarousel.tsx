@@ -155,9 +155,9 @@ export const RepoCarousel: React.FC<FetchOptions> = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-cyan-500 w-4" : "bg-gray-600"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "bg-cyan-500 w-6" : "bg-gray-600"
+              } flex items-center justify-center`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

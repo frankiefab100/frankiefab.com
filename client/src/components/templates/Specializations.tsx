@@ -1,5 +1,5 @@
 "use client";
-import { services } from "@/constants/services";
+import { SERVICES } from "@/constants/services";
 
 export default function Services() {
   return (
@@ -16,7 +16,7 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {services.map((service, index) => (
+          {SERVICES.map((service, index) => (
             <div
               key={index}
               className="group relative flex flex-col items-start space-y-2 transition-all duration-300 hover:translate-y-[-4px]"

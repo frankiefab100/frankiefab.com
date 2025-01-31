@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { events } from "@/constants/speaking";
+import { EVENTS } from "@/constants/speaking";
 
 const Talks = () => {
-  let sortedEvents = events.sort((a, b) => {
+  let sortedEvents = EVENTS.sort((a, b) => {
     return b.id - a.id;
   });
 
@@ -11,7 +11,7 @@ const Talks = () => {
     <section id="talks">
       <div className="text-gray-700 dark:text-gray-400 py-24 max-w-7xl mx-auto lg:px-16 px-6">
         <div className="max-w-2xl mx-auto text-center mb-4">
-          <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
+          <h2 className="text-[#131313] dark:text-white text-center mb-2 tracking-tight lg:text-4xl text-3xl">
             Speaking {""}
             <span className="text-cyan-600">Engagements</span>
           </h2>

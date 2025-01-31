@@ -11,19 +11,23 @@ const About = () => {
     <section id="about">
       <div className="relative overflow-hidden py-24 max-w-7xl mx-auto lg:px-16 px-6">
         <div className="inset-0 w-full h-full">
-          <Image
-            src="/images/profile-photo.jpg"
-            className="rounded-2xl mx-auto md:w-64 md:h-auto"
-            alt="Profile image"
-            width={200}
-            height={200}
-          />
+          <picture>
+            <source srcSet="/images/profile-photo.webp" type="image/webp" />
+            <source srcSet="/images/profile-photo.jpg" type="image/jpeg" />
+            <Image
+              src="/images/profile-photo.jpg"
+              className="rounded-2xl mx-auto md:w-64 md:h-auto"
+              alt="Profile image"
+              width={200}
+              height={200}
+            />
+          </picture>
         </div>
         <div className="text-center">
-          <h1 className="text-gray-800 dark:text-gray-200 font-semibold lg:text-5xl md:text-3xl text-2xl tracking-tight lg:leading-tight md:my-8 my-4">
+          <h1 className="font-Bitform text-gray-800 dark:text-gray-200 font-semibold lg:text-5xl md:text-3xl text-2xl tracking-tight lg:leading-tight md:my-8 my-4">
             I&apos;m Franklin Ohaegbulam. <br />{" "}
             <span className="text-gray-800/50 dark:text-gray-200/40">
-              I ideate, design, and build softwares.
+              I ideate, design, and build software.
             </span>
           </h1>
           <div className="my-4 text-left text-base sm:text-lg leading-6 text-gray-700 dark:text-gray-400">

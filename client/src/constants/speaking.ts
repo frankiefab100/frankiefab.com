@@ -1,6 +1,6 @@
 import { EventsList } from "../../lib/types";
 
-export const events: EventsList[] = [
+export const EVENTS: EventsList[] = [
     {
         id: 1,
         category: "Conference",

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { bookItems } from "@/constants/readinglist";
+import { BOOK_ITEMS } from "@/constants/readinglist";
 
 const ReadingList = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -19,7 +19,7 @@ const ReadingList = () => {
       </div>
 
       <div className="flex space-x-1 rounded-xl bg-[#fafafa] dark:bg-[#141414] p-1">
-        {bookItems.map((tab, index) => (
+        {BOOK_ITEMS.map((tab, index) => (
           <button
             key={tab.category}
             onClick={() => setActiveTab(index)}
@@ -33,12 +33,14 @@ const ReadingList = () => {
             role="tab"
           >
             <tab.icon size={14} />
-            <span className="ml-2 hidden md:block">{tab.category}</span>
+            <span className="ml-2 hidden md:block font-medium">
+              {tab.category}
+            </span>
           </button>
         ))}
       </div>
       <div className="mt-2">
-        {bookItems.map((tab, idx) => (
+        {BOOK_ITEMS.map((tab, idx) => (
           <div
             key={idx}
             className={`rounded-xl bg-gradient-to-r from-[#f8f9ff] to-[#f4f4f5] dark:bg-gradient-to-r dark:from-[#141414] dark:to-[#1e1e1e] shadow-custom p-2 ${
@@ -52,7 +54,7 @@ const ReadingList = () => {
                   key={index}
                   className="relative rounded-md p-3 bg-white hover:bg-[#f4f4f5] text-gray-600 dark:bg-[#141414] dark:hover:bg-[#222] dark:text-white backdrop-blur-sm transition-colors duration-200 "
                 >
-                  <p className="text-sm md:text-base font-medium leading-5">
+                  <p className="text-sm md:text-base font-normal leading-5">
                     {item}
                   </p>
                 </div>

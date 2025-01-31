@@ -1,7 +1,7 @@
 import { TechToolsProps } from "../../lib/types";
 import { CSS, Figma, Firebase, Git, GraphQL, HTML5, JavaScript, MongoDB, Motion, Netlify, Nextjs, Nodejs, Notion, Photoshop, React, Sass, Strapi, Supabase, TailwindCSS, TypeScript, Vercel } from "../components/shared/SvgIcons";
 
-export const tools: TechToolsProps[] = [
+export const TECH_TOOLS: TechToolsProps[] = [
     { name: "HTML5", icon: HTML5 },
     { name: "CSS3", icon: CSS },
     { name: "JavaScript", icon: JavaScript },

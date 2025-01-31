@@ -5,6 +5,7 @@ import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -95,12 +96,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          rel="preload"
+          href="/images/background-noise.webp"
+          as="image"
+          type="image/webp"
+        />
+      </Head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative min-h-screen">
             <div className="relative z-10 flex flex-col min-h-screen">
               <Header />
-              <main className="bg-noise flex-grow bg-white dark:bg-background ">
+              <main className="bg-noise flex-grow bg-white dark:bg-background">
                 {children}
                 <Analytics />
               </main>

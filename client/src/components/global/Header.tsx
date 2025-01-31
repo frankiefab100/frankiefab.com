@@ -43,10 +43,8 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  // const [theme, setTheme] = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // This effect ensures that we only render the theme toggle UI after mounting
   useEffect(() => {
     setMounted(true);
   }, []);
