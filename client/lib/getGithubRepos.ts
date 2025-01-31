@@ -14,9 +14,8 @@ export async function getGithubRepos({
   try {
     const response = await octokit.repos.listForUser({
       username: username,
-      per_page: 100, // Maximum allowed per page
-      type: 'owner',
-      sort: 'updated', // This ensures we get recently updated repos
+      per_page: 100,
+      sort: 'updated',
       direction: 'desc'
     });
 
@@ -27,20 +26,15 @@ export async function getGithubRepos({
         url: repo.html_url,
         description: repo.description || 'No description provided.',
         stars: repo.stargazers_count ?? 0,
-        image: repo.owner?.avatar_url ?? '/placeholder.png',
         updatedAt: repo.updated_at ? new Date(repo.updated_at).getTime() : 0
       }));
 
     if (random) {
       repos = repos.sort(() => 0.5 - Math.random());
     } else {
-      // Sort by stars first (descending), then by update date
       repos = repos.sort((a, b) => {
-        // First, compare by stars
         const starsDiff = b.stars - a.stars;
         if (starsDiff !== 0) return starsDiff;
-
-        // If stars are equal, compare by update date
         return b.updatedAt - a.updatedAt;
       });
     }
