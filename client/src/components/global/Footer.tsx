@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
 
           <div className="items-center mt-8 xl:mt-0 xl:flex xl:justify-end xl:space-x-6">
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 xl:justify-end">
+            <div className="flex flex-wrap items-center justify-center md:gap-x-6 gap-x-4 gap-y-3 xl:justify-end">
               <Link href="/about">
                 <span className="text-sm text-gray-700 dark:text-gray-200 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500 cursor-pointer">
                   About
@@ -52,6 +52,12 @@ const Footer = () => {
               <Link href="/contact">
                 <span className="text-sm text-gray-700 dark:text-gray-200 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500 cursor-pointer">
                   Contact
+                </span>
+              </Link>
+
+              <Link href="https://frankiefab.hashnode.dev/rss.xml">
+                <span className="text-sm text-gray-700 dark:text-gray-200 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500 cursor-pointer">
+                  RSS Feed
                 </span>
               </Link>
             </div>
