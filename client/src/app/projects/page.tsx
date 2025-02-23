@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllProjects } from "../../../lib/getAllProjects";
 import { ChevronRight } from "lucide-react";
+import React from "react";
 
-export default async function ProjectsPage() {
+const ProjectsPage = async () => {
   const { data: projects } = await getAllProjects();
 
   return (
@@ -80,4 +81,6 @@ export default async function ProjectsPage() {
       </div>
     </section>
   );
-}
+};
+
+export default ProjectsPage;

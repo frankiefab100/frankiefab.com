@@ -134,7 +134,7 @@ export default async function ProjectPage(props: {
               {project.otherImages.map((image, index) => (
                 <Image
                   key={index}
-                  src={image.formats.large.url ?? "/placeholder.png"}
+                  src={image.formats.large.url ?? image.formats.medium.url}
                   alt={`image ${index + 1}`}
                   className="rounded-lg w-full h-auto"
                   width={600}

@@ -37,7 +37,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../assets//images/background-noise.webp");
+  background-image: url("/images/background-noise.webp");
   background-size: cover;
   background-position: center;
   z-index: -99;

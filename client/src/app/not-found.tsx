@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import Error404 from "../assets/images/error404.svg";
 
 export default function NotFound() {
   return (
     <div className="bg-white dark:bg-black grid h-screen -mt-10 px-4 place-content-center">
       <div className="text-center">
         <Image
-          src="/images/error404.svg"
+          src={Error404}
           className="m-auto"
           width={280}
           height={280}
