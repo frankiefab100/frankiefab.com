@@ -1,4 +1,4 @@
-import { EventsList } from "../../lib/types";
+import { EventsList } from "../../types/types";
 
 export const EVENTS: EventsList[] = [
     {

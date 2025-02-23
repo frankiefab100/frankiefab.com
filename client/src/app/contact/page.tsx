@@ -4,8 +4,9 @@ import Toast from "@/components/ui/Toast";
 import { useForm, ValidationError } from "@formspree/react";
 import Image from "next/image";
 import { FormEvent, useState } from "react";
+import MailPhoneIllustration from "../../assets/images/email-phone.png";
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
   const [state, handleSubmit] = useForm(`process.env.FORMSPREE_FORM_ID`);
   const [showToast, setShowToast] = useState(false);
 
@@ -42,7 +43,7 @@ const ContactPage = () => {
             </p>
 
             <Image
-              src="/images/email-phone.png"
+              src={MailPhoneIllustration}
               alt="email phone illustration"
               width={400}
               height={400}

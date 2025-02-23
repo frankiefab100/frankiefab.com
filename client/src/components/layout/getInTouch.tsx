@@ -3,7 +3,7 @@
 import { Mail, Send, CalendarDays, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-export const GetInTouch = () => {
+export const GetInTouch: React.FC = () => {
   return (
     <div id="getintouch" className="w-full pb-16">
       <div className="w-full rounded-3xl overflow-hidden bg-gradient-to-r from-[#f1f1f1] to-[#f4f4f4] dark:bg-gradient-to-r dark:from-[#020817] dark:to-[#00001f] p-6 md:p-12 shadow-custom">

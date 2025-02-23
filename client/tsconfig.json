@@ -29,17 +29,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.js",
-    "tailwind.config.js",
-    "../MobileNav.tsx",
-    "../NavNew.tsx",
-    "../ProjectGallery.tsx",
-    "../page-SLUG.tsx",
-    "../ProjectDetails.client-SLUG.tsx",
-    "../old snippets/pagePROJECTS.tsx",
-    "../old snippets/api.ts",
-    "../old snippets/nodemailer.ts",
-    "../old snippets/pageDESIGN.tsx",
-    "../old snippets/pageDEV.tsx"
+    "tailwind.config.js"
   ],
   "exclude": ["node_modules"]
 }

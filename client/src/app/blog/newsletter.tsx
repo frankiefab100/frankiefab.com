@@ -2,7 +2,7 @@
 import { useSubstackEmbed } from "@/utils/useSubstackEmbed";
 import { useEffect } from "react";
 
-export const Newsletter = () => {
+export const Newsletter: React.FC = () => {
   useSubstackEmbed();
 
   useEffect(() => {
@@ -44,5 +44,3 @@ export const Newsletter = () => {
     </section>
   );
 };
-
-export default Newsletter;

@@ -1,17 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Github,
-  Linkedin,
-  Instagram,
-  Codepen,
-  Codesandbox,
-  Wallet,
-} from "lucide-react";
+import { Github, Instagram, Codepen, Codesandbox, Wallet } from "lucide-react";
 import { SiBehance, SiBluesky, SiProducthunt, SiX } from "react-icons/si";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <section className="py-12 bg-gradient-to-r from-gray-100 via-gray-200 to-white dark:bg-gradient-to-r dark:from-gray-950 dark:via-gray-900 dark:to-black">
       <div className="max-w-7xl mx-auto lg:px-16 px-6">

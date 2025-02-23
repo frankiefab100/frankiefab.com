@@ -1,9 +1,8 @@
 "use client";
-
 import React, { useState } from "react";
 import { BOOK_ITEMS } from "@/constants/readinglist";
 
-const ReadingList = () => {
+export const ReadingList: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -66,5 +65,3 @@ const ReadingList = () => {
     </div>
   );
 };
-
-export default ReadingList;

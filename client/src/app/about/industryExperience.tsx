@@ -7,6 +7,7 @@ import {
   MonitorSmartphone,
   TabletIcon,
 } from "lucide-react";
+import MacImg from "../../assets/images/mac-ondesk.jpg";
 
 const EXPERTISE_LIST = [
   { id: 1, title: "Web Accessibility", icon: <Accessibility /> },
@@ -21,7 +22,7 @@ const EXPERTISE_LIST = [
   { id: 6, title: "Content Management System", icon: <Globe /> },
 ];
 
-export const Expertise = () => {
+export const Expertise: React.FC = () => {
   return (
     <div className="py-8">
       <h2 className="font-CooperHewittMedium text-[#131313] dark:text-white text-left tracking-tight lg:text-3xl md:text-2xl text-lg">
@@ -34,7 +35,7 @@ export const Expertise = () => {
             <div className="relative overflow-hidden">
               <Image
                 className="object-cover rounded-md w-full h-full"
-                src="/images/mac-ondesk.jpg"
+                src={MacImg}
                 alt="coding desktop screen"
                 layout="responsive"
                 width={100}

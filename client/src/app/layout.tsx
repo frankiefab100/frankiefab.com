@@ -1,4 +1,4 @@
-import "./styles/globals.css";
+import "../styles/globals.css";
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import Header from "@/components/global/Header";
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "Frankiefab",
     images: [
       {
-        url: "/OG-image.png",
+        url: "../assets/images/OG-image.png",
         width: 1200,
         height: 630,
         alt: "Frankiefab Portfolio",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
       "A portfolio website by Franklin Ohaegbulam featuring his bio, tech stacks, side projects, writing and talks",
     images: [
       {
-        url: "/OG-image.png",
+        url: "../assets/images/OG-image.png",
         width: 1200,
         height: 630,
         alt: "Frankiefab Portfolio",

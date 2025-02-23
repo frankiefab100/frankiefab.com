@@ -1,10 +1,9 @@
 "use client";
-
 import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Folder } from "lucide-react";
 import { getGithubRepos } from "../../../lib/getGithubRepos";
-import type { RepoType, FetchOptions } from "../../../lib/types";
+import type { RepoType, FetchOptions } from "../../../types/types";
 import Loading from "@/app/loading";
 
 export const RepoCarousel: React.FC<FetchOptions> = () => {

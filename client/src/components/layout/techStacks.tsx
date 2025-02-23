@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { TooltipProps } from "../../../lib/types";
+import { TooltipProps } from "../../../types/types";
 import { TECH_TOOLS } from "@/constants/techstacks";
 import Link from "next/link";
 
@@ -28,7 +28,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content, children }) => {
   );
 };
 
-export default function TechStacks() {
+export const TechStacks: React.FC = () => {
   return (
     <div className="py-16 md:py-24 flex flex-col items-center justify-center md:px-10">
       <div className="text-center md:my-8 my-3">
@@ -62,4 +62,4 @@ export default function TechStacks() {
       </div>
     </div>
   );
-}
+};

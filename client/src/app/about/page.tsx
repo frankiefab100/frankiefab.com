@@ -1,21 +1,22 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { LogoSlider } from "@/components/templates/LogoSlider";
-import { Expertise } from "@/components/templates/IndustryExperience";
-import { ArrowUpRight } from "lucide-react";
-import ReadingList from "@/components/templates/ReadingList";
+import { LogoSlider } from "@/app/about/logoSlider";
+import { Expertise } from "@/app/about/industryExperience";
+import { ReadingList } from "@/app/about/readingList";
+import ImageWebp from "../../assets/images/profile-photo.webp";
+import ImageJpg from "../../assets/images/profile-photo.jpg";
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <section id="about">
       <div className="relative overflow-hidden py-24 max-w-7xl mx-auto lg:px-16 px-6">
         <div className="inset-0 w-full h-full">
           <picture>
-            <source srcSet="/images/profile-photo.webp" type="image/webp" />
-            <source srcSet="/images/profile-photo.jpg" type="image/jpeg" />
+            <source srcSet={ImageWebp.src} type="image/webp" />
+            <source srcSet={ImageJpg.src} type="image/jpeg" />
             <Image
-              src="/images/profile-photo.jpg"
+              src={ImageJpg}
               className="rounded-2xl mx-auto md:w-64 md:h-auto"
               alt="Profile image"
               width={200}

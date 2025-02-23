@@ -2,7 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Github, Link2 } from "lucide-react";
-import { ProjectData } from "../../../../lib/types";
+import { ProjectData } from "../../../../types/types";
 import { getProjectBySlug } from "../../../../lib/getProjectBySlug";
 
 export default async function ProjectPage(props: {

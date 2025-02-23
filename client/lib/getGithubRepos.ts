@@ -1,5 +1,5 @@
 import { Octokit } from '@octokit/rest';
-import { RepoType, FetchOptions } from "./types";
+import { RepoType, FetchOptions } from "../types/types";
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN

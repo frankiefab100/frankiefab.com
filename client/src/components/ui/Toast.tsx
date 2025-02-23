@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ToastProps } from "../../../lib/types";
+import { ToastProps } from "../../../types/types";
 
 const Toast: React.FC<ToastProps> = ({ message, isVisible, onClose }) => {
   useEffect(() => {

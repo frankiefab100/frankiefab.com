@@ -1,7 +1,7 @@
 "use client";
 import { SERVICES } from "@/constants/services";
 
-export default function Services() {
+export const Services: React.FC = () => {
   return (
     <section className="w-full py-16 md:py-24">
       <div className="text-center md:my-8 my-3">
@@ -38,4 +38,4 @@ export default function Services() {
       </div>
     </section>
   );
-}
+};

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { EVENTS } from "@/constants/speaking";
 
-const Talks = () => {
+const Talks: React.FC = () => {
   let sortedEvents = EVENTS.sort((a, b) => {
     return b.id - a.id;
   });

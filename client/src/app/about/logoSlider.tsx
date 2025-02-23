@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import Freecodecamp from "../../assets/logos/freecodecamp.svg";
+import ReactPlay from "../../assets/logos/ReactPlay.svg";
+import Ethereum from "../../assets/logos/Ethereum-Logo.svg";
+import Astro from "../../assets/logos/astro-logo-dark.svg";
+import DeveloperDAO from "../../assets/logos/DeveloperDAO.png";
+import MDN from "../../assets/logos/Mozilla-MDN.svg";
 
 const OSS_LOGOS = [
   {
@@ -13,7 +19,7 @@ const OSS_LOGOS = [
         rel="noopener noreferrer"
       >
         <Image
-          src="/icons/freecodecamp.svg"
+          src={Freecodecamp}
           alt="Freecodecamp Logo"
           height={100}
           width={100}
@@ -30,12 +36,7 @@ const OSS_LOGOS = [
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image
-          src="/icons/ReactPlay.svg"
-          alt="ReactPlay Logo"
-          height={100}
-          width={100}
-        />
+        <Image src={ReactPlay} alt="ReactPlay Logo" height={100} width={100} />
       </Link>
     ),
   },
@@ -48,12 +49,7 @@ const OSS_LOGOS = [
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image
-          src="/icons/Ethereum-Logo.svg"
-          alt="ethereum Logo"
-          height={100}
-          width={100}
-        />
+        <Image src={Ethereum} alt="ethereum Logo" height={100} width={100} />
       </Link>
     ),
   },
@@ -66,12 +62,7 @@ const OSS_LOGOS = [
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image
-          src="/icons/astro-logo-dark.svg"
-          alt="Astro Logo"
-          height={100}
-          width={100}
-        />
+        <Image src={Astro} alt="Astro Logo" height={100} width={100} />
       </Link>
     ),
   },
@@ -85,7 +76,7 @@ const OSS_LOGOS = [
         rel="noopener noreferrer"
       >
         <Image
-          src="/icons/DeveloperDAO.png"
+          src={DeveloperDAO}
           alt="Developerdao Logo"
           height={100}
           width={100}
@@ -103,18 +94,13 @@ const OSS_LOGOS = [
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Image
-          src="/icons/Mozilla-MDN.svg"
-          alt="Mozilla-MDN Logo"
-          height={100}
-          width={100}
-        />
+        <Image src={MDN} alt="Mozilla-MDN Logo" height={100} width={100} />
       </Link>
     ),
   },
 ];
 
-export const LogoSlider = () => {
+export const LogoSlider: React.FC = () => {
   return (
     <div className="md:py-8 py-2">
       <div className="max-w-screen-x">

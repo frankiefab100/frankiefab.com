@@ -26,7 +26,7 @@ const NAVIGATION_LINKS = [
   ["Speaking", "/talks", PodcastIcon],
 ] as const;
 
-export default function Header() {
+const Header: React.FC = () => {
   const { theme, setTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -188,4 +188,6 @@ export default function Header() {
       )}
     </header>
   );
-}
+};
+
+export default Header;

@@ -4,7 +4,6 @@ export interface TechToolsProps {
   color?: string;
 }
 
-
 export interface TooltipProps {
   content: string;
   children: React.ReactNode;

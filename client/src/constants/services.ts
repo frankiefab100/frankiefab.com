@@ -1,6 +1,6 @@
 
 import { Code2, Palette, ScrollText } from "lucide-react";
-import { ServicesProps } from "../../lib/types";
+import { ServicesProps } from "../../types/types";
 
 export const SERVICES: ServicesProps[] = [
     {

@@ -1,17 +1,17 @@
 "use client";
-import { Newsletter } from "@/components/templates/Newsletter";
+import { Newsletter } from "@/app/blog/newsletter";
 import Pagination from "@/components/ui/Pagination";
 import { Calendar, BookOpen } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FETCH_ARTICLES } from "../../../graphql/fetchHashnodePosts";
-import { Posts } from "../../../lib/types";
+import { Posts } from "../../../types/types";
 import Link from "next/link";
 import { formatDate } from "@/utils/dateFormat";
 import Loading from "../loading";
 import ErrorPage from "../error";
 
-const BlogPage = () => {
+const BlogPage: React.FC = () => {
   const [blogData, setBlogData] = useState<Posts>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);

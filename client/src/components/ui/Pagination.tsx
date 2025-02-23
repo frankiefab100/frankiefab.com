@@ -1,6 +1,6 @@
 "use client";
 
-import { PaginationProps } from "../../../lib/types";
+import { PaginationProps } from "../../../types/types";
 
 const Pagination = ({
   totalItems,

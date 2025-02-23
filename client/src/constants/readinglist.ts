@@ -3,7 +3,7 @@ import {
     FlameIcon,
     TrendingUp,
 } from "lucide-react";
-import { TabItem } from "../../lib/types";
+import { TabItem } from "../../types/types";
 
 export const BOOK_ITEMS: TabItem[] = [
     {
