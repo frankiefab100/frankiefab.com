@@ -19,4 +19,22 @@ export const EVENTS: EventsList[] = [
         link: "",
         slide: "https://www.slideshare.net/slideshow/osca-abuja-contributing-to-open-source-as-a-designerpdf/253014004",
     },
+    {
+        id: 3,
+        category: "Bootcamp",
+        date: "Jan 17 2025",
+        title: "Advanced Git and GitHub",
+        desc: "BlockchainUNN Bootcamp - Enugu, Nigeria",
+        link: "https://www.youtube.com/live/QxnbfyaZFHQ?si=aU4iBCD-C4PMkMLD",
+        slide: "https://docs.google.com/document/d/1hHg8ssTqmkjbCa5lYRJHMYQhXPbNbZkC34rc8gwAUc0/",
+    },
+    {
+        id: 4,
+        category: "Bootcamp",
+        date: "Feb 04 2025",
+        title: "Introduction to React.js",
+        desc: "BlockchainUNN Bootcamp - Enugu, Nigeria",
+        link: "https://www.youtube.com/live/oBK4NDMbbgY?si=YWFjzVhe_g7eU4dR",
+        slide: "https://www.slideshare.net/slideshow/introduction-to-react-blockchain-unn-pdf/275373389",
+    }
 ];
