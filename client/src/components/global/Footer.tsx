@@ -5,7 +5,7 @@ import { SOCIAL_LINKS } from "@/utils/socialLinks";
 
 interface SocialLinkProps {
   href: string;
-  icon: React.ReactNode;
+  icon: any;
   title: string;
   srOnly: string;
 }
