@@ -1,8 +1,29 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Instagram, Codepen, Codesandbox, Wallet } from "lucide-react";
-import { SiBehance, SiBluesky, SiProducthunt, SiX } from "react-icons/si";
+import { SOCIAL_LINKS } from "@/utils/socialLinks";
+
+interface SocialLinkProps {
+  href: string;
+  icon: React.ReactNode;
+  title: string;
+  srOnly: string;
+}
+
+const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, title, srOnly }) => {
+  return (
+    <Link
+      href={href}
+      title={title}
+      className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {icon}
+      <span className="sr-only">{srOnly}</span>
+    </Link>
+  );
+};
 
 const Footer: React.FC = () => {
   return (
@@ -58,96 +79,9 @@ const Footer: React.FC = () => {
             <div className="w-full h-px mt-8 mb-5 xl:w-px xl:m-0 xl:h-5 bg-gray-300 dark:bg-gray-800"></div>
 
             <div className="flex items-center justify-center space-x-4 md:space-x-5 xl:justify-end">
-              <Link
-                href="https://twitter.com/frankiefab100"
-                title="Twitter"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SiX className="h-5 w-5" />
-                <span className="sr-only">Twitter/X</span>
-              </Link>
-              <Link
-                href="https://github.com/frankiefab100"
-                title="github"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">Github</span>
-              </Link>
-              <Link
-                href="https://instagram.com/frankiefab100"
-                title="Instagram"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link
-                href="https://behance.net/frankiefab100"
-                title="Behance"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SiBehance className="h-5 w-5" />
-                <span className="sr-only">Behance</span>
-              </Link>
-              <Link
-                href="https://bsky.app/profile/frankiefab.bsky.social"
-                title="bluesky"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SiBluesky className="h-5 w-5" />
-                <span className="sr-only">Bluesky</span>
-              </Link>
-              <Link
-                href="https://producthunt.com/frankiefab100"
-                title="Producthunt"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SiProducthunt className="h-5 w-5" />
-                <span className="sr-only">Producthunt</span>
-              </Link>
-              <Link
-                href="https://codepen.io/frankiefab100"
-                title="codepen"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Codepen className="h-5 w-5" />
-                <span className="sr-only">Codesandbox</span>
-              </Link>
-              <Link
-                href="https://codesandbox.io/frankiefab100"
-                title="codesandbox"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Codesandbox className="h-5 w-5" />
-                <span className="sr-only">Rainbow wallet</span>
-              </Link>
-              <Link
-                href="https://rainbow.me/frankiefab.eth"
-                title="rainbow-wallet"
-                className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Wallet className="h-5 w-5" />
-                <span className="sr-only">Crypto Wallet</span>
-              </Link>
+              {SOCIAL_LINKS.map(({ href, icon, title, srOnly }) => (
+                <SocialLink key={title} href={href} icon={icon} title={title} srOnly={srOnly} />
+              ))}
             </div>
           </div>
         </div>
