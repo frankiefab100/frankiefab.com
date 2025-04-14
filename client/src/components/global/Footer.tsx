@@ -3,28 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { SOCIAL_LINKS } from "@/utils/socialLinks";
 
-interface SocialLinkProps {
-  href: string;
-  icon: any;
-  title: string;
-  srOnly: string;
-}
-
-const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, title, srOnly }) => {
-  return (
-    <Link
-      href={href}
-      title={title}
-      className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {icon}
-      <span className="sr-only">{srOnly}</span>
-    </Link>
-  );
-};
-
 const Footer: React.FC = () => {
   return (
     <section className="py-12 bg-gradient-to-r from-gray-100 via-gray-200 to-white dark:bg-gradient-to-r dark:from-gray-950 dark:via-gray-900 dark:to-black">
@@ -79,8 +57,18 @@ const Footer: React.FC = () => {
             <div className="w-full h-px mt-8 mb-5 xl:w-px xl:m-0 xl:h-5 bg-gray-300 dark:bg-gray-800"></div>
 
             <div className="flex items-center justify-center space-x-4 md:space-x-5 xl:justify-end">
-              {SOCIAL_LINKS.map(({ href, icon, title, srOnly }) => (
-                <SocialLink key={title} href={href} icon={<Icon className="h-5 w-5" />} title={title} srOnly={srOnly} />
+              {SOCIAL_LINKS.map(({ href, icon: Icon, title, srOnly }) => (
+                <Link
+                  key={title}
+                  href={href}
+                  title={title}
+                  className="block text-gray-600 dark:text-gray-300 transition-all duration-200 dark:hover:text-blue-500 hover:text-blue-500"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="sr-only">{srOnly}</span>
+                </Link>
               ))}
             </div>
           </div>
