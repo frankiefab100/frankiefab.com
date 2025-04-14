@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
 
             <div className="flex items-center justify-center space-x-4 md:space-x-5 xl:justify-end">
               {SOCIAL_LINKS.map(({ href, icon, title, srOnly }) => (
-                <SocialLink key={title} href={href} icon={icon} title={title} srOnly={srOnly} />
+                <SocialLink key={title} href={href} icon={<Icon className="h-5 w-5" />} title={title} srOnly={srOnly} />
               ))}
             </div>
           </div>
