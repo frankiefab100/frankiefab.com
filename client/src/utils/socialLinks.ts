@@ -1,7 +1,7 @@
 import { Github, Instagram, Codepen, Codesandbox, Wallet } from "lucide-react";
 import { SiBehance, SiBluesky, SiProducthunt, SiX } from "react-icons/si";
 
-const socialLinks = [
+export const socialLinks = [
   {
     href: "https://twitter.com/frankiefab100",
     icon: <SiX className="h-5 w-5" />,
