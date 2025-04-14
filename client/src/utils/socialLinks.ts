@@ -57,5 +57,3 @@ export const SOCIAL_LINKS = [
     srOnly: "Crypto Wallet",
   },
 ];
-
-export default socialLinks;
